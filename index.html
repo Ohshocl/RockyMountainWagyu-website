@@ -30,12 +30,11 @@
 
         :root {
             --black: #000000;
-            --gold: #FDB913;
             --white: #FFFFFF;
-            --cream: #FAF9F6;
-            --dark-gray: #2C2C2C;
+            --yellow: #FDB913;
             --light-gray: #F5F5F5;
-            --accent-gold: #D4AF37;
+            --medium-gray: #E0E0E0;
+            --dark-gray: #333333;
         }
 
         body {
@@ -45,27 +44,36 @@
             line-height: 1.6;
         }
 
-        /* Scrolling Table of Contents */
+        /* Scrolling Table of Contents - Discrete Floating */
         .toc-sidebar {
             position: fixed;
-            left: 0;
-            top: 80px;
-            width: 250px;
-            height: calc(100vh - 80px);
-            background: var(--cream);
-            border-right: 3px solid var(--gold);
-            padding: 30px 20px;
+            left: 20px;
+            top: 160px;
+            width: 200px;
+            max-height: calc(100vh - 200px);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px 15px;
             overflow-y: auto;
             z-index: 100;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .toc-sidebar:hover {
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
         }
 
         .toc-sidebar h3 {
-            font-size: 1.1rem;
-            color: var(--black);
-            margin-bottom: 20px;
+            font-size: 0.85rem;
+            color: var(--dark-gray);
+            margin-bottom: 15px;
             text-transform: uppercase;
             letter-spacing: 1px;
+            font-weight: 600;
         }
 
         .toc-sidebar ul {
@@ -73,23 +81,24 @@
         }
 
         .toc-sidebar li {
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
 
         .toc-sidebar a {
             color: var(--dark-gray);
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             transition: all 0.3s;
             display: block;
-            padding: 8px 12px;
-            border-left: 3px solid transparent;
+            padding: 6px 10px;
+            border-left: 2px solid transparent;
+            border-radius: 4px;
         }
 
         .toc-sidebar a:hover,
         .toc-sidebar a.active {
-            color: var(--gold);
-            border-left-color: var(--gold);
+            color: var(--yellow);
+            border-left-color: var(--yellow);
             background: rgba(253, 185, 19, 0.1);
         }
 
@@ -97,92 +106,146 @@
         .toc-toggle {
             display: none;
             position: fixed;
-            left: 10px;
-            top: 90px;
+            left: 20px;
+            top: 150px;
             z-index: 101;
-            background: var(--gold);
+            background: rgba(253, 185, 19, 0.95);
             border: none;
             padding: 10px 15px;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
             font-size: 1.2rem;
             color: var(--black);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
-        /* Header with Business Card SVG Background */
+        /* Header - Using Business Card Image */
         header {
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            background: var(--white);
         }
 
-        .header-background {
+        .header-card {
             width: 100%;
-            height: 80px;
-            background: var(--black);
+            height: 140px;
+            position: relative;
+            overflow: hidden;
         }
 
-        nav {
+        /* Left black stripe with WAGYU text */
+        .header-left-stripe {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50px;
+            height: 140px;
+            background: var(--black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
+            z-index: 2;
+        }
+
+        .header-left-stripe span {
+            color: var(--white);
+            font-size: 1rem;
+            font-weight: bold;
+            letter-spacing: 4px;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Center section with card background pattern */
+        .header-center {
+            position: absolute;
+            left: 50px;
+            right: 20px;
+            top: 0;
+            height: 140px;
+            background: linear-gradient(to bottom, #D8D8D8 0%, #E8E8E8 40%, #F0F0F0 70%, #FFFFFF 100%);
+        }
+
+        /* Mountain landscape background */
+        .card-background {
             position: absolute;
             top: 0;
+            left: 0;
             width: 100%;
-            height: 80px;
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 40px 0 290px;
+            height: 100%;
+        }
+
+        .header-logo {
+            position: absolute;
+            top: 50%;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translate(-50%, -50%);
+            z-index: 3;
+            text-align: center;
         }
 
-        .logo {
+        .header-logo h1 {
             font-size: 1.8rem;
+            color: var(--black);
             font-weight: bold;
-            color: var(--gold);
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            display: flex;
-            align-items: center;
-            gap: 12px;
+            margin: 0;
+            letter-spacing: 2px;
+            text-transform: none;
+            white-space: nowrap;
+            text-shadow: 0 1px 3px rgba(255,255,255,0.8);
         }
 
-        .logo svg {
-            width: 50px;
-            height: 50px;
+        /* Right yellow stripe */
+        .header-right-stripe {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 20px;
+            height: 140px;
+            background: var(--yellow);
+            z-index: 2;
+        }
+
+        /* Navigation */
+        nav {
+            position: absolute;
+            top: 10px;
+            right: 80px;
+            z-index: 3;
         }
 
         .nav-links {
             display: flex;
-            gap: 35px;
+            gap: 25px;
             list-style: none;
         }
 
         .nav-links a {
-            color: var(--white);
+            color: var(--black);
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 0.9rem;
             transition: color 0.3s;
             font-weight: 500;
-            letter-spacing: 0.5px;
         }
 
         .nav-links a:hover {
-            color: var(--gold);
+            color: var(--yellow);
         }
 
-        /* Main Content with TOC offset */
+        /* Main Content */
         main {
-            margin-left: 250px;
-            margin-top: 80px;
+            margin-left: 0;
+            margin-top: 120px;
         }
 
-        /* Hero Section - Text Only with Mountain Silhouette */
+        /* Hero Section */
         .hero {
-            background: linear-gradient(to bottom, var(--black) 0%, var(--dark-gray) 100%);
-            color: var(--white);
+            background: linear-gradient(to bottom, var(--white) 0%, var(--light-gray) 100%);
+            color: var(--black);
             padding: 100px 40px 80px;
             text-align: center;
             min-height: 500px;
@@ -191,25 +254,13 @@
             justify-content: center;
             align-items: center;
             position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 150px;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 150"><path fill="%23FDB913" opacity="0.1" d="M0,100 L150,80 L300,90 L450,70 L600,85 L750,75 L900,90 L1050,80 L1200,95 L1200,150 L0,150 Z"/></svg>') no-repeat bottom center;
-            background-size: cover;
+            border-bottom: 5px solid var(--yellow);
         }
 
         .hero h1 {
             font-size: 3.5rem;
-            color: var(--gold);
+            color: var(--black);
             margin-bottom: 20px;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
             font-weight: 700;
             letter-spacing: 2px;
         }
@@ -217,14 +268,13 @@
         .hero-subtitle {
             font-size: 1.6rem;
             margin-bottom: 15px;
-            color: var(--cream);
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            color: var(--dark-gray);
         }
 
         .hero-tagline {
             font-size: 1.2rem;
             margin-bottom: 40px;
-            color: var(--white);
+            color: var(--dark-gray);
             max-width: 700px;
             font-style: italic;
         }
@@ -248,25 +298,26 @@
         }
 
         .btn-primary {
-            background: var(--gold);
+            background: var(--yellow);
             color: var(--black);
         }
 
         .btn-primary:hover {
-            background: var(--accent-gold);
+            background: var(--black);
+            color: var(--yellow);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(253, 185, 19, 0.4);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
         }
 
         .btn-secondary {
-            background: transparent;
-            color: var(--white);
-            border: 2px solid var(--white);
+            background: var(--white);
+            color: var(--black);
+            border: 2px solid var(--black);
         }
 
         .btn-secondary:hover {
-            background: var(--white);
-            color: var(--black);
+            background: var(--black);
+            color: var(--white);
         }
 
         /* Container */
@@ -279,7 +330,7 @@
         /* Section Styles */
         section {
             margin-bottom: 80px;
-            scroll-margin-top: 100px;
+            scroll-margin-top: 140px;
         }
 
         section h2 {
@@ -295,7 +346,7 @@
             display: block;
             width: 100px;
             height: 4px;
-            background: var(--gold);
+            background: var(--yellow);
             margin: 20px auto;
         }
 
@@ -310,7 +361,7 @@
 
         /* About Wagyu Section */
         .about-wagyu {
-            background: var(--cream);
+            background: var(--light-gray);
             padding: 80px 40px;
         }
 
@@ -350,7 +401,7 @@
             background: var(--white);
             padding: 30px;
             border-radius: 8px;
-            border-left: 4px solid var(--gold);
+            border-left: 4px solid var(--yellow);
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             transition: transform 0.3s;
         }
@@ -361,16 +412,26 @@
         }
 
         .feature-box h4 {
-            color: var(--gold);
+            color: var(--black);
             margin-bottom: 12px;
             font-size: 1.3rem;
+        }
+
+        .feature-box h4::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: var(--yellow);
+            margin-right: 10px;
+            border-radius: 50%;
         }
 
         .feature-box p {
             line-height: 1.7;
         }
 
-        /* Quality Comparison Section */
+        /* Quality Section */
         .quality-section {
             background: var(--white);
         }
@@ -383,12 +444,13 @@
         }
 
         .quality-card {
-            background: var(--cream);
+            background: var(--light-gray);
             padding: 40px 30px;
             border-radius: 10px;
             text-align: center;
             transition: transform 0.3s;
-            border-top: 5px solid var(--gold);
+            border-top: 5px solid var(--black);
+            border-bottom: 5px solid var(--yellow);
         }
 
         .quality-card:hover {
@@ -396,15 +458,11 @@
             box-shadow: 0 12px 30px rgba(0,0,0,0.15);
         }
 
-        .quality-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
         .quality-card h3 {
             font-size: 1.5rem;
             color: var(--black);
             margin-bottom: 15px;
+            margin-top: 20px;
         }
 
         /* Products Section */
@@ -417,18 +475,29 @@
 
         .product-card {
             background: var(--white);
-            border: 2px solid var(--gold);
+            border: 3px solid var(--black);
             padding: 35px;
             border-radius: 10px;
             text-align: center;
             transition: all 0.3s;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--yellow);
         }
 
         .product-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 12px 35px rgba(253, 185, 19, 0.3);
-            border-color: var(--accent-gold);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+            border-color: var(--yellow);
         }
 
         .product-card h3 {
@@ -448,9 +517,10 @@
             text-align: center;
             margin-top: 40px;
             padding: 30px;
-            background: var(--cream);
+            background: var(--light-gray);
             border-radius: 10px;
-            border: 2px solid var(--gold);
+            border: 3px solid var(--black);
+            border-left: 15px solid var(--yellow);
         }
 
         .presale-callout h3 {
@@ -465,17 +535,17 @@
 
         /* About Us Section */
         .about-us {
-            background: linear-gradient(135deg, var(--dark-gray) 0%, var(--black) 100%);
+            background: var(--black);
             color: var(--white);
             padding: 80px 40px;
         }
 
         .about-us h2 {
-            color: var(--gold);
+            color: var(--white);
         }
 
         .about-us h2::after {
-            background: var(--white);
+            background: var(--yellow);
         }
 
         .about-content {
@@ -500,20 +570,25 @@
         .value-item {
             text-align: center;
             padding: 25px;
-            background: rgba(255,255,255,0.1);
+            background: var(--white);
+            color: var(--black);
             border-radius: 10px;
-            border: 1px solid var(--gold);
-        }
-
-        .value-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
+            border: 2px solid var(--yellow);
         }
 
         .value-item h4 {
-            color: var(--gold);
+            color: var(--black);
             margin-bottom: 10px;
             font-size: 1.3rem;
+        }
+
+        .value-item h4::before {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 3px;
+            background: var(--yellow);
+            margin: 0 auto 15px;
         }
 
         /* Contact Section */
@@ -534,8 +609,9 @@
             background: var(--white);
             padding: 40px;
             border-radius: 10px;
-            border-left: 5px solid var(--gold);
+            border-left: 5px solid var(--yellow);
             box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            border: 2px solid var(--black);
         }
 
         .contact-info h3 {
@@ -558,13 +634,14 @@
         }
 
         .contact-info a {
-            color: var(--gold);
+            color: var(--black);
             text-decoration: none;
             font-weight: 600;
+            border-bottom: 2px solid var(--yellow);
         }
 
         .contact-info a:hover {
-            color: var(--accent-gold);
+            color: var(--yellow);
         }
 
         .contact-info ul {
@@ -577,11 +654,16 @@
             line-height: 1.6;
         }
 
+        .contact-info li::marker {
+            color: var(--yellow);
+        }
+
         /* Footer */
         footer {
             background: var(--black);
             color: var(--white);
             padding: 60px 40px 30px;
+            border-top: 5px solid var(--yellow);
         }
 
         .footer-content {
@@ -594,7 +676,7 @@
         }
 
         .footer-brand h3 {
-            color: var(--gold);
+            color: var(--yellow);
             font-size: 1.8rem;
             margin-bottom: 15px;
         }
@@ -602,11 +684,11 @@
         .footer-brand p {
             font-size: 1rem;
             line-height: 1.7;
-            color: var(--cream);
+            color: var(--white);
         }
 
         .footer-links h4 {
-            color: var(--gold);
+            color: var(--yellow);
             font-size: 1.2rem;
             margin-bottom: 15px;
         }
@@ -620,17 +702,17 @@
         }
 
         .footer-links a {
-            color: var(--cream);
+            color: var(--white);
             text-decoration: none;
             transition: color 0.3s;
         }
 
         .footer-links a:hover {
-            color: var(--gold);
+            color: var(--yellow);
         }
 
         .social-section h4 {
-            color: var(--gold);
+            color: var(--yellow);
             font-size: 1.2rem;
             margin-bottom: 20px;
         }
@@ -644,20 +726,20 @@
         .social-links a {
             width: 50px;
             height: 50px;
-            background: var(--dark-gray);
-            border: 2px solid var(--gold);
+            background: var(--white);
+            border: 2px solid var(--yellow);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--gold);
+            color: var(--black);
             font-size: 1.5rem;
             text-decoration: none;
             transition: all 0.3s;
         }
 
         .social-links a:hover {
-            background: var(--gold);
+            background: var(--yellow);
             color: var(--black);
             transform: translateY(-3px);
         }
@@ -666,13 +748,15 @@
             border-top: 1px solid var(--dark-gray);
             padding-top: 30px;
             text-align: center;
-            color: var(--cream);
+            color: var(--white);
         }
 
         /* Responsive Design */
         @media (max-width: 1024px) {
             .toc-sidebar {
-                transform: translateX(-100%);
+                transform: translateX(-240px);
+                left: 0;
+                border-radius: 0 8px 8px 0;
             }
 
             .toc-sidebar.active {
@@ -683,24 +767,8 @@
                 display: block;
             }
 
-            main {
-                margin-left: 0;
-            }
-
             nav {
-                padding: 0 40px;
-            }
-
-            .quality-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .values-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
+                display: none;
             }
 
             .footer-content {
@@ -721,8 +789,16 @@
                 flex-direction: column;
             }
 
-            .nav-links {
-                display: none;
+            .header-left-stripe {
+                width: 40px;
+            }
+
+            .header-center {
+                left: 40px;
+            }
+
+            .header-logo h1 {
+                font-size: 1.4rem;
             }
 
             .wagyu-features {
@@ -731,6 +807,11 @@
 
             section h2 {
                 font-size: 2rem;
+            }
+
+            .toc-sidebar {
+                width: 180px;
+                padding: 15px 10px;
             }
         }
     </style>
@@ -752,52 +833,130 @@
         </ul>
     </aside>
 
-    <!-- Header with Business Card Inspired SVG -->
+    <!-- Header - Business Card Design -->
     <header>
-        <svg class="header-background" viewBox="0 0 1200 80" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-                <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style="stop-color:#000000;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:1" />
-                </linearGradient>
-            </defs>
-            <rect width="1200" height="80" fill="url(#headerGrad)"/>
-            
-            <!-- Mountain silhouettes in background -->
-            <path d="M 0,80 L 0,50 L 50,35 L 100,45 L 150,30 L 200,50 L 250,35 L 300,55 L 1200,55 L 1200,80 Z" 
-                  fill="#FDB913" opacity="0.05"/>
-            <path d="M 0,80 L 0,60 L 80,45 L 160,55 L 240,40 L 320,60 L 400,50 L 1200,50 L 1200,80 Z" 
-                  fill="#FDB913" opacity="0.08"/>
-                  
-            <!-- Subtle tree silhouettes -->
-            <g opacity="0.06" fill="#FDB913">
-                <path d="M 950,50 L 955,35 L 960,50 Z"/>
-                <path d="M 955,45 L 955,55"/>
-                <path d="M 970,45 L 975,30 L 980,45 Z"/>
-                <path d="M 975,40 L 975,55"/>
-                <path d="M 990,48 L 995,33 L 1000,48 Z"/>
-                <path d="M 995,43 L 995,55"/>
-            </g>
-        </svg>
-        <nav>
-            <div class="logo">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Bull silhouette inspired by business card -->
-                    <path d="M 20,70 L 25,65 L 30,60 Q 35,55 40,55 L 45,50 Q 50,45 55,45 Q 60,45 65,50 L 70,55 Q 75,55 80,60 L 85,65 L 90,70 L 85,75 Q 80,80 75,80 L 70,85 L 65,85 L 60,80 Q 55,75 50,75 Q 45,75 40,80 L 35,85 L 30,85 L 25,80 Q 20,75 15,70 Z M 45,48 L 43,45 L 45,42 M 65,48 L 67,45 L 65,42" 
-                          fill="#FDB913" stroke="#FDB913" stroke-width="1"/>
-                    <!-- Horns -->
-                    <path d="M 35,50 Q 30,40 28,35 M 75,50 Q 80,40 82,35" stroke="#FDB913" stroke-width="2" fill="none"/>
-                </svg>
-                <span>Rocky Mountain Wagyu</span>
+        <div class="header-card">
+            <!-- Left black stripe with WAGYU -->
+            <div class="header-left-stripe">
+                <span>WAGYU</span>
             </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about-wagyu">Wagyu Info</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+            
+            <!-- Center section - card background -->
+            <div class="header-center">
+                <!-- Business card background as SVG -->
+                <svg class="card-background" viewBox="0 0 1000 140" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <!-- Gradient background matching the card -->
+                        <linearGradient id="cardGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#D8D8D8;stop-opacity:1" />
+                            <stop offset="40%" style="stop-color:#E8E8E8;stop-opacity:1" />
+                            <stop offset="70%" style="stop-color:#F0F0F0;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    
+                    <!-- Background gradient -->
+                    <rect width="1000" height="140" fill="url(#cardGradient)"/>
+                    
+                    <!-- Mountain range silhouettes -->
+                    <g fill="#000000">
+                        <!-- Back mountains -->
+                        <path d="M 0,140 L 0,80 L 80,50 L 160,70 L 240,40 L 320,65 L 400,45 L 480,70 L 560,50 L 640,65 L 720,55 L 800,75 L 880,60 L 960,70 L 1000,65 L 1000,140 Z" opacity="0.9"/>
+                        
+                        <!-- Front mountains with more detail -->
+                        <path d="M 0,140 L 0,95 L 60,75 L 120,90 L 180,65 L 240,85 L 300,70 L 360,90 L 420,75 L 480,95 L 540,80 L 600,95 L 660,85 L 720,100 L 780,90 L 840,105 L 900,95 L 960,105 L 1000,100 L 1000,140 Z"/>
+                    </g>
+                    
+                    <!-- Tree silhouettes on mountains -->
+                    <g fill="#000000">
+                        <!-- Left cluster -->
+                        <polygon points="100,85 105,72 110,85"/>
+                        <rect x="104" y="85" width="2" height="10"/>
+                        <polygon points="120,90 125,77 130,90"/>
+                        <rect x="124" y="90" width="2" height="10"/>
+                        <polygon points="140,88 145,75 150,88"/>
+                        <rect x="144" y="88" width="2" height="10"/>
+                        
+                        <!-- Center cluster -->
+                        <polygon points="380,85 385,70 390,85"/>
+                        <rect x="384" y="85" width="2" height="12"/>
+                        <polygon points="400,88 405,73 410,88"/>
+                        <rect x="404" y="88" width="2" height="10"/>
+                        <polygon points="420,86 425,71 430,86"/>
+                        <rect x="424" y="86" width="2" height="11"/>
+                        
+                        <!-- Right cluster -->
+                        <polygon points="680,92 685,77 690,92"/>
+                        <rect x="684" y="92" width="2" height="10"/>
+                        <polygon points="700,95 705,80 710,95"/>
+                        <rect x="704" y="95" width="2" height="10"/>
+                        <polygon points="720,93 725,78 730,93"/>
+                        <rect x="724" y="93" width="2" height="10"/>
+                    </g>
+                    
+                    <!-- Cattle/Bull silhouettes in foreground -->
+                    <g fill="#000000">
+                        <!-- Left bull -->
+                        <g transform="translate(250, 105)">
+                            <!-- Body -->
+                            <path d="M -18,0 L -15,-6 L -10,-4 L -6,-8 L 0,-8 L 4,-6 L 10,-4 L 15,-6 L 18,0 L 15,10 L 10,10 L 4,6 L 0,10 L -4,6 L -10,10 L -15,10 Z"/>
+                            <!-- Horns -->
+                            <path d="M -10,-6 Q -14,-14 -18,-18 M 10,-6 Q 14,-14 18,-18" stroke="#000000" stroke-width="2" fill="none"/>
+                            <!-- Legs -->
+                            <rect x="-12" y="10" width="3" height="12"/>
+                            <rect x="-4" y="10" width="3" height="12"/>
+                            <rect x="3" y="10" width="3" height="12"/>
+                            <rect x="11" y="10" width="3" height="12"/>
+                        </g>
+                        
+                        <!-- Center bull -->
+                        <g transform="translate(480, 110)">
+                            <!-- Body -->
+                            <path d="M -16,0 L -13,-5 L -8,-3 L -5,-7 L 0,-7 L 3,-5 L 8,-3 L 13,-5 L 16,0 L 13,9 L 8,9 L 3,5 L 0,9 L -3,5 L -8,9 L -13,9 Z"/>
+                            <!-- Horns -->
+                            <path d="M -8,-5 Q -12,-12 -16,-16 M 8,-5 Q 12,-12 16,-16" stroke="#000000" stroke-width="2" fill="none"/>
+                            <!-- Legs -->
+                            <rect x="-10" y="9" width="3" height="10"/>
+                            <rect x="-3" y="9" width="3" height="10"/>
+                            <rect x="2" y="9" width="3" height="10"/>
+                            <rect x="9" y="9" width="3" height="10"/>
+                        </g>
+                        
+                        <!-- Right bull -->
+                        <g transform="translate(720, 108)">
+                            <!-- Body -->
+                            <path d="M -17,0 L -14,-5 L -9,-3 L -5,-7 L 0,-7 L 4,-5 L 9,-3 L 14,-5 L 17,0 L 14,9 L 9,9 L 4,5 L 0,9 L -4,5 L -9,9 L -14,9 Z"/>
+                            <!-- Horns -->
+                            <path d="M -9,-5 Q -13,-13 -17,-17 M 9,-5 Q 13,-13 17,-17" stroke="#000000" stroke-width="2" fill="none"/>
+                            <!-- Legs -->
+                            <rect x="-11" y="9" width="3" height="11"/>
+                            <rect x="-3" y="9" width="3" height="11"/>
+                            <rect x="2" y="9" width="3" height="11"/>
+                            <rect x="10" y="9" width="3" height="11"/>
+                        </g>
+                    </g>
+                </svg>
+                
+                <!-- Logo text - centered over the scene -->
+                <div class="header-logo">
+                    <h1>Rocky Mountain Wagyu</h1>
+                </div>
+            </div>
+            
+            <!-- Right yellow stripe -->
+            <div class="header-right-stripe"></div>
+            
+            <!-- Navigation -->
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about-wagyu">Wagyu</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
@@ -852,17 +1011,14 @@
             
             <div class="quality-grid">
                 <div class="quality-card">
-                    <div class="quality-icon">⏱️</div>
                     <h3>2.5 Year Raising Period</h3>
                     <p>Each animal is raised for a full 2.5 years to ensure optimal marbling, flavor development, and tenderness—significantly longer than standard beef production. This extended timeline is essential for developing Wagyu's signature characteristics.</p>
                 </div>
                 <div class="quality-card">
-                    <div class="quality-icon">🏔️</div>
                     <h3>Mountain Environment</h3>
                     <p>Our cattle benefit from Utah's Rocky Mountain climate and natural grazing lands. The pristine environment, clean air, and quality forage contribute to superior meat quality and exceptional animal welfare.</p>
                 </div>
                 <div class="quality-card">
-                    <div class="quality-icon">👨‍👩‍👧‍👦</div>
                     <h3>Family Operated</h3>
                     <p>Personal attention to every animal, traditional raising practices, and a commitment to quality over quantity that only a family ranch can provide. We know each animal individually.</p>
                 </div>
@@ -912,17 +1068,14 @@
 
                 <div class="values-grid">
                     <div class="value-item">
-                        <div class="value-icon">🎯</div>
                         <h4>Quality First</h4>
                         <p>We prioritize excellence over volume, ensuring every animal meets our high standards before it becomes your family's beef.</p>
                     </div>
                     <div class="value-item">
-                        <div class="value-icon">🏔️</div>
                         <h4>Mountain Raised</h4>
                         <p>Utah's pristine Rocky Mountain environment contributes to superior flavor, texture, and overall animal health.</p>
                     </div>
                     <div class="value-item">
-                        <div class="value-icon">🤝</div>
                         <h4>Personal Service</h4>
                         <p>Family operation means you get direct communication with the people raising your beef and personalized attention to your needs.</p>
                     </div>
@@ -940,9 +1093,9 @@
             <div class="contact-grid">
                 <div class="contact-info">
                     <h3>Contact Information</h3>
-                    <p class="contact-detail"><strong>📞 Phone:</strong> <a href="tel:8013013850">801-301-3850</a></p>
-                    <p class="contact-detail"><strong>✉️ Email:</strong> <a href="mailto:rockymtnwagyu@gmail.com">rockymtnwagyu@gmail.com</a></p>
-                    <p class="contact-detail"><strong>📍 Location:</strong> Rocky Mountain Region, Utah</p>
+                    <p class="contact-detail"><strong>Phone:</strong> <a href="tel:8013013850">801-301-3850</a></p>
+                    <p class="contact-detail"><strong>Email:</strong> <a href="mailto:rockymtnwagyu@gmail.com">rockymtnwagyu@gmail.com</a></p>
+                    <p class="contact-detail"><strong>Location:</strong> Rocky Mountain Region, Utah</p>
                     <p style="margin-top: 25px;">We operate on a farming timeline and are happy to take the time to discuss your needs, answer questions about our beef, explain the difference between Wagyu and conventional beef, or walk you through our pre-sale opportunities.</p>
                 </div>
                 
@@ -969,7 +1122,7 @@
             <div class="footer-brand">
                 <h3>Rocky Mountain Wagyu</h3>
                 <p>Premium American Wagyu beef raised with care in Utah's Rocky Mountains. Family-operated with a commitment to quality that exceeds industry standards while remaining accessible to families who appreciate exceptional beef.</p>
-                <p style="margin-top: 15px; font-size: 0.9rem; color: var(--gold);">Quality between American and Japanese Wagyu excellence</p>
+                <p style="margin-top: 15px; font-size: 0.9rem; color: var(--yellow);">Quality between American and Japanese Wagyu excellence</p>
             </div>
             
             <div class="footer-links">
