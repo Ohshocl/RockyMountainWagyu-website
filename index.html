@@ -1,1 +1,287 @@
- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rocky Mountain Wagyu - Premium Wagyu Beef</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        /* Header */
+        header {
+            background-color: #000000;
+            padding: 20px 0;
+            border-bottom: 4px solid #FDB913;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #FDB913;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #FDB913;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            padding: 100px 20px;
+            text-align: center;
+            border-bottom: 2px solid #FDB913;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            color: #FDB913;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 24px;
+            color: #ffffff;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section h2 {
+            font-size: 36px;
+            color: #FDB913;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #FDB913;
+            padding-bottom: 10px;
+        }
+
+        .section p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .product-card {
+            background-color: #1a1a1a;
+            border: 2px solid #FDB913;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(253, 185, 19, 0.3);
+        }
+
+        .product-card h3 {
+            color: #FDB913;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        /* Contact Section */
+        .contact-info {
+            background-color: #1a1a1a;
+            padding: 40px;
+            border-radius: 8px;
+            border: 2px solid #FDB913;
+        }
+
+        .contact-info h3 {
+            color: #FDB913;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+
+        .contact-info a {
+            color: #FDB913;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000000;
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 4px solid #FDB913;
+            margin-top: 60px;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .nav-links a {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Rocky Mountain Wagyu</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Rocky Mountain Wagyu</h1>
+        <p>Premium, Mountain-Raised Wagyu Beef - Quality Above Industry Standards</p>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        
+        <!-- Products Section -->
+        <section class="section" id="products">
+            <h2>Our Products</h2>
+            <p>We offer premium Wagyu beef raised with care in the Rocky Mountains. All of our beef is raised for 2.5 years to ensure the highest quality.</p>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <h3>Whole Beef</h3>
+                    <p>Complete animal, on the hoof. Perfect for those wanting the full Rocky Mountain Wagyu experience.</p>
+                </div>
+                
+                <div class="product-card">
+                    <h3>Half Beef</h3>
+                    <p>Half of a premium Wagyu animal. Excellent value and variety of cuts for your family.</p>
+                </div>
+                
+                <div class="product-card">
+                    <h3>Quarter Beef</h3>
+                    <p>Quarter portions available. A great way to experience our premium Wagyu quality.</p>
+                </div>
+                
+                <div class="product-card">
+                    <h3>Individual Cuts</h3>
+                    <p>Select premium cuts available. Contact us for current availability and pricing.</p>
+                </div>
+            </div>
+
+            <p style="margin-top: 30px;"><strong>Pre-Sales Available:</strong> Reserve your calf now for delivery in 2.5 years. Special terms and payment options available.</p>
+        </section>
+
+        <!-- About Section -->
+        <section class="section" id="about">
+            <h2>About Rocky Mountain Wagyu</h2>
+            <p>Rocky Mountain Wagyu is a family-operated ranch dedicated to raising premium Wagyu beef that exceeds industry standards. We take pride in our independent approach, focusing on quality that bridges American and Japanese Wagyu excellence.</p>
+            
+            <p>Our cattle are raised in the beautiful Rocky Mountain region, where the natural environment and our careful raising practices create beef of exceptional quality. Each animal is raised for a full 2.5 years to ensure optimal marbling, flavor, and tenderness.</p>
+            
+            <p><strong>What Makes Us Unique:</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.8;">
+                <li>Premium quality exceeding American Wagyu Association standards</li>
+                <li>Mountain-raised for superior flavor and texture</li>
+                <li>Family-operated with personal attention to every animal</li>
+                <li>Independent brand focused on excellence</li>
+                <li>2.5-year raising period for optimal quality</li>
+            </ul>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section" id="contact">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <p><strong>Phone:</strong> <a href="tel:8013013850">801-301-3850</a></p>
+                <p><strong>Email:</strong> <a href="mailto:rockymtnwagyu@gmail.com">rockymtnwagyu@gmail.com</a></p>
+                
+                <p style="margin-top: 20px;">We're in the farming business, so we operate on a relaxed timeline. Feel free to reach out with any questions about our beef, pricing, or pre-sale opportunities. We're happy to discuss your needs and help you select the perfect option for your family.</p>
+                
+                <p style="margin-top: 20px;"><strong>Business Hours:</strong> Please contact us via phone or email to schedule a conversation or visit.</p>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Rocky Mountain Wagyu. All rights reserved.</p>
+        <p>Premium Mountain-Raised Wagyu Beef</p>
+    </footer>
+
+</body>
+</html> 
