@@ -66,6 +66,7 @@
             gap: 15px;
             list-style: none;
             align-items: center;
+            justify-content: center;
         }
 
         nav a {
@@ -472,6 +473,21 @@
             pointer-events: none;
         }
 
+        .quality-section::before {
+            content: '';
+            position: absolute;
+            top: 50px;
+            right: -100px;
+            width: 400px;
+            height: 300px;
+            background-image: url('documents/Rocky Mountain Wagyu Logo.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.03;
+            pointer-events: none;
+        }
+
         .quality-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -581,15 +597,6 @@
             height: 3px;
             background: var(--yellow);
             margin: 12px auto 0;
-        }
-
-        .product-card img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            border: 2px solid var(--yellow);
         }
 
         /* Social Media Section */
@@ -929,10 +936,6 @@
                 height: 200px;
             }
 
-            .product-card img {
-                height: 180px;
-            }
-
             .social-links {
                 flex-direction: column;
                 gap: 35px;
@@ -1032,6 +1035,13 @@
                 <h2>Why We Raise Wagyu</h2>
                 <p>Our mission is simple: To feed our families healthy, organic beef.</p>
             </div>
+            
+            <!-- Calf Showcase -->
+            <div style="max-width: 800px; margin: 0 auto 50px; text-align: center;">
+                <img src="documents/baby%20cow%201.PNG" alt="Rocky Mountain Wagyu Calf" style="width: 100%; max-width: 600px; height: auto; border-radius: 15px; box-shadow: 0 10px 35px rgba(0,0,0,0.2); border: 4px solid var(--yellow);">
+                <p style="margin-top: 20px; font-size: 1.1rem; color: var(--dark-gray); font-style: italic;">Meet one of our Wagyu calves—each animal receives individual care throughout their 2.5-year journey</p>
+            </div>
+            
             <div class="why-content">
                 <p>We started Rocky Mountain Wagyu because we believe families deserve access to premium, healthy beef raised with integrity. Every decision we make is guided by this simple principle: <strong>would we serve this to our own families?</strong></p>
                 <p>The answer is always yes. From our mountain pastures to your table, we maintain the highest standards of animal welfare, environmental stewardship, and quality control. Our Wagyu cattle are raised without hormones or antibiotics, on natural mountain grazing lands that produce superior marbling and flavor.</p>
@@ -1053,7 +1063,7 @@
                     <div class="wagyu-image-label">Ribeye</div>
                 </div>
                 <div class="wagyu-image-card">
-                    <img src="documents/ny strip.jpg" alt="Premium Wagyu NY Strip">
+                    <img src="documents/ny%20strip.jpg" alt="Premium Wagyu NY Strip">
                     <div class="wagyu-image-label">NY Strip</div>
                 </div>
                 <div class="wagyu-image-card">
@@ -1115,22 +1125,18 @@
             </div>
             <div class="products-grid">
                 <div class="product-card">
-                    <img src="documents/wagy steaks.jpg" alt="Wagyu Steaks Selection">
                     <h3>Whole Beef</h3>
                     <p>Complete animal, perfect for large families or shared purchases. Maximum value and variety of cuts.</p>
                 </div>
                 <div class="product-card">
-                    <img src="documents/rib eye.jpg" alt="Premium Ribeye">
                     <h3>Half Beef</h3>
                     <p>Our most popular option—excellent value with balanced selection of steaks, roasts, and ground beef.</p>
                 </div>
                 <div class="product-card">
-                    <img src="documents/ny strip.jpg" alt="NY Strip Steak">
                     <h3>Quarter Beef</h3>
                     <p>Perfect introduction to premium Wagyu quality without committing to a full or half animal.</p>
                 </div>
                 <div class="product-card">
-                    <img src="documents/filet.jpg" alt="Filet Mignon">
                     <h3>Individual Cuts</h3>
                     <p>Select premium cuts available as our operation grows. Contact us for current availability.</p>
                 </div>
