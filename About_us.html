@@ -1,1 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>About Us | Rocky Mountain Wagyu | Premium American Wagyu Beef</title>
+    <meta name="description" content="Learn about Rocky Mountain Wagyu - Family-owned ranch raising premium, organic Wagyu beef in Utah's Rocky Mountains. Our story, values, and commitment to quality.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        :root {
+            --black: #000000;
+            --white: #FFFFFF;
+            --yellow: #FDB913;
+            --light-gray: #F5F5F5;
+            --medium-gray: #E0E0E0;
+            --dark-gray: #333333;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: var(--dark-gray);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* Header with Logo and Navigation */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: var(--black);
+            border-bottom: 4px solid var(--yellow);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .header-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-logo img {
+            height: 60px;
+            width: auto;
+            filter: drop-shadow(0 2px 8px rgba(253, 185, 19, 0.4));
+        }
+
+        nav ul {
+            display: flex;
+            gap: 15px;
+            list-style: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            padding: 12px 28px;
+            background: transparent;
+            border: 3px solid var(--yellow);
+            border-radius: 50px;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        nav a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--yellow);
+            transition: left 0.4s;
+            z-index: -1;
+        }
+
+        nav a:hover::before {
+            left: 0;
+        }
+
+        nav a:hover {
+            color: var(--black);
+            transform: translateY(-3px) rotate(-2deg);
+            box-shadow: 0 6px 20px rgba(253, 185, 19, 0.5);
+        }
+
+        nav li:nth-child(even) a:hover {
+            transform: translateY(-3px) rotate(2deg);
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--yellow);
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        main {
+            margin-top: 94px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+            color: var(--white);
+            padding: 80px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 800px;
+            height: 800px;
+            background-image: url('documents/Rocky Mountain Wagyu Logo.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.03;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--yellow);
+            margin-bottom: 25px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .hero-tagline {
+            font-size: 1.5rem;
+            color: var(--yellow);
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 40px;
+            position: relative;
+        }
+
+        .section-light {
+            background: var(--white);
+        }
+
+        .section-dark {
+            background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            color: var(--black);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: var(--yellow);
+        }
+
+        .section-header p {
+            font-size: 1.3rem;
+            color: var(--dark-gray);
+            max-width: 900px;
+            margin: 25px auto 0;
+            line-height: 1.8;
+        }
+
+        .content-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Story Section with Image */
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .story-content {
+            padding: 30px;
+        }
+
+        .story-content h3 {
+            font-size: 2rem;
+            color: var(--black);
+            margin-bottom: 25px;
+        }
+
+        .story-content p {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+        .story-image {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+            border: 4px solid var(--yellow);
+        }
+
+        .story-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Mission, Values, Why Section */
+        .mission-section {
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+            color: var(--white);
+            padding: 80px 40px;
+            position: relative;
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .mission-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            padding: 45px;
+            border-radius: 15px;
+            border: 3px solid var(--yellow);
+            transition: all 0.4s;
+        }
+
+        .mission-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 50px rgba(253, 185, 19, 0.3);
+            background: linear-gradient(135deg, rgba(253, 185, 19, 0.2), rgba(253, 185, 19, 0.1));
+        }
+
+        .mission-card h3 {
+            font-size: 2rem;
+            color: var(--yellow);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .mission-card p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        /* Wagyu Excellence Section */
+        .excellence-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+            max-width: 1400px;
+            margin: 50px auto;
+        }
+
+        .excellence-item {
+            background: var(--light-gray);
+            padding: 40px;
+            border-radius: 12px;
+            border-left: 6px solid var(--yellow);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .excellence-item h3 {
+            font-size: 1.8rem;
+            color: var(--black);
+            margin-bottom: 20px;
+        }
+
+        .excellence-item p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .excellence-item ul {
+            margin-left: 25px;
+            margin-top: 15px;
+        }
+
+        .excellence-item li {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        /* Image Showcase */
+        .image-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 60px auto;
+        }
+
+        .showcase-image {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.2);
+            border: 3px solid var(--yellow);
+            transition: all 0.4s;
+        }
+
+        .showcase-image:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 50px rgba(253, 185, 19, 0.4);
+        }
+
+        .showcase-image img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .showcase-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            padding: 20px 15px 15px;
+            color: var(--yellow);
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        /* Team Section */
+        .team-section {
+            text-align: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .team-content {
+            background: var(--light-gray);
+            padding: 50px;
+            border-radius: 15px;
+            border-top: 6px solid var(--yellow);
+            border-bottom: 6px solid var(--yellow);
+            box-shadow: 0 10px 35px rgba(0,0,0,0.1);
+        }
+
+        .team-content p {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            margin-bottom: 25px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--yellow) 0%, #f5a800 100%);
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-size: 3rem;
+            color: var(--black);
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .cta-content p {
+            font-size: 1.3rem;
+            color: var(--dark-gray);
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .btn {
+            padding: 18px 45px;
+            font-size: 1.15rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: inline-block;
+            background: var(--black);
+            color: var(--white);
+            border: 3px solid var(--black);
+        }
+
+        .btn:hover {
+            background: var(--white);
+            color: var(--black);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+            color: var(--white);
+            padding: 60px 40px 30px;
+            border-top: 6px solid var(--yellow);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            text-align: left;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            color: var(--yellow);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            max-width: 180px;
+            height: auto;
+            filter: drop-shadow(0 3px 12px rgba(253, 185, 19, 0.4));
+        }
+
+        .footer-brand p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .footer-tagline {
+            color: var(--yellow);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        .footer-contact-info {
+            list-style: none;
+        }
+
+        .footer-contact-info li {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .footer-contact-info a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-contact-info a:hover {
+            color: var(--yellow);
+        }
+
+        .footer-social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .footer-social-link {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: var(--white);
+            transition: all 0.3s;
+            font-size: 1.05rem;
+        }
+
+        .footer-social-link:hover {
+            color: var(--yellow);
+            transform: translateX(5px);
+        }
+
+        .footer-social-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--white);
+            border: 2px solid var(--yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--black);
+            transition: all 0.3s;
+        }
+
+        .footer-social-link:hover .footer-social-icon {
+            background: var(--yellow);
+            transform: rotate(5deg);
+        }
+
+        .footer-bottom {
+            border-top: 2px solid var(--dark-gray);
+            padding-top: 25px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .story-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .excellence-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 12px 20px;
+            }
+
+            .header-logo img {
+                height: 50px;
+            }
+
+            nav ul {
+                position: fixed;
+                top: 82px;
+                left: 0;
+                right: 0;
+                background: var(--black);
+                flex-direction: column;
+                gap: 0;
+                padding: 20px;
+                border-bottom: 4px solid var(--yellow);
+                transform: translateX(-100%);
+                transition: transform 0.3s;
+            }
+
+            nav ul.active {
+                transform: translateX(0);
+            }
+
+            nav li {
+                width: 100%;
+                text-align: center;
+                padding: 15px 0;
+                border-bottom: 1px solid var(--dark-gray);
+            }
+
+            nav a {
+                display: block;
+                font-size: 1.1rem;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            main {
+                margin-top: 82px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.4rem;
+            }
+
+            .section {
+                padding: 60px 20px;
+            }
+
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+
+            .mission-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .image-showcase {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-content h2 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Logo and Navigation -->
+    <header>
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="documents/Rocky Mountain Wagyu Logo.png" alt="Rocky Mountain Wagyu">
+            </div>
+            <button class="mobile-menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About_us.html">About</a></li>
+                    <li><a href="Products_&_Pricing.html">Products</a></li>
+                    <li><a href="Ordering_Process.html">Ordering</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Our Story</h1>
+                <p class="hero-subtitle">A Family Commitment to Premium, Organic Wagyu Beef</p>
+                <p class="hero-tagline">Pasture to plate, The Rocky Mountain Way</p>
+            </div>
+        </section>
+
+        <!-- Our Story Section -->
+        <section class="section section-light">
+            <div class="content-wrapper">
+                <div class="story-grid">
+                    <div class="story-content">
+                        <h3>Welcome to Rocky Mountain Wagyu</h3>
+                        <p>We're a family-operated ranch nestled in Utah's majestic Rocky Mountains, dedicated to raising premium Wagyu beef with integrity and care. Our journey began with a simple but powerful mission: <strong>to feed our families healthy, organic beef.</strong></p>
+                        <p>Every decision we make is guided by one fundamental question: would we serve this to our own families? The answer is always yes. From the moment a calf is born to the day our beef reaches your table, we maintain the highest standards of animal welfare, environmental stewardship, and quality control.</p>
+                        <p>We're not just ranchers—we're full-time students, full-time workers, and full-time believers in doing things the right way. Our operation runs on a farming timeline, which means we take the time necessary to raise exceptional beef rather than rushing to meet arbitrary deadlines.</p>
+                    </div>
+                    <div class="story-image">
+                        <img src="documents/about_us/cow.jpg" alt="Rocky Mountain Wagyu Cattle">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission, Why, Values Section -->
+        <section class="mission-section">
+            <div class="content-wrapper">
+                <div class="mission-grid">
+                    <div class="mission-card">
+                        <h3>Our Why</h3>
+                        <p>To feed our families healthy, organic beef.</p>
+                        <p style="margin-top: 20px;">This simple statement drives everything we do. We believe families deserve access to premium, healthy beef raised with integrity—beef that nourishes both body and soul.</p>
+                    </div>
+                    <div class="mission-card">
+                        <h3>Our Mission</h3>
+                        <p>Rocky Mountain Wagyu delivers premium, organic beef - Raised with care, from our mountain pasture to your table.</p>
+                        <p style="margin-top: 20px;">We're committed to transparency, quality, and building lasting relationships with the families we serve.</p>
+                    </div>
+                    <div class="mission-card">
+                        <h3>Our Values</h3>
+                        <p><strong>Quality Over Quantity:</strong> We raise each animal for a full 2.5 years—significantly longer than industry standards—to ensure optimal marbling and flavor.</p>
+                        <p style="margin-top: 15px;"><strong>Independence:</strong> We maintain our own standards, aiming for quality between American and Japanese Wagyu, without association memberships.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What Makes Wagyu Superior -->
+        <section class="section section-dark">
+            <div class="section-header">
+                <h2>Why Wagyu is Superior</h2>
+                <p>Not all beef is created equal. Wagyu represents the pinnacle of beef quality, and here's why.</p>
+            </div>
+            <div class="content-wrapper">
+                <div class="excellence-grid">
+                    <div class="excellence-item">
+                        <h3>Exceptional Marbling</h3>
+                        <p>Wagyu beef is world-renowned for its intense intramuscular marbling—the fine threads of fat distributed throughout the meat. This isn't just about appearance; this marbling is what creates:</p>
+                        <ul>
+                            <li>Unmatched tenderness that practically melts in your mouth</li>
+                            <li>Rich, buttery flavor that's incomparable to conventional beef</li>
+                            <li>Juicy texture that remains consistent throughout cooking</li>
+                            <li>A dining experience that transforms every meal into something special</li>
+                        </ul>
+                    </div>
+                    <div class="excellence-item">
+                        <h3>Healthier Fat Profile</h3>
+                        <p>While Wagyu is marbled with fat, it's actually a healthier choice than conventional beef:</p>
+                        <ul>
+                            <li><strong>Higher monounsaturated fats:</strong> The same heart-healthy fats found in olive oil and avocados</li>
+                            <li><strong>Increased omega-3 fatty acids:</strong> Essential fats that support heart and brain health</li>
+                            <li><strong>Lower saturated fat ratio:</strong> Compared to conventional grain-fed beef</li>
+                            <li><strong>Natural CLA content:</strong> Conjugated linoleic acid, associated with various health benefits</li>
+                        </ul>
+                    </div>
+                    <div class="excellence-item">
+                        <h3>Superior Genetics & Raising</h3>
+                        <p>Wagyu cattle are genetically predisposed to produce this exceptional marbling, but genetics is only part of the story. Our commitment includes:</p>
+                        <ul>
+                            <li><strong>2.5-year raising period:</strong> Far longer than the industry standard, allowing optimal development</li>
+                            <li><strong>Mountain-raised:</strong> Utah's pristine Rocky Mountain environment contributes to superior meat quality</li>
+                            <li><strong>No hormones, no antibiotics:</strong> Just natural, healthy raising practices</li>
+                            <li><strong>Individual attention:</strong> Each animal receives personal care throughout its journey</li>
+                        </ul>
+                    </div>
+                    <div class="excellence-item">
+                        <h3>Unmatched Flavor & Texture</h3>
+                        <p>The Wagyu difference is immediately apparent in every bite:</p>
+                        <ul>
+                            <li><strong>Deep umami flavor:</strong> Rich, savory notes that create complexity</li>
+                            <li><strong>Buttery texture:</strong> A signature characteristic impossible to replicate</li>
+                            <li><strong>Perfect balance:</strong> Flavor that's intense but never overwhelming</li>
+                            <li><strong>Consistent quality:</strong> Every cut delivers the premium experience you expect</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quality Showcase -->
+        <section class="section section-light">
+            <div class="section-header">
+                <h2>Our Commitment to Excellence</h2>
+                <p>From our pasture to your kitchen—every step reflects our dedication to quality</p>
+            </div>
+            <div class="content-wrapper">
+                <div class="image-showcase">
+                    <div class="showcase-image">
+                        <img src="documents/about_us/Steak_on_fork.jpg" alt="Premium Wagyu on Fork">
+                        <div class="showcase-label">Restaurant Quality</div>
+                    </div>
+                    <div class="showcase-image">
+                        <img src="documents/about_us/knife_steak.jpg" alt="Perfectly Cut Wagyu">
+                        <div class="showcase-label">Perfect Cuts</div>
+                    </div>
+                    <div class="showcase-image">
+                        <img src="documents/about_us/cubed_wagyu.jpg" alt="Cubed Wagyu">
+                        <div class="showcase-label">Versatile Cuts</div>
+                    </div>
+                    <div class="showcase-image">
+                        <img src="documents/about_us/wagyu_skirt.jpg" alt="Wagyu Skirt Steak">
+                        <div class="showcase-label">Premium Selection</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Approach -->
+        <section class="section section-dark">
+            <div class="content-wrapper">
+                <div class="team-section">
+                    <div class="section-header">
+                        <h2>Our Approach</h2>
+                    </div>
+                    <div class="team-content">
+                        <p>Rocky Mountain Wagyu is more than a business—it's a family commitment spanning generations. We're proud of our agricultural heritage and our "hillbilly" roots, combining traditional ranching wisdom with a dedication to premium quality.</p>
+                        <p>Our team includes full-time students who balance their education with hands-on ranch work, learning the craft of raising exceptional beef. This multi-generational approach ensures that time-tested practices are preserved while embracing innovations that benefit our animals and our customers.</p>
+                        <p>We operate on a farming timeline because that's what's right for the animals and the land. When you purchase from us, you're not just buying beef—you're supporting a family operation that puts integrity, quality, and animal welfare above all else.</p>
+                        <p><strong>We maintain independence from industry associations</strong> because we want to set our own standards—standards that aim for quality between American Wagyu and Japanese Wagyu benchmarks. This independence allows us to focus solely on what matters: raising the best beef possible for your family.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>Experience the Rocky Mountain Difference</h2>
+                <p>Ready to taste premium, organic Wagyu beef raised with care in Utah's Rocky Mountains? We'd love to help you select the perfect option for your family.</p>
+                <a href="Products_&_Pricing.html" class="btn">View Our Products</a>
+                <a href="Contact.html" class="btn" style="margin-left: 20px;">Contact Us</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <!-- About Section -->
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="documents/Rocky Mountain Wagyu Logo.png" alt="Rocky Mountain Wagyu Logo">
+                </div>
+                <div class="footer-brand">
+                    <p>Premium, organic Wagyu beef raised with care in Utah's Rocky Mountains.</p>
+                    <p>Family-operated with a commitment to quality that exceeds industry standards.</p>
+                    <p class="footer-tagline">Pasture to plate, The Rocky Mountain Way</p>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <ul class="footer-contact-info">
+                    <li><strong>Phone:</strong><br><a href="tel:8013013850">801-301-3850</a></li>
+                    <li><strong>Email:</strong><br><a href="mailto:rockymtnwagyu@gmail.com">rockymtnwagyu@gmail.com</a></li>
+                    <li><strong>Hours:</strong><br>By appointment<br>(We operate on a farming timeline)</li>
+                </ul>
+            </div>
+
+            <!-- Social Media Section -->
+            <div class="footer-section">
+                <h4>Follow Our Journey</h4>
+                <div class="footer-social-links">
+                    <a href="https://www.instagram.com/RockymtnWagyu" target="_blank" class="footer-social-link">
+                        <div class="footer-social-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </div>
+                        <span>@RockymtnWagyu</span>
+                    </a>
+
+                    <a href="https://www.tiktok.com/@Rockymtnwagyu" target="_blank" class="footer-social-link">
+                        <div class="footer-social-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                            </svg>
+                        </div>
+                        <span>@Rockymtnwagyu</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Rocky Mountain Wagyu. All rights reserved.</p>
+            <p style="margin-top: 10px;">Premium Mountain-Raised American Wagyu Beef | Utah Family Ranch</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navMenu').classList.toggle('active');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.getElementById('navMenu');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (!nav.contains(event.target) && !toggle.contains(event.target)) {
+                nav.classList.remove('active');
+            }
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
