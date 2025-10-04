@@ -126,29 +126,31 @@
             margin-top: 94px;
         }
 
-        /* Hero Section */
+        /* Hero Section with Business Card Background */
         .hero {
-            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+            background-image: url('documents/rocky mountiany wagyu business card.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             color: var(--white);
-            padding: 80px 40px;
+            padding: 60px 40px 40px;
             text-align: center;
             position: relative;
             overflow: hidden;
+            min-height: 420px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .hero::before {
             content: '';
             position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 800px;
-            height: 800px;
-            background-image: url('documents/Rocky Mountain Wagyu Logo.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            opacity: 0.03;
-            transform: translate(-50%, -50%);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.7) 100%);
             pointer-events: none;
         }
 
@@ -702,8 +704,9 @@
         <section class="hero">
             <div class="hero-content">
                 <h1>Our Story</h1>
-                <p class="hero-subtitle">A Family Commitment to Premium, Organic Wagyu Beef</p>
+                <p class="hero-subtitle">Premium, Organic Wagyu Beef</p>
                 <p class="hero-tagline">Pasture to plate, The Rocky Mountain Way</p>
+                <p class="hero-mission">Rocky Mountain Wagyu delivers premium, organic beef - Raised with care, from our mountain pasture to your table.</p>
             </div>
         </section>
 
