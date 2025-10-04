@@ -41,13 +41,15 @@
 
         .business-card-header {
             width: 100%;
-            height: auto;
+            height: 120px;
             display: block;
+            object-fit: cover;
+            object-position: center;
         }
 
         nav {
             position: absolute;
-            bottom: 20px;
+            bottom: 10px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 3;
@@ -722,7 +724,7 @@
         @media (max-width: 768px) {
             /* Header and Navigation */
             .business-card-header {
-                max-height: 200px;
+                height: 100px;
                 object-fit: cover;
                 object-position: center;
             }
