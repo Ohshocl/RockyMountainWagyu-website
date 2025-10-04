@@ -132,11 +132,11 @@
             background-position: center;
             background-repeat: no-repeat;
             color: var(--white);
-            padding: 80px 40px;
+            padding: 60px 40px 40px;
             text-align: center;
             position: relative;
             overflow: hidden;
-            min-height: 500px;
+            min-height: 420px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -272,6 +272,9 @@
             padding: 20px 40px;
             text-align: center;
             border-bottom: 3px solid var(--black);
+            position: relative;
+            margin-top: -30px;
+            z-index: 10;
         }
 
         .trust-bar p {
@@ -363,6 +366,53 @@
             background: linear-gradient(135deg, var(--dark-gray) 0%, var(--black) 100%);
             color: var(--white);
             padding: 80px 40px;
+        }
+
+        .wagyu-visual-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 1400px;
+            margin: 40px auto 50px;
+        }
+
+        .wagyu-image-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            border: 3px solid var(--yellow);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            transition: all 0.4s;
+        }
+
+        .wagyu-image-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s;
+        }
+
+        .wagyu-image-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(253, 185, 19, 0.4);
+        }
+
+        .wagyu-image-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .wagyu-image-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            padding: 20px 15px 15px;
+            color: var(--yellow);
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-align: center;
         }
 
         .feature-grid {
@@ -531,6 +581,15 @@
             height: 3px;
             background: var(--yellow);
             margin: 12px auto 0;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 2px solid var(--yellow);
         }
 
         /* Social Media Section */
@@ -797,8 +856,8 @@
             }
 
             .hero {
-                padding: 60px 20px;
-                min-height: 400px;
+                padding: 50px 20px 30px;
+                min-height: 350px;
             }
 
             .hero h1 {
@@ -831,6 +890,7 @@
 
             .trust-bar {
                 padding: 15px 20px;
+                margin-top: -20px;
             }
 
             .trust-bar p {
@@ -858,6 +918,19 @@
             .products-grid {
                 grid-template-columns: 1fr;
                 gap: 25px;
+            }
+
+            .wagyu-visual-showcase {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .wagyu-image-card img {
+                height: 200px;
+            }
+
+            .product-card img {
+                height: 180px;
             }
 
             .social-links {
@@ -901,6 +974,14 @@
 
             .section-header h2 {
                 font-size: 1.9rem;
+            }
+
+            .wagyu-visual-showcase {
+                grid-template-columns: 1fr;
+            }
+
+            .wagyu-image-card img {
+                height: 250px;
             }
         }
     </style>
@@ -964,6 +1045,27 @@
                 <h2 style="color: var(--yellow);">What Makes Wagyu Special</h2>
                 <p style="color: var(--white);">Wagyu (pronounced "wah-gyoo") literally means "Japanese cow." This legendary beef is renowned worldwide for its exceptional marbling, buttery texture, and rich, umami flavor.</p>
             </div>
+
+            <!-- Visual Showcase of Quality -->
+            <div class="wagyu-visual-showcase">
+                <div class="wagyu-image-card">
+                    <img src="documents/rib eye.jpg" alt="Premium Wagyu Ribeye">
+                    <div class="wagyu-image-label">Ribeye</div>
+                </div>
+                <div class="wagyu-image-card">
+                    <img src="documents/ny strip.jpg" alt="Premium Wagyu NY Strip">
+                    <div class="wagyu-image-label">NY Strip</div>
+                </div>
+                <div class="wagyu-image-card">
+                    <img src="documents/filet.jpg" alt="Premium Wagyu Filet">
+                    <div class="wagyu-image-label">Filet Mignon</div>
+                </div>
+                <div class="wagyu-image-card">
+                    <img src="documents/cooked wagyu.jpg" alt="Cooked Wagyu Perfection">
+                    <div class="wagyu-image-label">Perfectly Cooked</div>
+                </div>
+            </div>
+
             <div class="feature-grid">
                 <div class="feature-card">
                     <h3>Superior Marbling</h3>
@@ -1013,18 +1115,22 @@
             </div>
             <div class="products-grid">
                 <div class="product-card">
+                    <img src="documents/wagy steaks.jpg" alt="Wagyu Steaks Selection">
                     <h3>Whole Beef</h3>
                     <p>Complete animal, perfect for large families or shared purchases. Maximum value and variety of cuts.</p>
                 </div>
                 <div class="product-card">
+                    <img src="documents/rib eye.jpg" alt="Premium Ribeye">
                     <h3>Half Beef</h3>
                     <p>Our most popular option—excellent value with balanced selection of steaks, roasts, and ground beef.</p>
                 </div>
                 <div class="product-card">
+                    <img src="documents/ny strip.jpg" alt="NY Strip Steak">
                     <h3>Quarter Beef</h3>
                     <p>Perfect introduction to premium Wagyu quality without committing to a full or half animal.</p>
                 </div>
                 <div class="product-card">
+                    <img src="documents/filet.jpg" alt="Filet Mignon">
                     <h3>Individual Cuts</h3>
                     <p>Select premium cuts available as our operation grows. Contact us for current availability.</p>
                 </div>
