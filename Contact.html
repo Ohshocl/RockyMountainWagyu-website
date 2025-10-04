@@ -1,1 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Contact Us | Rocky Mountain Wagyu | Premium American Wagyu Beef</title>
+    <meta name="description" content="Contact Rocky Mountain Wagyu - Get in touch to order premium, organic Wagyu beef or learn more about our family ranch in Utah's Rocky Mountains.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        :root {
+            --black: #000000;
+            --white: #FFFFFF;
+            --yellow: #FDB913;
+            --light-gray: #F5F5F5;
+            --medium-gray: #E0E0E0;
+            --dark-gray: #333333;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: var(--dark-gray);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* Header with Logo and Navigation */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: var(--black);
+            border-bottom: 4px solid var(--yellow);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .header-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-logo img {
+            height: 60px;
+            width: auto;
+            filter: drop-shadow(0 2px 8px rgba(253, 185, 19, 0.4));
+        }
+
+        nav ul {
+            display: flex;
+            gap: 15px;
+            list-style: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            padding: 12px 28px;
+            background: transparent;
+            border: 3px solid var(--yellow);
+            border-radius: 50px;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        nav a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--yellow);
+            transition: left 0.4s;
+            z-index: -1;
+        }
+
+        nav a:hover::before {
+            left: 0;
+        }
+
+        nav a:hover {
+            color: var(--black);
+            transform: translateY(-3px) rotate(-2deg);
+            box-shadow: 0 6px 20px rgba(253, 185, 19, 0.5);
+        }
+
+        nav li:nth-child(even) a:hover {
+            transform: translateY(-3px) rotate(2deg);
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--yellow);
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        main {
+            margin-top: 94px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url('documents/hero_section.jpeg');
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+            color: var(--white);
+            padding: 60px 40px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.7) 100%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            color: var(--yellow);
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.8);
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--white);
+            font-weight: 600;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+        }
+
+        .hero-tagline {
+            font-size: 1.3rem;
+            color: var(--white);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+        }
+
+        /* Contact Info Section */
+        .contact-info-section {
+            padding: 80px 40px;
+            background: var(--white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: var(--light-gray);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            border: 3px solid var(--black);
+            border-top: 6px solid var(--yellow);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.4s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(253, 185, 19, 0.25);
+            border-color: var(--yellow);
+        }
+
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2.5rem;
+            color: var(--black);
+            box-shadow: 0 4px 15px rgba(253, 185, 19, 0.4);
+        }
+
+        .contact-card h3 {
+            font-size: 1.8rem;
+            color: var(--black);
+            margin-bottom: 15px;
+        }
+
+        .contact-card p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .contact-card a {
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid var(--yellow);
+            transition: all 0.3s;
+        }
+
+        .contact-card a:hover {
+            color: var(--yellow);
+        }
+
+        /* Contact Form Section */
+        .form-section {
+            padding: 80px 40px;
+            background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            color: var(--black);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: var(--yellow);
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--dark-gray);
+            max-width: 800px;
+            margin: 25px auto 0;
+            line-height: 1.8;
+        }
+
+        .contact-form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+            border: 4px solid var(--black);
+            position: relative;
+        }
+
+        .contact-form-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: var(--yellow);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--black);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 15px;
+            font-size: 1rem;
+            border: 2px solid var(--medium-gray);
+            border-radius: 8px;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--yellow);
+            box-shadow: 0 0 0 3px rgba(253, 185, 19, 0.2);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .btn {
+            padding: 18px 45px;
+            font-size: 1.15rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            background: var(--yellow);
+            color: var(--black);
+            border: 3px solid var(--yellow);
+            width: 100%;
+            font-family: 'Georgia', 'Times New Roman', serif;
+        }
+
+        .btn:hover {
+            background: var(--black);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Business Info Section */
+        .business-info-section {
+            padding: 80px 40px;
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+            color: var(--white);
+        }
+
+        .business-info-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .business-info-content h2 {
+            font-size: 2.5rem;
+            color: var(--yellow);
+            margin-bottom: 30px;
+        }
+
+        .business-info-content p {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            margin-bottom: 25px;
+        }
+
+        .business-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .info-box {
+            background: rgba(255,255,255,0.1);
+            padding: 35px;
+            border-radius: 12px;
+            border: 2px solid var(--yellow);
+            transition: all 0.4s;
+        }
+
+        .info-box:hover {
+            background: rgba(253, 185, 19, 0.2);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(253, 185, 19, 0.3);
+        }
+
+        .info-box h3 {
+            font-size: 1.6rem;
+            color: var(--yellow);
+            margin-bottom: 15px;
+        }
+
+        .info-box p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+            color: var(--white);
+            padding: 60px 40px 30px;
+            border-top: 6px solid var(--yellow);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            text-align: left;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            color: var(--yellow);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            max-width: 180px;
+            height: auto;
+            filter: drop-shadow(0 3px 12px rgba(253, 185, 19, 0.4));
+        }
+
+        .footer-brand p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .footer-tagline {
+            color: var(--yellow);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        .footer-contact-info {
+            list-style: none;
+        }
+
+        .footer-contact-info li {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .footer-contact-info a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-contact-info a:hover {
+            color: var(--yellow);
+        }
+
+        .footer-social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .footer-social-link {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: var(--white);
+            transition: all 0.3s;
+            font-size: 1.05rem;
+        }
+
+        .footer-social-link:hover {
+            color: var(--yellow);
+            transform: translateX(5px);
+        }
+
+        .footer-social-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--white);
+            border: 2px solid var(--yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--black);
+            transition: all 0.3s;
+        }
+
+        .footer-social-link:hover .footer-social-icon {
+            background: var(--yellow);
+            transform: rotate(5deg);
+        }
+
+        .footer-bottom {
+            border-top: 2px solid var(--dark-gray);
+            padding-top: 25px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 12px 20px;
+            }
+
+            .header-logo img {
+                height: 50px;
+            }
+
+            nav ul {
+                position: fixed;
+                top: 82px;
+                left: 0;
+                right: 0;
+                background: var(--black);
+                flex-direction: column;
+                gap: 0;
+                padding: 20px;
+                border-bottom: 4px solid var(--yellow);
+                transform: translateX(-100%);
+                transition: transform 0.3s;
+            }
+
+            nav ul.active {
+                transform: translateX(0);
+            }
+
+            nav li {
+                width: 100%;
+                text-align: center;
+                padding: 15px 0;
+                border-bottom: 1px solid var(--dark-gray);
+            }
+
+            nav a {
+                display: block;
+                font-size: 1.1rem;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            main {
+                margin-top: 82px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+                letter-spacing: 1px;
+            }
+
+            .hero-subtitle {
+                font-size: 1.4rem;
+            }
+
+            .hero-tagline {
+                font-size: 1.1rem;
+            }
+
+            .contact-info-section,
+            .form-section,
+            .business-info-section {
+                padding: 60px 20px;
+            }
+
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+
+            .contact-form-container {
+                padding: 30px 25px;
+            }
+
+            .contact-grid,
+            .business-info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Logo and Navigation -->
+    <header>
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="documents/Rocky Mountain Wagyu Logo.png" alt="Rocky Mountain Wagyu">
+            </div>
+            <button class="mobile-menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About_us.html">About</a></li>
+                    <li><a href="Products_&_Pricing.html">Products</a></li>
+                    <li><a href="Ordering_Process.html">Ordering</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Contact Us</h1>
+                <p class="hero-subtitle">We're Here to Help</p>
+                <p class="hero-tagline">Ready to experience premium Rocky Mountain Wagyu? Get in touch with us today.</p>
+            </div>
+        </section>
+
+        <!-- Contact Information Cards -->
+        <section class="contact-info-section">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <h3>Phone</h3>
+                    <p><a href="tel:8013013850">801-301-3850</a></p>
+                    <p style="font-size: 1rem; color: var(--dark-gray); margin-top: 15px;">Call us to discuss your order, ask questions, or learn more about our Wagyu beef.</p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <h3>Email</h3>
+                    <p><a href="mailto:rockymtnwagyu@gmail.com">rockymtnwagyu@gmail.com</a></p>
+                    <p style="font-size: 1rem; color: var(--dark-gray); margin-top: 15px;">Send us an email and we'll respond within 24 hours.</p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">📱</div>
+                    <h3>Social Media</h3>
+                    <p><a href="https://www.instagram.com/RockymtnWagyu" target="_blank">@RockymtnWagyu</a></p>
+                    <p style="font-size: 1rem; color: var(--dark-gray); margin-top: 15px;">Follow our journey on Instagram and TikTok to see daily life on the ranch.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="form-section">
+            <div class="section-header">
+                <h2>Send Us a Message</h2>
+                <p>Have questions about our Wagyu beef, ordering process, or availability? Fill out the form below and we'll get back to you soon.</p>
+            </div>
+
+            <div class="contact-form-container">
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="interest">I'm Interested In *</label>
+                        <select id="interest" name="interest" required>
+                            <option value="">Select an option...</option>
+                            <option value="whole-beef">Whole Beef</option>
+                            <option value="half-beef">Half Beef</option>
+                            <option value="quarter-beef">Quarter Beef</option>
+                            <option value="individual-cuts">Individual Cuts</option>
+                            <option value="general-inquiry">General Inquiry</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required placeholder="Tell us about your needs, questions, or how we can help..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Business Information -->
+        <section class="business-info-section">
+            <div class="business-info-content">
+                <h2>Our Approach to Customer Service</h2>
+                <p>At Rocky Mountain Wagyu, we operate on a farming timeline. This means we take the time necessary to provide you with thoughtful, personalized service—the same care and attention we give to raising our Wagyu cattle.</p>
+                <p>We're not a large commercial operation with instant online ordering. We're a family ranch that believes in building relationships with the families we serve. When you contact us, you're talking directly with the people who raise your beef.</p>
+
+                <div class="business-info-grid">
+                    <div class="info-box">
+                        <h3>Response Time</h3>
+                        <p>We typically respond to inquiries within 24 hours during business days. We may be out on the ranch or in class, but we will get back to you.</p>
+                    </div>
+
+                    <div class="info-box">
+                        <h3>Availability</h3>
+                        <p>By appointment. We're happy to schedule a time to discuss your needs, answer questions, or arrange a ranch visit.</p>
+                    </div>
+
+                    <div class="info-box">
+                        <h3>Orders & Reservations</h3>
+                        <p>Contact us to check current availability and place orders. With our 2.5-year raising period, we also offer pre-sales for future calves.</p>
+                    </div>
+                </div>
+
+                <p style="margin-top: 40px; font-size: 1.1rem;">We appreciate your patience and understanding. Quality beef—and quality service—takes time.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <!-- About Section -->
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="documents/Rocky Mountain Wagyu Logo.png" alt="Rocky Mountain Wagyu Logo">
+                </div>
+                <div class="footer-brand">
+                    <p>Premium, organic Wagyu beef raised with care in Utah's Rocky Mountains.</p>
+                    <p>Family-operated with a commitment to quality that exceeds industry standards.</p>
+                    <p class="footer-tagline">Pasture to plate, The Rocky Mountain Way</p>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <ul class="footer-contact-info">
+                    <li><strong>Phone:</strong><br><a href="tel:8013013850">801-301-3850</a></li>
+                    <li><strong>Email:</strong><br><a href="mailto:rockymtnwagyu@gmail.com">rockymtnwagyu@gmail.com</a></li>
+                    <li><strong>Hours:</strong><br>By appointment<br>(We operate on a farming timeline)</li>
+                </ul>
+            </div>
+
+            <!-- Social Media Section -->
+            <div class="footer-section">
+                <h4>Follow Our Journey</h4>
+                <div class="footer-social-links">
+                    <a href="https://www.instagram.com/RockymtnWagyu" target="_blank" class="footer-social-link">
+                        <div class="footer-social-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </div>
+                        <span>@RockymtnWagyu</span>
+                    </a>
+
+                    <a href="https://www.tiktok.com/@Rockymtnwagyu" target="_blank" class="footer-social-link">
+                        <div class="footer-social-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                            </svg>
+                        </div>
+                        <span>@Rockymtnwagyu</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Rocky Mountain Wagyu. All rights reserved.</p>
+            <p style="margin-top: 10px;">Premium Mountain-Raised American Wagyu Beef | Utah Family Ranch</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navMenu').classList.toggle('active');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.getElementById('navMenu');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (!nav.contains(event.target) && !toggle.contains(event.target)) {
+                nav.classList.remove('active');
+            }
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
