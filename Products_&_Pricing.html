@@ -111,7 +111,6 @@
             transform: translateY(-3px) rotate(2deg);
         }
 
-        /* Mobile Menu Toggle */
         .mobile-menu-toggle {
             display: none;
             background: none;
@@ -331,6 +330,60 @@
             margin-bottom: 20px;
         }
 
+        /* Quality Showcase Gallery */
+        .quality-showcase {
+            background: linear-gradient(135deg, var(--dark-gray) 0%, var(--black) 100%);
+            padding: 80px 40px;
+            color: var(--white);
+        }
+
+        .showcase-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1400px;
+            margin: 50px auto;
+        }
+
+        .showcase-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            border: 3px solid var(--yellow);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            transition: all 0.4s;
+            aspect-ratio: 4/3;
+        }
+
+        .showcase-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(253, 185, 19, 0.4);
+        }
+
+        .showcase-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .showcase-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .showcase-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.95), transparent);
+            padding: 25px 15px 15px;
+            color: var(--yellow);
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
         /* Detailed Products Section */
         .detailed-products {
             background: var(--light-gray);
@@ -398,6 +451,34 @@
             color: var(--dark-gray);
             font-size: 1rem;
             line-height: 1.6;
+        }
+
+        /* Ground Beef Showcase */
+        .ground-beef-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .ground-beef-item {
+            text-align: center;
+        }
+
+        .ground-beef-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 3px solid var(--yellow);
+            margin-bottom: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .ground-beef-item h4 {
+            font-size: 1.5rem;
+            color: var(--black);
+            margin-bottom: 10px;
         }
 
         /* Pricing Information */
@@ -654,7 +735,7 @@
                 font-size: 2.2rem;
             }
 
-            .products-grid {
+            .products-grid, .showcase-gallery {
                 grid-template-columns: 1fr;
             }
 
@@ -689,6 +770,7 @@
         <div class="toc-title">Quick Guide</div>
         <ul class="toc-links">
             <li><a href="#overview" class="toc-link">Overview</a></li>
+            <li><a href="#quality" class="toc-link">See Our Quality</a></li>
             <li><a href="#whole-beef" class="toc-link">Whole Beef</a></li>
             <li><a href="#half-beef" class="toc-link">Half Beef</a></li>
             <li><a href="#quarter-beef" class="toc-link">Quarter Beef</a></li>
@@ -716,31 +798,66 @@
 
             <div class="products-grid">
                 <div class="product-card">
-                    <img src="documents/product_images/whole-beef-placeholder.jpg" alt="Whole Beef" class="product-image">
+                    <img src="documents/product_images/whole beef.jpg" alt="Whole Beef" class="product-image">
                     <h3>Whole Beef</h3>
                     <p>Complete animal with maximum value and variety. Perfect for large families or shared purchases between friends.</p>
                     <a href="#whole-beef" class="btn btn-primary">Learn More</a>
                 </div>
 
                 <div class="product-card">
-                    <img src="documents/product_images/half-beef-placeholder.jpg" alt="Half Beef" class="product-image">
+                    <img src="documents/product_images/Half beef.jpg" alt="Half Beef" class="product-image">
                     <h3>Half Beef</h3>
                     <p>Our most popular option. Excellent value with a balanced selection of steaks, roasts, and ground beef.</p>
                     <a href="#half-beef" class="btn btn-primary">Learn More</a>
                 </div>
 
                 <div class="product-card">
-                    <img src="documents/product_images/quarter-beef-placeholder.jpg" alt="Quarter Beef" class="product-image">
+                    <img src="documents/product_images/quarter beef.jpg" alt="Quarter Beef" class="product-image">
                     <h3>Quarter Beef</h3>
                     <p>Perfect introduction to premium Wagyu quality without committing to a full or half animal.</p>
                     <a href="#quarter-beef" class="btn btn-primary">Learn More</a>
                 </div>
 
                 <div class="product-card">
-                    <img src="documents/product_images/individual-cuts-placeholder.jpg" alt="Individual Cuts" class="product-image">
+                    <img src="documents/product_images/individual cuts.jpg" alt="Individual Cuts" class="product-image">
                     <h3>Individual Cuts</h3>
                     <p>Select premium cuts available as our operation grows. Contact us for current availability.</p>
                     <a href="#individual-cuts" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quality Showcase Gallery -->
+        <section class="quality-showcase" id="quality">
+            <div class="section-header">
+                <h2 style="color: var(--yellow);">See the Quality for Yourself</h2>
+                <p style="color: var(--white);">Our Wagyu beef features exceptional marbling throughout every cut. This intramuscular fat creates the signature buttery texture and rich flavor that makes Wagyu world-renowned.</p>
+            </div>
+
+            <div class="showcase-gallery">
+                <div class="showcase-item">
+                    <img src="documents/product_images/ribeye.jpg" alt="Premium Ribeye Steak">
+                    <div class="showcase-label">Ribeye</div>
+                </div>
+                <div class="showcase-item">
+                    <img src="documents/product_images/nystrip.jpg" alt="NY Strip Steak">
+                    <div class="showcase-label">NY Strip</div>
+                </div>
+                <div class="showcase-item">
+                    <img src="documents/product_images/sirloin.jpg" alt="Sirloin Steak">
+                    <div class="showcase-label">Sirloin</div>
+                </div>
+                <div class="showcase-item">
+                    <img src="documents/product_images/tbone.jpg" alt="T-Bone Steak">
+                    <div class="showcase-label">T-Bone</div>
+                </div>
+                <div class="showcase-item">
+                    <img src="documents/product_images/brisket1.jpg" alt="Premium Brisket">
+                    <div class="showcase-label">Brisket</div>
+                </div>
+                <div class="showcase-item">
+                    <img src="documents/product_images/shortrib.jpg" alt="Short Ribs">
+                    <div class="showcase-label">Short Ribs</div>
                 </div>
             </div>
         </section>
@@ -754,7 +871,7 @@
                     <p>The complete Rocky Mountain Wagyu experience</p>
                 </div>
                 <div class="product-detail-content">
-                    <img src="documents/product_images/whole-beef-detail-placeholder.jpg" alt="Whole Beef Detail" class="product-image">
+                    <img src="documents/product_images/whole beef.jpg" alt="Whole Beef Detail" class="product-image">
                     
                     <h4 style="font-size: 1.5rem; color: var(--black); margin: 30px 0 20px;">What You Get</h4>
                     <p>A whole beef provides approximately 400-600 pounds of packaged beef, depending on the animal. You'll receive a complete variety of cuts including premium steaks, roasts, ground beef, and specialty cuts.</p>
@@ -795,7 +912,7 @@
                     <p>Our most popular choice for families</p>
                 </div>
                 <div class="product-detail-content">
-                    <img src="documents/product_images/half-beef-detail-placeholder.jpg" alt="Half Beef Detail" class="product-image">
+                    <img src="documents/product_images/Half beef.jpg" alt="Half Beef Detail" class="product-image">
                     
                     <h4 style="font-size: 1.5rem; color: var(--black); margin: 30px 0 20px;">What You Get</h4>
                     <p>A half beef provides approximately 200-300 pounds of packaged beef. You'll receive a well-balanced selection of all major cuts, perfect for most families.</p>
@@ -836,7 +953,7 @@
                     <p>Introduction to premium Wagyu quality</p>
                 </div>
                 <div class="product-detail-content">
-                    <img src="documents/product_images/quarter-beef-detail-placeholder.jpg" alt="Quarter Beef Detail" class="product-image">
+                    <img src="documents/product_images/quarter beef.jpg" alt="Quarter Beef Detail" class="product-image">
                     
                     <h4 style="font-size: 1.5rem; color: var(--black); margin: 30px 0 20px;">What You Get</h4>
                     <p>A quarter beef provides approximately 100-150 pounds of packaged beef. You'll receive a good variety of cuts, though with less customization options than larger orders.</p>
@@ -873,52 +990,78 @@
             <!-- Individual Cuts -->
             <div class="product-detail" id="individual-cuts">
                 <div class="product-detail-header">
-                    <h3>Individual Cuts</h3>
+                    <h3>Individual Cuts & Ground Beef</h3>
                     <p>Select premium cuts as available</p>
                 </div>
                 <div class="product-detail-content">
-                    <img src="documents/product_images/individual-cuts-detail-placeholder.jpg" alt="Individual Cuts Detail" class="product-image">
                     
-                    <h4 style="font-size: 1.5rem; color: var(--black); margin: 30px 0 20px;">Available Cuts</h4>
-                    <p style="margin-bottom: 30px;">As our operation grows, we're beginning to offer select individual cuts. Availability varies based on our processing schedule and demand. Contact us for current availability and pricing.</p>
-
-                    <div style="background: var(--light-gray); padding: 30px; border-radius: 12px; margin-bottom: 30px;">
-                        <h4 style="font-size: 1.3rem; color: var(--black); margin-bottom: 20px;">Premium Steaks</h4>
-                        <ul style="list-style: none; padding: 0; line-height: 2;">
-                            <li style="padding: 8px 0; border-bottom: 1px solid var(--medium-gray);">✓ <strong>Ribeye Steaks</strong> - The most marbled and flavorful cut</li>
-                            <li style="padding: 8px 0; border-bottom: 1px solid var(--medium-gray);">✓ <strong>NY Strip Steaks</strong> - Perfect balance of tenderness and flavor</li>
-                            <li style="padding: 8px 0; border-bottom: 1px solid var(--medium-gray);">✓ <strong>Filet Mignon</strong> - Exceptionally tender premium cut</li>
-                            <li style="padding: 8px 0; border-bottom: 1px solid var(--medium-gray);">✓ <strong>T-Bone Steaks</strong> - Best of both worlds with strip and tenderloin</li>
-                            <li style="padding: 8px 0; border-bottom: 1px solid var(--medium-gray);">✓ <strong>Sirloin Steaks</strong> - Lean and flavorful everyday steak</li>
-                            <li style="padding: 8px 0;">✓ <strong>Top Round Steaks</strong> - Versatile cut for grilling or braising</li>
-                        </ul>
+                    <h4 style="font-size: 1.8rem; color: var(--black); margin: 30px 0 20px; text-align: center;">Premium Steaks Available</h4>
+                    <div class="showcase-gallery" style="margin-bottom: 50px;">
+                        <div class="showcase-item">
+                            <img src="documents/product_images/ribeye.jpg" alt="Ribeye Steak">
+                            <div class="showcase-label">Ribeye</div>
+                        </div>
+                        <div class="showcase-item">
+                            <img src="documents/product_images/nystrip.jpg" alt="NY Strip">
+                            <div class="showcase-label">NY Strip</div>
+                        </div>
+                        <div class="showcase-item">
+                            <img src="documents/product_images/sirloin.jpg" alt="Sirloin">
+                            <div class="showcase-label">Sirloin</div>
+                        </div>
+                        <div class="showcase-item">
+                            <img src="documents/product_images/tbone.jpg" alt="T-Bone">
+                            <div class="showcase-label">T-Bone</div>
+                        </div>
+                        <div class="showcase-item">
+                            <img src="documents/product_images/randomsteak.jpg" alt="Premium Steak">
+                            <div class="showcase-label">Premium Cuts</div>
+                        </div>
                     </div>
 
-                    <div style="background: var(--light-gray); padding: 30px; border-radius: 12px; margin-bottom: 30px;">
-                        <h4 style="font-size: 1.3rem; color: var(--black); margin-bottom: 20px;">Roasts & Larger Cuts</h4>
-                        <ul style="list-style: none; padding: 0; line-height: 2;">
-                            <li style="padding: 8px 0; border-bottom: 1px solid var(--medium-gray);">✓ <strong>Chuck Roast</strong> - Perfect for slow cooking and pot roasts</li>
-                            <li style="padding: 8px 0; border-bottom: 1px solid var(--medium-gray);">✓ <strong>Rump Roast</strong> - Lean roast ideal for oven cooking</li>
-                            <li style="padding: 8px 0; border-bottom: 1px solid var(--medium-gray);">✓ <strong>Brisket</strong> - Premium cut for smoking and braising</li>
-                            <li style="padding: 8px 0; border-bottom: 1px solid var(--medium-gray);">✓ <strong>Short Ribs</strong> - Rich, flavorful for braising</li>
-                            <li style="padding: 8px 0;">✓ <strong>Stew Meat</strong> - Pre-cut chunks for stews and soups</li>
-                        </ul>
+                    <h4 style="font-size: 1.8rem; color: var(--black); margin: 30px 0 20px; text-align: center;">Roasts & Specialty Cuts</h4>
+                    <div class="showcase-gallery" style="margin-bottom: 50px;">
+                        <div class="showcase-item">
+                            <img src="documents/product_images/brisket1.jpg" alt="Premium Brisket">
+                            <div class="showcase-label">Brisket</div>
+                        </div>
+                        <div class="showcase-item">
+                            <img src="documents/product_images/chuckroast.jpg" alt="Chuck Roast">
+                            <div class="showcase-label">Chuck Roast</div>
+                        </div>
+                        <div class="showcase-item">
+                            <img src="documents/product_images/rumproast.jpg" alt="Rump Roast">
+                            <div class="showcase-label">Rump Roast</div>
+                        </div>
+                        <div class="showcase-item">
+                            <img src="documents/product_images/shortrib.jpg" alt="Short Ribs">
+                            <div class="showcase-label">Short Ribs</div>
+                        </div>
+                        <div class="showcase-item">
+                            <img src="documents/product_images/brisket2.jpg" alt="Multiple Briskets Available">
+                            <div class="showcase-label">Brisket Available</div>
+                        </div>
                     </div>
 
-                    <div style="background: var(--light-gray); padding: 30px; border-radius: 12px; margin-bottom: 30px;">
-                        <h4 style="font-size: 1.3rem; color: var(--black); margin-bottom: 20px;">Ground Beef</h4>
-                        <ul style="list-style: none; padding: 0; line-height: 2;">
-                            <li style="padding: 8px 0; border-bottom: 1px solid var(--medium-gray);">✓ <strong>1 lb Packages</strong> - Perfect for everyday meals</li>
-                            <li style="padding: 8px 0; border-bottom: 1px solid var(--medium-gray);">✓ <strong>2 lb Packages</strong> - Ideal for larger families</li>
-                            <li style="padding: 8px 0; border-bottom: 1px solid var(--medium-gray);">✓ <strong>5 lb Bulk Packages</strong> - Best value for frequent use</li>
-                            <li style="padding: 8px 0;">✓ <strong>Ground Beef Patties</strong> - Pre-formed burger patties (when available)</li>
-                        </ul>
-                        <p style="margin-top: 20px; font-style: italic; color: var(--dark-gray);">Our Wagyu ground beef features exceptional marbling throughout, making it perfect for burgers, meatballs, tacos, and any recipe calling for ground beef.</p>
+                    <h4 style="font-size: 1.8rem; color: var(--black); margin: 50px 0 20px; text-align: center;">Premium Ground Beef</h4>
+                    <p style="text-align: center; font-size: 1.1rem; margin-bottom: 30px;">Our Wagyu ground beef features exceptional marbling throughout, making it perfect for burgers, meatballs, tacos, and any recipe calling for ground beef.</p>
+                    
+                    <div class="ground-beef-showcase">
+                        <div class="ground-beef-item">
+                            <img src="documents/product_images/ground beef.jpg" alt="Premium Ground Beef">
+                            <h4>Ground Beef Packages</h4>
+                            <p>Available in 1 lb, 2 lb, and 5 lb packages</p>
+                        </div>
+                        <div class="ground-beef-item">
+                            <img src="documents/product_images/beefpatties.jpg" alt="Wagyu Beef Patties">
+                            <h4>Pre-Formed Patties</h4>
+                            <p>Convenient burger patties ready for the grill</p>
+                        </div>
                     </div>
 
                     <div class="pricing-note">
-                        <h4>How to Order</h4>
-                        <p>Individual cuts are available on a limited basis. Contact us to check current availability and pricing for specific cuts. We recommend ordering ahead for special occasions or specific needs.</p>
+                        <h4>How to Order Individual Cuts</h4>
+                        <p>Individual cuts and ground beef are available on a limited basis depending on our processing schedule. Contact us to check current availability and pricing for specific cuts. We recommend ordering ahead for special occasions or specific needs.</p>
                     </div>
 
                     <h4 style="font-size: 1.5rem; color: var(--black); margin: 30px 0 20px;">Perfect For</h4>
@@ -1033,7 +1176,6 @@
             document.getElementById('navMenu').classList.toggle('active');
         }
 
-        // Close menu when clicking outside
         document.addEventListener('click', function(event) {
             const nav = document.getElementById('navMenu');
             const toggle = document.querySelector('.mobile-menu-toggle');
@@ -1043,18 +1185,15 @@
             }
         });
 
-        // Close menu when clicking a link
         document.querySelectorAll('nav a').forEach(link => {
             link.addEventListener('click', function() {
                 document.getElementById('navMenu').classList.remove('active');
             });
         });
 
-        // Table of Contents functionality
         const tocLinks = document.querySelectorAll('.toc-link');
         const sections = document.querySelectorAll('section[id], div[id]');
 
-        // Smooth scrolling for TOC links
         tocLinks.forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -1074,7 +1213,6 @@
             });
         });
 
-        // Highlight active section in TOC as user scrolls
         function highlightActiveSection() {
             const scrollPos = window.scrollY + 150;
 
@@ -1094,7 +1232,6 @@
             });
         }
 
-        // Call on scroll with throttling for performance
         let scrollTimeout;
         window.addEventListener('scroll', function() {
             if (scrollTimeout) {
@@ -1105,7 +1242,6 @@
             });
         });
 
-        // Initial call to set active state on page load
         highlightActiveSection();
     </script>
 </body>
