@@ -1,1 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Ordering Process | Rocky Mountain Wagyu | How to Order Premium Wagyu Beef</title>
+    <meta name="description" content="Learn how to order premium Rocky Mountain Wagyu beef. Simple process from contact to delivery with flexible options for your family's needs.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        :root {
+            --black: #000000;
+            --white: #FFFFFF;
+            --yellow: #FDB913;
+            --light-gray: #F5F5F5;
+            --medium-gray: #E0E0E0;
+            --dark-gray: #333333;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: var(--dark-gray);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* Header with Logo and Navigation */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: var(--black);
+            border-bottom: 4px solid var(--yellow);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .header-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-logo img {
+            height: 100px;
+            width: auto;
+            filter: drop-shadow(0 2px 8px rgba(253, 185, 19, 0.4));
+        }
+
+        nav ul {
+            display: flex;
+            gap: 15px;
+            list-style: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            padding: 12px 28px;
+            background: transparent;
+            border: 3px solid var(--yellow);
+            border-radius: 50px;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        nav a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--yellow);
+            transition: left 0.4s;
+            z-index: -1;
+        }
+
+        nav a:hover::before {
+            left: 0;
+        }
+
+        nav a:hover {
+            color: var(--black);
+            transform: translateY(-3px) rotate(-2deg);
+            box-shadow: 0 6px 20px rgba(253, 185, 19, 0.5);
+        }
+
+        nav li:nth-child(even) a:hover {
+            transform: translateY(-3px) rotate(2deg);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--yellow);
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        main {
+            margin-top: 94px;
+        }
+
+        /* Table of Contents Sidebar */
+        .toc-sidebar {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 500;
+            background: rgba(0, 0, 0, 0.85);
+            padding: 20px 15px;
+            border-radius: 12px;
+            border: 2px solid var(--yellow);
+            backdrop-filter: blur(10px);
+            max-width: 200px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s;
+        }
+
+        .toc-sidebar:hover {
+            background: rgba(0, 0, 0, 0.95);
+            box-shadow: 0 6px 30px rgba(253, 185, 19, 0.3);
+        }
+
+        .toc-title {
+            color: var(--yellow);
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .toc-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .toc-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.85rem;
+            padding: 8px 12px;
+            border-left: 3px solid transparent;
+            transition: all 0.3s;
+            display: block;
+            line-height: 1.3;
+        }
+
+        .toc-links a:hover {
+            color: var(--yellow);
+            border-left-color: var(--yellow);
+            padding-left: 16px;
+            background: rgba(253, 185, 19, 0.1);
+        }
+
+        .toc-links a.active {
+            color: var(--yellow);
+            border-left-color: var(--yellow);
+            background: rgba(253, 185, 19, 0.15);
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+            color: var(--white);
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--yellow);
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.8);
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            color: var(--white);
+            font-weight: 500;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+        }
+
+        /* Section Styling */
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            color: var(--black);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: var(--yellow);
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--dark-gray);
+            max-width: 800px;
+            margin: 25px auto 0;
+            line-height: 1.8;
+        }
+
+        /* Process Steps Section */
+        .process-section {
+            background: var(--white);
+            padding: 80px 40px;
+        }
+
+        .steps-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .step {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 60px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .step:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .step-number {
+            flex: 0 0 80px;
+            width: 80px;
+            height: 80px;
+            background: var(--yellow);
+            border: 4px solid var(--black);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--black);
+            box-shadow: 0 8px 25px rgba(253, 185, 19, 0.4);
+        }
+
+        .step-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .step-content h3 {
+            font-size: 2rem;
+            color: var(--black);
+            margin-bottom: 15px;
+        }
+
+        .step-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .step-image {
+            flex: 0 0 400px;
+            width: 400px;
+            height: 300px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 3px solid var(--yellow);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .step-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Packaging Options */
+        .packaging-section {
+            background: var(--light-gray);
+            padding: 80px 40px;
+        }
+
+        .packaging-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 35px;
+            max-width: 1200px;
+            margin: 50px auto;
+        }
+
+        .packaging-card {
+            background: var(--white);
+            border: 3px solid var(--black);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            transition: all 0.4s;
+        }
+
+        .packaging-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(253, 185, 19, 0.3);
+            border-color: var(--yellow);
+        }
+
+        .packaging-card-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--yellow);
+        }
+
+        .packaging-card-content {
+            padding: 30px;
+        }
+
+        .packaging-card h3 {
+            font-size: 1.8rem;
+            color: var(--black);
+            margin-bottom: 15px;
+        }
+
+        .packaging-card p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            background: var(--white);
+            padding: 80px 40px;
+        }
+
+        .timeline-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--light-gray);
+            padding: 50px;
+            border-radius: 15px;
+            border-left: 8px solid var(--yellow);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 30px;
+            align-items: flex-start;
+        }
+
+        .timeline-icon {
+            flex: 0 0 50px;
+            width: 50px;
+            height: 50px;
+            background: var(--yellow);
+            border: 3px solid var(--black);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--black);
+        }
+
+        .timeline-text {
+            flex: 1;
+        }
+
+        .timeline-text h4 {
+            font-size: 1.3rem;
+            color: var(--black);
+            margin-bottom: 8px;
+        }
+
+        .timeline-text p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+            color: var(--white);
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: var(--yellow);
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-options {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .contact-method {
+            text-align: center;
+        }
+
+        .contact-method h3 {
+            color: var(--yellow);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-method a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: color 0.3s;
+        }
+
+        .contact-method a:hover {
+            color: var(--yellow);
+        }
+
+        .btn {
+            padding: 18px 45px;
+            font-size: 1.15rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--yellow);
+            color: var(--black);
+            box-shadow: 0 8px 25px rgba(253, 185, 19, 0.4);
+            border: 3px solid var(--yellow);
+        }
+
+        .btn-primary:hover {
+            background: var(--white);
+            color: var(--black);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(253, 185, 19, 0.6);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+            color: var(--white);
+            padding: 60px 40px 30px;
+            border-top: 6px solid var(--yellow);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            text-align: left;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            color: var(--yellow);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            max-width: 180px;
+            height: auto;
+            filter: drop-shadow(0 3px 12px rgba(253, 185, 19, 0.4));
+        }
+
+        .footer-brand p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .footer-tagline {
+            color: var(--yellow);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        .footer-contact-info {
+            list-style: none;
+        }
+
+        .footer-contact-info li {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .footer-contact-info a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-contact-info a:hover {
+            color: var(--yellow);
+        }
+
+        .footer-social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .footer-social-link {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: var(--white);
+            transition: all 0.3s;
+            font-size: 1.05rem;
+        }
+
+        .footer-social-link:hover {
+            color: var(--yellow);
+            transform: translateX(5px);
+        }
+
+        .footer-social-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--white);
+            border: 2px solid var(--yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--black);
+            transition: all 0.3s;
+        }
+
+        .footer-social-link:hover .footer-social-icon {
+            background: var(--yellow);
+            transform: rotate(5deg);
+        }
+
+        .footer-bottom {
+            border-top: 2px solid var(--dark-gray);
+            padding-top: 25px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .toc-sidebar {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 12px 20px;
+            }
+
+            .header-logo img {
+                height: 50px;
+            }
+
+            nav ul {
+                position: fixed;
+                top: 82px;
+                left: 0;
+                right: 0;
+                background: var(--black);
+                flex-direction: column;
+                gap: 0;
+                padding: 20px;
+                border-bottom: 4px solid var(--yellow);
+                transform: translateX(-100%);
+                transition: transform 0.3s;
+            }
+
+            nav ul.active {
+                transform: translateX(0);
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            main {
+                margin-top: 82px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+
+            .step {
+                flex-direction: column !important;
+            }
+
+            .step-image {
+                flex: 1;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .packaging-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Logo and Navigation -->
+    <header>
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="documents/Rocky Mountain Wagyu Logo.png" alt="Rocky Mountain Wagyu">
+            </div>
+            <button class="mobile-menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About_us.html">About</a></li>
+                    <li><a href="Products_&_Pricing.html">Products</a></li>
+                    <li><a href="Ordering_Process.html">Ordering</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Table of Contents Sidebar -->
+    <aside class="toc-sidebar">
+        <div class="toc-title">Quick Guide</div>
+        <ul class="toc-links">
+            <li><a href="#process" class="toc-link">How to Order</a></li>
+            <li><a href="#packaging" class="toc-link">Packaging Options</a></li>
+            <li><a href="#timeline" class="toc-link">What to Expect</a></li>
+            <li><a href="#contact" class="toc-link">Place Your Order</a></li>
+        </ul>
+    </aside>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Ordering Process</h1>
+                <p class="hero-subtitle">Simple Steps to Premium Wagyu Beef</p>
+            </div>
+        </section>
+
+        <!-- Process Steps -->
+        <section class="process-section" id="process">
+            <div class="section-header">
+                <h2>How to Order</h2>
+                <p>Our ordering process is straightforward and personal. We'll work with you every step of the way to ensure you get exactly what you need.</p>
+            </div>
+
+            <div class="steps-container">
+                <!-- Step 1 -->
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Contact Us</h3>
+                        <p>Give us a call at <strong>801-301-3850</strong> or email us at <strong>rockymtnwagyu@gmail.com</strong> to discuss your needs. We'll help you determine the right option for your family—whether that's a whole beef, half, quarter, or individual cuts.</p>
+                        <p>We operate on a farming timeline, so don't worry about rushing. We're happy to take the time to answer all your questions and explain the process in detail.</p>
+                    </div>
+                    <div class="step-image">
+                        <img src="documents/orders_images/ordering1.jpg" alt="Contact us to start your order">
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Select Your Beef</h3>
+                        <p>Choose from our available cattle or reserve a spot in our pre-sale program. Each animal is raised for a full 2.5 years to ensure optimal marbling and flavor.</p>
+                        <p>If you're ordering a whole, half, or quarter beef, we'll discuss timing and availability. For individual cuts, we'll let you know what's currently in stock from our most recent processing.</p>
+                    </div>
+                    <div class="step-image">
+                        <img src="documents/orders_images/cows lined up.jpg" alt="Select your beef from our cattle">
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Customize Your Cuts</h3>
+                        <p>For whole, half, and quarter beef orders, you'll work directly with our butcher to specify exactly how you want your beef cut and packaged. Choose your preferred steak thickness, roast sizes, and ground beef package amounts.</p>
+                        <p>We'll provide you with a cutting instructions form that walks you through all the options. Don't worry if you're not sure what to choose—we're happy to provide recommendations based on your family's cooking preferences.</p>
+                    </div>
+                    <div class="step-image">
+                        <img src="documents/orders_images/ordering 3.jpg" alt="Customize your cuts and packaging">
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Processing & Packaging</h3>
+                        <p>Your beef will be professionally processed by our trusted local butcher who specializes in premium cuts. All meat is carefully inspected, cut to your specifications, and packaged to preserve freshness.</p>
+                        <p>You can choose between vacuum-sealed packaging for maximum freezer life or traditional butcher paper wrapping. Both options keep your beef fresh for months in the freezer.</p>
+                    </div>
+                    <div class="step-image">
+                        <img src="documents/orders_images/whole live cow ordering.jpg" alt="Professional processing">
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Pickup or Delivery</h3>
+                        <p>Once your beef is processed and packaged, we'll contact you to arrange pickup. We'll coordinate a convenient time that works with your schedule.</p>
+                        <p>Make sure you have adequate freezer space ready—we recommend 16-20 cubic feet for a whole beef, 8-10 cubic feet for a half, and 4-5 cubic feet for a quarter.</p>
+                    </div>
+                    <div class="step-image">
+                        <img src="documents/orders_images/ny strip in container.jpg" alt="Pickup your premium beef">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Packaging Options -->
+        <section class="packaging-section" id="packaging">
+            <div class="section-header">
+                <h2>Packaging Options</h2>
+                <p>Choose the packaging method that best suits your needs. Both options preserve quality and freshness.</p>
+            </div>
+
+            <div class="packaging-grid">
+                <div class="packaging-card">
+                    <img src="documents/orders_images/vacuum sealed steak.jpg" alt="Vacuum Sealed Packaging" class="packaging-card-image">
+                    <div class="packaging-card-content">
+                        <h3>Vacuum Sealed</h3>
+                        <p>Our vacuum-sealed packaging removes all air from the package, providing maximum protection against freezer burn and extending shelf life up to 2-3 years in the freezer.</p>
+                        <p><strong>Benefits:</strong> Longest freezer life, prevents freezer burn, easy to see contents, space-efficient stacking</p>
+                    </div>
+                </div>
+
+                <div class="packaging-card">
+                    <img src="documents/orders_images/wrapped in butcher paper.jpg" alt="Butcher Paper Packaging" class="packaging-card-image">
+                    <div class="packaging-card-content">
+                        <h3>Butcher Paper</h3>
+                        <p>Traditional butcher paper wrapping provides excellent protection while being more eco-friendly. Beef stays fresh for 6-12 months in the freezer when properly wrapped.</p>
+                        <p><strong>Benefits:</strong> Traditional method, environmentally friendly, easy to label, classic presentation</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="timeline-section" id="timeline">
+            <div class="section-header">
+                <h2>What to Expect</h2>
+                <p>Here's a general timeline for the ordering process from start to finish.</p>
+            </div>
+
+            <div class="timeline-content">
+                <div class="timeline-item">
+                    <div class="timeline-icon">📞</div>
+                    <div class="timeline-text">
+                        <h4>Initial Contact</h4>
+                        <p>Reach out to us and we'll discuss your needs, answer questions, and help you select the right option for your family.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">🐄</div>
+                    <div class="timeline-text">
+                        <h4>Selection & Reservation</h4>
+                        <p>Choose from currently available beef or reserve a spot in our pre-sale program. We'll provide all the details about timing and expectations.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">📋</div>
+                    <div class="timeline-text">
+                        <h4>Cutting Instructions (1-2 weeks before processing)</h4>
+                        <p>You'll receive a cutting instructions form to specify how you want your beef prepared. We'll help you through this process if it's your first time.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">🔪</div>
+                    <div class="timeline-text">
+                        <h4>Processing (2-3 weeks)</h4>
+                        <p>Your beef is professionally butchered and aged to perfection, then cut and packaged according to your specifications.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">📦</div>
+                    <div class="timeline-text">
+                        <h4>Pickup Notification</h4>
+                        <p>We'll contact you when your beef is ready and arrange a convenient pickup time. Bring your coolers and get ready to stock your freezer with premium Wagyu!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section" id="contact">
+            <h2>Ready to Order?</h2>
+            <p>Contact us today to get started. We're here to answer your questions and help you through every step of the process.</p>
+            
+            <div class="contact-options">
+                <div class="contact-method">
+                    <h3>Call Us</h3>
+                    <a href="tel:8013013850">801-301-3850</a>
+                </div>
+                <div class="contact-method">
+                    <h3>Email Us</h3>
+                    <a href="mailto:rockymtnwagyu@gmail.com">rockymtnwagyu@gmail.com</a>
+                </div>
+            </div>
+
+            <div style="margin-top: 40px;">
+                <a href="Contact.html" class="btn btn-primary">Contact Us</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <!-- About Section -->
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="documents/Rocky Mountain Wagyu Logo.png" alt="Rocky Mountain Wagyu Logo">
+                </div>
+                <div class="footer-brand">
+                    <p>Premium, organic Wagyu beef raised with care in Utah's Rocky Mountains.</p>
+                    <p>Family-operated with a commitment to quality that exceeds industry standards.</p>
+                    <p class="footer-tagline">Pasture to plate, The Rocky Mountain Way</p>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <ul class="footer-contact-info">
+                    <li><strong>Phone:</strong><br><a href="tel:8013013850">801-301-3850</a></li>
+                    <li><strong>Email:</strong><br><a href="mailto:rockymtnwagyu@gmail.com">rockymtnwagyu@gmail.com</a></li>
+                    <li><strong>Hours:</strong><br>By appointment<br>(We operate on a farming timeline)</li>
+                </ul>
+            </div>
+
+            <!-- Social Media Section -->
+            <div class="footer-section">
+                <h4>Follow Our Journey</h4>
+                <div class="footer-social-links">
+                    <a href="https://www.instagram.com/RockymtnWagyu" target="_blank" class="footer-social-link">
+                        <div class="footer-social-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </div>
+                        <span>@RockymtnWagyu</span>
+                    </a>
+
+                    <a href="https://www.tiktok.com/@Rockymtnwagyu" target="_blank" class="footer-social-link">
+                        <div class="footer-social-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                            </svg>
+                        </div>
+                        <span>@Rockymtnwagyu</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Rocky Mountain Wagyu. All rights reserved.</p>
+            <p style="margin-top: 10px;">Premium Mountain-Raised American Wagyu Beef | Utah Family Ranch</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navMenu').classList.toggle('active');
+        }
+
+        document.addEventListener('click', function(event) {
+            const nav = document.getElementById('navMenu');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (!nav.contains(event.target) && !toggle.contains(event.target)) {
+                nav.classList.remove('active');
+            }
+        });
+
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+
+        const tocLinks = document.querySelectorAll('.toc-link');
+        const sections = document.querySelectorAll('section[id]');
+
+        tocLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    const headerOffset = 94;
+                    const elementPosition = targetSection.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        function highlightActiveSection() {
+            const scrollPos = window.scrollY + 150;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    tocLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }
+
+        let scrollTimeout;
+        window.addEventListener('scroll', function() {
+            if (scrollTimeout) {
+                window.cancelAnimationFrame(scrollTimeout);
+            }
+            scrollTimeout = window.requestAnimationFrame(function() {
+                highlightActiveSection();
+            });
+        });
+
+        highlightActiveSection();
+    </script>
+</body>
+</html>
