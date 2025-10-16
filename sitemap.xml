@@ -1,1 +1,86 @@
+# robots.txt for Rocky Mountain Wagyu
+# Website: https://rockymountainwagyufarm.com
+# Generated: January 2025
 
+# This file tells search engines which pages they can and cannot crawl
+# Properly configured robots.txt helps with SEO and site performance
+
+# ============================================
+# ALLOW ALL SEARCH ENGINES TO INDEX SITE
+# ============================================
+User-agent: *
+Allow: /
+
+# ============================================
+# SITEMAP LOCATION (CRITICAL FOR SEO)
+# ============================================
+Sitemap: https://rockymountainwagyufarm.com/sitemap.xml
+
+# ============================================
+# BLOCK UNNECESSARY FOLDERS/FILES
+# ============================================
+# These folders don't need to be indexed by Google
+# Blocking them helps search engines focus on important pages
+
+# Block image folders (images will still be indexed via pages)
+Disallow: /documents/
+Disallow: /images/
+Disallow: /assets/
+
+# Block any admin or private folders (if you add them later)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Block any backup files
+Disallow: /*.bak$
+Disallow: /*~$
+
+# ============================================
+# SPECIFIC SEARCH ENGINE INSTRUCTIONS
+# ============================================
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+# Yahoo (uses Bing now, but still good to include)
+User-agent: Slurp
+Allow: /
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+
+# ============================================
+# BLOCK BAD BOTS (OPTIONAL BUT RECOMMENDED)
+# ============================================
+# These bots are known for scraping, stealing content, or wasting bandwidth
+
+# Block common spam/scraper bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# ============================================
+# NOTES FOR ROCKY MOUNTAIN WAGYU
+# ============================================
+# 1. Upload this file to your ROOT directory (same place as index.html)
+# 2. Test it at: https://www.google.com/webmasters/tools/robots-testing-tool
+# 3. Verify in Google Search Console after upload
+# 4. Make sure sitemap.xml is also in root directory
+# 5. The robots.txt file should be accessible at:
+#    https://rockymountainwagyufarm.com/robots.txt
