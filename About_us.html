@@ -363,7 +363,7 @@
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
             max-width: 1400px;
-            margin: 60px auto;
+            margin: 0 auto 50px;
         }
 
         .showcase-image {
@@ -398,6 +398,34 @@
             font-size: 1.2rem;
             font-weight: 700;
             text-align: center;
+        }
+
+        /* Package Info Box */
+        .package-info-box {
+            max-width: 1000px;
+            margin: 50px auto 0;
+            text-align: center;
+            background: var(--light-gray);
+            padding: 40px;
+            border-radius: 15px;
+            border: 3px solid var(--yellow);
+            box-shadow: 0 10px 35px rgba(0,0,0,0.1);
+        }
+
+        .package-info-box h3 {
+            font-size: 2rem;
+            color: var(--black);
+            margin-bottom: 20px;
+        }
+
+        .package-info-box p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .package-info-box p:last-child {
+            margin-bottom: 0;
         }
 
         /* Team Section */
@@ -676,6 +704,18 @@
             .cta-content h2 {
                 font-size: 2.2rem;
             }
+
+            .package-info-box {
+                padding: 30px 25px;
+            }
+
+            .package-info-box h3 {
+                font-size: 1.6rem;
+            }
+
+            .package-info-box p {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
@@ -804,27 +844,40 @@
         <!-- Quality Showcase -->
         <section class="section section-light">
             <div class="section-header">
-                <h2>Our Commitment to Excellence</h2>
-                <p>From our pasture to your kitchen—every step reflects our dedication to quality</p>
+                <h2>What You'll Receive</h2>
+                <p>We sell whole, half, and quarter cuts of premium Wagyu beef. Here's a glimpse of the exceptional quality you'll get from your portion.</p>
             </div>
             <div class="content-wrapper">
                 <div class="image-showcase">
                     <div class="showcase-image">
                         <img src="documents/about_us/Steak_on_fork.jpg" alt="Premium Wagyu quality">
-                        <div class="showcase-label">Restaurant Quality</div>
+                        <div class="showcase-label">Premium Steak Quality</div>
                     </div>
                     <div class="showcase-image">
                         <img src="documents/about_us/knife_steak.jpg" alt="Expertly prepared Wagyu">
-                        <div class="showcase-label">Expert Preparation</div>
+                        <div class="showcase-label">Restaurant-Quality Beef</div>
                     </div>
                     <div class="showcase-image">
                         <img src="documents/about_us/cubed_wagyu.jpg" alt="Wagyu beef preparation">
-                        <div class="showcase-label">Versatile Options</div>
+                        <div class="showcase-label">Versatile Cuts</div>
                     </div>
                     <div class="showcase-image">
                         <img src="documents/about_us/wagyu_skirt.jpg" alt="Premium beef selection">
-                        <div class="showcase-label">Premium Selection</div>
+                        <div class="showcase-label">Exceptional Marbling</div>
                     </div>
+                </div>
+                
+                <div class="package-info-box">
+                    <h3>How We Serve You</h3>
+                    <p>
+                        We sell <strong>whole, half, and quarter cuts</strong>—not individual cuts. When you purchase from us, you're buying a portion of the entire animal. You pick up your beef from our ranch and take it to a butcher of your choosing.
+                    </p>
+                    <p style="color: var(--dark-gray);">
+                        <strong>Optional Services (at additional cost):</strong> We can arrange professional butchering, or deliver your beef directly to your butcher. Our butcher offers vacuum-sealed or butcher paper wrapping. Contact us to discuss these options and pricing.
+                    </p>
+                    <p style="color: var(--dark-gray);">
+                        This approach ensures you receive the full value and variety of premium Wagyu beef while supporting our sustainable, small-batch ranching model. Your butcher will custom-process your beef to include steaks, roasts, ground beef, and specialty cuts according to your preferences and wrap it to your specifications.
+                    </p>
                 </div>
             </div>
         </section>
@@ -850,7 +903,7 @@
         <section class="cta-section">
             <div class="cta-content">
                 <h2>Experience the Difference</h2>
-                <p>Ready to taste premium, organic Wagyu beef raised with care in Utah's Rocky Mountains? We'd love to help you select the perfect option for your family.</p>
+                <p>Ready to fill your freezer with premium, organic Wagyu beef raised with care in Utah's Rocky Mountains? We offer whole, half, and quarter cuts available for pickup at our ranch.</p>
                 <a href="Products_&_Pricing.html" class="btn">View Our Products</a>
                 <a href="Contact.html" class="btn" style="margin-left: 20px;">Contact Us</a>
             </div>
