@@ -4,8 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Products & Pricing | Rocky Mountain Wagyu | Premium Utah Wagyu Beef</title>
-    <meta name="description" content="Explore Rocky Mountain Wagyu's premium beef products - whole, half, and quarter beef options. Raised with care in Utah's mountain pastures.">
+    <title>Wagyu Beef Options | Whole, Half & Quarter | Rocky Mountain Wagyu</title>
+    <meta name="description" content="Choose whole, half, or quarter premium Wagyu beef from our Utah ranch. Raised for 2.5 years with no hormones or antibiotics. Contact us for pricing and availability.">
+    
+    <!-- ============================================
+         PRICING CONFIGURATION - UPDATE THIS SECTION
+         ============================================
+         
+         TO UPDATE PRICES: 
+         1. Scroll down to find "PRICING DISPLAY SECTIONS" (search for: <!-- PRICING SECTION -->)
+         2. Replace "Contact us for pricing" with your actual prices
+         3. Optionally: Update the pricing notes below for reference
+         
+         CURRENT PRICING (for reference - update when prices change):
+         - Whole Beef: [PRICE NOT SET - Contact for pricing]
+         - Half Beef: [PRICE NOT SET - Contact for pricing]
+         - Quarter Beef: [PRICE NOT SET - Contact for pricing]
+         - Processing Fee (Our Butcher): [PRICE NOT SET - Contact for pricing]
+         - Delivery Fee: [PRICE NOT SET - Based on distance]
+         
+         PRICING NOTES:
+         - Prices can be per pound (e.g., "$8.50/lb hanging weight")
+         - Or flat rate (e.g., "$3,500 for whole beef")
+         - Processing is additional
+         - Delivery is distance-based
+         
+         Last Updated: [DATE NOT SET]
+         ============================================ -->
+    
     
     <style>
         * {
@@ -453,34 +479,6 @@
             line-height: 1.6;
         }
 
-        /* Ground Beef Showcase */
-        .ground-beef-showcase {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-        }
-
-        .ground-beef-item {
-            text-align: center;
-        }
-
-        .ground-beef-item img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 12px;
-            border: 3px solid var(--yellow);
-            margin-bottom: 20px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
-
-        .ground-beef-item h4 {
-            font-size: 1.5rem;
-            color: var(--black);
-            margin-bottom: 10px;
-        }
-
         /* Pricing Information */
         .pricing-note {
             background: var(--yellow);
@@ -771,10 +769,10 @@
         <ul class="toc-links">
             <li><a href="#overview" class="toc-link">Overview</a></li>
             <li><a href="#quality" class="toc-link">See Our Quality</a></li>
+            <li><a href="#processing" class="toc-link">Processing Options</a></li>
             <li><a href="#whole-beef" class="toc-link">Whole Beef</a></li>
             <li><a href="#half-beef" class="toc-link">Half Beef</a></li>
             <li><a href="#quarter-beef" class="toc-link">Quarter Beef</a></li>
-            <li><a href="#individual-cuts" class="toc-link">Individual Cuts</a></li>
             <li><a href="#presale" class="toc-link">Pre-Sale Program</a></li>
             <li><a href="#order" class="toc-link">Order Now</a></li>
         </ul>
@@ -784,45 +782,38 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
-                <h1>Premium Wagyu Products</h1>
-                <p class="hero-subtitle">Exceptional Quality, Mountain-Raised Beef</p>
+                <h1>Our Beef Options</h1>
+                <p class="hero-subtitle">Choose the perfect size for your family</p>
             </div>
         </section>
 
         <!-- Products Overview -->
         <section class="products-overview" id="overview">
             <div class="section-header">
-                <h2>Our Product Offerings</h2>
-                <p>Choose the option that best fits your family's needs. Every cut comes from our 2.5-year raising program with no hormones or antibiotics.</p>
+                <h2>Three Simple Choices</h2>
+                <p>We offer whole, half, and quarter beef to fit your family's needs. Every option is raised with our 2.5-year commitment to quality—no hormones, no antibiotics, just exceptional beef. You'll pick up your beef from our ranch and arrange processing with your preferred butcher, or we can coordinate butchering and delivery for an additional fee.</p>
             </div>
 
             <div class="products-grid">
                 <div class="product-card">
                     <img src="documents/product_images/whole beef.jpg" alt="Whole Beef" class="product-image">
                     <h3>Whole Beef</h3>
-                    <p>Complete animal with maximum value and variety. Perfect for large families or shared purchases between friends.</p>
+                    <p>The complete animal with maximum variety and best value per pound. Perfect for large families or splitting between households. You arrange processing, or we can coordinate it for you.</p>
                     <a href="#whole-beef" class="btn btn-primary">Learn More</a>
                 </div>
 
                 <div class="product-card">
                     <img src="documents/product_images/Half beef.jpg" alt="Half Beef" class="product-image">
                     <h3>Half Beef</h3>
-                    <p>Our most popular option. Excellent value with a balanced selection of steaks, roasts, and ground beef.</p>
+                    <p>Our most popular option. A balanced selection of cuts that's ideal for families of 4-6. You choose your butcher, or we can arrange processing and packaging.</p>
                     <a href="#half-beef" class="btn btn-primary">Learn More</a>
                 </div>
 
                 <div class="product-card">
                     <img src="documents/product_images/quarter beef.jpg" alt="Quarter Beef" class="product-image">
                     <h3>Quarter Beef</h3>
-                    <p>Perfect introduction to premium Wagyu quality without committing to a full or half animal.</p>
+                    <p>A great introduction to premium Wagyu without the commitment of larger quantities. Fits easily in a standard freezer. Take to your butcher or we'll handle it.</p>
                     <a href="#quarter-beef" class="btn btn-primary">Learn More</a>
-                </div>
-
-                <div class="product-card">
-                    <img src="documents/product_images/individual cuts.jpg" alt="Individual Cuts" class="product-image">
-                    <h3>Individual Cuts</h3>
-                    <p>Select premium cuts available as our operation grows. Contact us for current availability.</p>
-                    <a href="#individual-cuts" class="btn btn-primary">Learn More</a>
                 </div>
             </div>
         </section>
@@ -830,39 +821,84 @@
         <!-- Quality Showcase Gallery -->
         <section class="quality-showcase" id="quality">
             <div class="section-header">
-                <h2 style="color: var(--yellow);">See the Quality for Yourself</h2>
-                <p style="color: var(--white);">Our Wagyu beef features exceptional marbling throughout every cut. This intramuscular fat creates the signature buttery texture and rich flavor that makes Wagyu world-renowned.</p>
+                <h2 style="color: var(--yellow);">See the Difference</h2>
+                <p style="color: var(--white);">Our beef features exceptional marbling throughout. This intramuscular fat creates the signature buttery texture and rich flavor that makes Wagyu world-renowned. When you purchase whole, half, or quarter beef, you'll receive a variety of premium cuts like these.</p>
             </div>
 
             <div class="showcase-gallery">
                 <div class="showcase-item">
-                    <img src="documents/product_images/ribeye.jpg" alt="Premium Ribeye Steak">
-                    <div class="showcase-label">Ribeye</div>
+                    <img src="documents/product_images/ribeye.jpg" alt="Premium Marbled Beef">
+                    <div class="showcase-label">Premium Marbling</div>
                 </div>
                 <div class="showcase-item">
-                    <img src="documents/product_images/nystrip.jpg" alt="NY Strip Steak">
-                    <div class="showcase-label">NY Strip</div>
+                    <img src="documents/product_images/nystrip.jpg" alt="Quality Beef Cut">
+                    <div class="showcase-label">Exceptional Quality</div>
                 </div>
                 <div class="showcase-item">
-                    <img src="documents/product_images/sirloin.jpg" alt="Sirloin Steak">
-                    <div class="showcase-label">Sirloin</div>
+                    <img src="documents/product_images/sirloin.jpg" alt="Beautiful Marbling">
+                    <div class="showcase-label">Beautiful Marbling</div>
                 </div>
                 <div class="showcase-item">
-                    <img src="documents/product_images/tbone.jpg" alt="T-Bone Steak">
-                    <div class="showcase-label">T-Bone</div>
+                    <img src="documents/product_images/tbone.jpg" alt="Premium Beef">
+                    <div class="showcase-label">Premium Cuts</div>
                 </div>
                 <div class="showcase-item">
-                    <img src="documents/product_images/tritip.jpg" alt="Tri-Tip">
-                    <div class="showcase-label">Tri-Tip</div>
+                    <img src="documents/product_images/tritip.jpg" alt="Quality Selection">
+                    <div class="showcase-label">Variety of Cuts</div>
                 </div>
                 <div class="showcase-item">
-                    <img src="documents/product_images/brisket1.jpg" alt="Premium Brisket">
-                    <div class="showcase-label">Brisket</div>
+                    <img src="documents/product_images/brisket1.jpg" alt="Superior Quality">
+                    <div class="showcase-label">Superior Quality</div>
                 </div>
                 <div class="showcase-item">
-                    <img src="documents/product_images/shortrib.jpg" alt="Short Ribs">
-                    <div class="showcase-label">Short Ribs</div>
+                    <img src="documents/product_images/shortrib.jpg" alt="Rich Marbling">
+                    <div class="showcase-label">Rich Marbling</div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Processing & Delivery Options -->
+        <section class="products-overview" id="processing" style="background: var(--light-gray);">
+            <div class="section-header">
+                <h2>Processing & Delivery Options</h2>
+                <p>We want you to have control over how your beef is processed and delivered. Here are your options:</p>
+            </div>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <h3>Standard Pickup</h3>
+                    <p style="margin-bottom: 25px;">Purchase your whole, half, or quarter beef and pick it up directly from our ranch. You then take it to your preferred butcher for processing and packaging.</p>
+                    <div style="background: var(--light-gray); padding: 15px; border-radius: 8px; border-left: 4px solid var(--yellow); text-align: left;">
+                        <p style="margin: 0; font-size: 0.95rem;"><strong>Best for:</strong> Customers who have an established relationship with a local butcher or want to choose their own processor</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <h3>We Arrange Butchering</h3>
+                    <p style="margin-bottom: 25px;">We'll coordinate processing with our trusted local butcher. Choose between vacuum-sealed packaging or traditional butcher paper wrapping.</p>
+                    <div style="background: var(--light-gray); padding: 15px; border-radius: 8px; border-left: 4px solid var(--yellow); text-align: left;">
+                        <p style="margin: 0 0 10px; font-size: 0.95rem;"><strong>Includes:</strong> Professional cutting to your specifications, vacuum sealing or butcher paper, freezing</p>
+                        <!-- PRICING: TO UPDATE -->
+                        <p style="margin: 0; font-size: 0.95rem; color: var(--dark-gray);"><em>Additional processing fee applies - contact for current rates</em></p>
+                        <!-- EXAMPLE: <em>Processing fee: $1.25/lb hanging weight</em> -->
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <h3>Delivery Service</h3>
+                    <p style="margin-bottom: 25px;">We can deliver your beef directly to your butcher of choice, saving you the trip and ensuring proper transport.</p>
+                    <div style="background: var(--light-gray); padding: 15px; border-radius: 8px; border-left: 4px solid var(--yellow); text-align: left;">
+                        <p style="margin: 0 0 10px; font-size: 0.95rem;"><strong>Best for:</strong> Customers who need delivery to their preferred processor</p>
+                        <!-- PRICING: TO UPDATE -->
+                        <p style="margin: 0; font-size: 0.95rem; color: var(--dark-gray);"><em>Delivery fee based on distance - contact for quote</em></p>
+                        <!-- EXAMPLE: <em>Delivery fee: Starting at $50 (varies by distance)</em> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="pricing-note" style="margin-top: 40px;">
+                <h4>Questions About Processing?</h4>
+                <p>Contact us to discuss processing options, get current pricing and fee estimates, and learn about our recommended butcher's services. We're happy to explain the entire process and help you choose the best option for your situation.</p>
             </div>
         </section>
 
@@ -872,42 +908,54 @@
             <div class="product-detail" id="whole-beef">
                 <div class="product-detail-header">
                     <h3>Whole Beef</h3>
-                    <p>The complete Rocky Mountain Wagyu experience</p>
+                    <p>The complete package with maximum value</p>
                 </div>
                 <div class="product-detail-content">
-                    <h4 style="font-size: 1.5rem; color: var(--black); margin: 0 0 30px;">What You Get</h4>
-                    <p style="margin-bottom: 30px;">A whole beef provides approximately 400-600 pounds of packaged beef, depending on the animal. You'll receive a complete variety of cuts including premium steaks, roasts, ground beef, and specialty cuts.</p>
+                    <h4 style="font-size: 1.5rem; color: var(--black); margin: 0 0 30px;">What You're Purchasing</h4>
+                    <p style="margin-bottom: 30px;">You're purchasing a whole live animal (or hanging weight). After processing by your butcher, this typically yields approximately 400-600 pounds of packaged beef, depending on the animal size and how it's cut. The final variety of cuts depends on your cutting instructions to the butcher.</p>
                     
                     <div style="display: flex; gap: 30px; margin-bottom: 30px; flex-wrap: wrap;">
                         <img src="documents/product_images/whole beef.jpg" alt="Whole Beef Detail" style="flex: 0 0 400px; width: 400px; height: auto; object-fit: contain; border-radius: 8px; border: 2px solid var(--yellow); box-shadow: 0 8px 25px rgba(0,0,0,0.15);">
                         
                         <div style="flex: 1; min-width: 300px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; align-content: start;">
                             <div class="feature-item">
-                                <h4>Premium Steaks</h4>
-                                <p>Ribeyes, NY strips, filet mignon, sirloin, and T-bones with exceptional marbling</p>
+                                <h4>Complete Variety</h4>
+                                <p>Work with your butcher to get premium steaks, tender roasts, versatile ground beef, and specialty cuts</p>
                             </div>
                             <div class="feature-item">
-                                <h4>Roasts & Brisket</h4>
-                                <p>Chuck roasts, rump roasts, brisket perfect for slow cooking</p>
+                                <h4>Best Value</h4>
+                                <p>Lowest price per pound when comparing purchase price to final packaged weight</p>
                             </div>
                             <div class="feature-item">
-                                <h4>Ground Beef</h4>
-                                <p>High-quality ground beef in convenient 1-2 lb packages</p>
+                                <h4>Fully Customizable</h4>
+                                <p>Specify steak thickness, roast sizes, ground beef package weights, and special requests</p>
                             </div>
                             <div class="feature-item">
-                                <h4>Specialty Cuts</h4>
-                                <p>Short ribs, stew meat, and other specialty options</p>
+                                <h4>Year's Supply</h4>
+                                <p>Enough beef to feed a large family or multiple households for 8-12 months</p>
                             </div>
                         </div>
                     </div>
 
+                    <!-- PRICING SECTION: WHOLE BEEF -->
+                    <!-- TO UPDATE: Replace the <p> content below with your actual pricing -->
                     <div class="pricing-note">
-                        <h4>Investment & Value</h4>
-                        <p>Whole beef represents the best value per pound and provides maximum variety. Contact us for current pricing and availability.</p>
+                        <h4>Pricing & Processing</h4>
+                        <p><strong>Beef Price:</strong> Contact us for current pricing<br>
+                        <strong>Processing Fee:</strong> Additional fee applies (contact for estimate)<br>
+                        <strong>Delivery Fee:</strong> Based on distance (if applicable)</p>
+                        <p style="margin-top: 15px;">The purchase price covers the animal itself. Processing fees are separate and paid directly to the butcher (if you use our butcher) or to your chosen processor.</p>
+                        
+                        <!-- EXAMPLE when you have pricing:
+                        <p><strong>Beef Price:</strong> $8.50/lb hanging weight (approximately $3,400-$4,250 per whole beef)<br>
+                        <strong>Processing Fee:</strong> $1.25/lb hanging weight (if using our butcher)<br>
+                        <strong>Delivery Fee:</strong> Starting at $50 (based on distance)</p>
+                        -->
                     </div>
+                    <!-- END PRICING SECTION: WHOLE BEEF -->
 
-                    <h4 style="font-size: 1.5rem; color: var(--black); margin: 30px 0 20px;">Perfect For</h4>
-                    <p>Large families, multiple households sharing, or anyone wanting to stock their freezer with a full year's supply of premium Wagyu beef. Requires approximately 16-20 cubic feet of freezer space.</p>
+                    <h4 style="font-size: 1.5rem; color: var(--black); margin: 30px 0 20px;">Ideal For</h4>
+                    <p>Large families wanting to stock up for the year, multiple households pooling together to split the cost and beef, or anyone serious about knowing exactly where their meat comes from. You'll need approximately 16-20 cubic feet of freezer space for the final packaged product.</p>
                 </div>
             </div>
 
@@ -915,11 +963,11 @@
             <div class="product-detail" id="half-beef">
                 <div class="product-detail-header">
                     <h3>Half Beef</h3>
-                    <p>Our most popular choice for families</p>
+                    <p>The perfect balance for most families</p>
                 </div>
                 <div class="product-detail-content">
-                    <h4 style="font-size: 1.5rem; color: var(--black); margin: 0 0 30px;">What You Get</h4>
-                    <p style="margin-bottom: 30px;">A half beef provides approximately 200-300 pounds of packaged beef. You'll receive a well-balanced selection of all major cuts, perfect for most families.</p>
+                    <h4 style="font-size: 1.5rem; color: var(--black); margin: 0 0 30px;">What You're Purchasing</h4>
+                    <p style="margin-bottom: 30px;">You're purchasing a half animal (or half of the hanging weight). After processing by your butcher, this typically yields approximately 200-300 pounds of packaged beef. This gives you a well-balanced mix of all major cut types—perfect for feeding a family of 4-6 for several months.</p>
                     
                     <div style="display: flex; gap: 30px; margin-bottom: 30px; flex-wrap: wrap;">
                         <img src="documents/product_images/Half beef.jpg" alt="Half Beef Detail" style="flex: 0 0 400px; width: 400px; height: auto; object-fit: contain; border-radius: 8px; border: 2px solid var(--yellow); box-shadow: 0 8px 25px rgba(0,0,0,0.15);">
@@ -927,30 +975,42 @@
                         <div style="flex: 1; min-width: 300px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; align-content: start;">
                             <div class="feature-item">
                                 <h4>Balanced Selection</h4>
-                                <p>Mix of premium steaks, everyday cuts, and ground beef</p>
+                                <p>A natural mix of premium steaks for special dinners and everyday cuts for weekly meals</p>
                             </div>
                             <div class="feature-item">
-                                <h4>Manageable Quantity</h4>
-                                <p>Perfect amount for a family of 4-6 for several months</p>
+                                <h4>Most Popular</h4>
+                                <p>The sweet spot between variety, value, and freezer space for most families</p>
                             </div>
                             <div class="feature-item">
-                                <h4>Cut Options</h4>
-                                <p>Customize your cutting instructions to match your preferences</p>
+                                <h4>Flexible Cutting</h4>
+                                <p>Customize how your beef is cut and packaged to match your cooking preferences</p>
                             </div>
                             <div class="feature-item">
-                                <h4>Excellent Value</h4>
-                                <p>Great price per pound with variety of premium cuts</p>
+                                <h4>Manageable Size</h4>
+                                <p>Substantial quantity without overwhelming your freezer or budget</p>
                             </div>
                         </div>
                     </div>
 
+                    <!-- PRICING SECTION: HALF BEEF -->
+                    <!-- TO UPDATE: Replace the <p> content below with your actual pricing -->
                     <div class="pricing-note">
-                        <h4>Investment & Value</h4>
-                        <p>Half beef offers excellent value and is our most requested option. Contact us for current pricing and to reserve your half.</p>
+                        <h4>Pricing & Processing</h4>
+                        <p><strong>Beef Price:</strong> Contact us for current pricing<br>
+                        <strong>Processing Fee:</strong> Additional fee applies (contact for estimate)<br>
+                        <strong>Delivery Fee:</strong> Based on distance (if applicable)</p>
+                        <p style="margin-top: 15px;">The purchase price covers your half of the animal. Processing is separate—either arranged through us for an additional fee, or you can use your own butcher.</p>
+                        
+                        <!-- EXAMPLE when you have pricing:
+                        <p><strong>Beef Price:</strong> $8.50/lb hanging weight (approximately $1,700-$2,125 per half beef)<br>
+                        <strong>Processing Fee:</strong> $1.25/lb hanging weight (if using our butcher)<br>
+                        <strong>Delivery Fee:</strong> Starting at $50 (based on distance)</p>
+                        -->
                     </div>
+                    <!-- END PRICING SECTION: HALF BEEF -->
 
-                    <h4 style="font-size: 1.5rem; color: var(--black); margin: 30px 0 20px;">Perfect For</h4>
-                    <p>Average families looking for premium quality without overwhelming freezer space. Requires approximately 8-10 cubic feet of freezer space.</p>
+                    <h4 style="font-size: 1.5rem; color: var(--black); margin: 30px 0 20px;">Ideal For</h4>
+                    <p>Families of 4-6 who want premium beef regularly but don't need an entire year's supply. Also great for two smaller households to split. You'll need approximately 8-10 cubic feet of freezer space for the final packaged product.</p>
                 </div>
             </div>
 
@@ -958,132 +1018,54 @@
             <div class="product-detail" id="quarter-beef">
                 <div class="product-detail-header">
                     <h3>Quarter Beef</h3>
-                    <p>Introduction to premium Wagyu quality</p>
+                    <p>A great way to experience our quality</p>
                 </div>
                 <div class="product-detail-content">
-                    <h4 style="font-size: 1.5rem; color: var(--black); margin: 0 0 30px;">What You Get</h4>
-                    <p style="margin-bottom: 30px;">A quarter beef provides approximately 100-150 pounds of packaged beef. You'll receive a good variety of cuts, though with less customization options than larger orders.</p>
+                    <h4 style="font-size: 1.5rem; color: var(--black); margin: 0 0 30px;">What You're Purchasing</h4>
+                    <p style="margin-bottom: 30px;">You're purchasing a quarter animal (or quarter of the hanging weight). After processing by your butcher, this typically yields approximately 100-150 pounds of packaged beef. You'll get a good variety of cuts, though with less customization flexibility than larger orders since you're working with a smaller portion. This is perfect for experiencing our beef without a huge commitment.</p>
                     
                     <div style="display: flex; gap: 30px; margin-bottom: 30px; flex-wrap: wrap;">
                         <img src="documents/product_images/quarter beef.jpg" alt="Quarter Beef Detail" style="flex: 0 0 400px; width: 400px; height: auto; object-fit: contain; border-radius: 8px; border: 2px solid var(--yellow); box-shadow: 0 8px 25px rgba(0,0,0,0.15);">
                         
                         <div style="flex: 1; min-width: 300px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; align-content: start;">
                             <div class="feature-item">
-                                <h4>Variety Pack</h4>
-                                <p>Selection of steaks, roasts, and ground beef</p>
+                                <h4>Good Variety</h4>
+                                <p>Selection of steaks, roasts, and ground beef to try different preparations</p>
                             </div>
                             <div class="feature-item">
-                                <h4>Smaller Commitment</h4>
-                                <p>Perfect for trying premium Wagyu without large investment</p>
+                                <h4>Smaller Investment</h4>
+                                <p>Experience our quality without the financial or space commitment of larger options</p>
                             </div>
                             <div class="feature-item">
                                 <h4>Easy Storage</h4>
-                                <p>Fits in standard chest freezer with room to spare</p>
+                                <p>Fits comfortably in a standard chest freezer with room to spare</p>
                             </div>
                             <div class="feature-item">
-                                <h4>Quality Guaranteed</h4>
-                                <p>Same 2.5-year raising process and care</p>
+                                <h4>Same Standards</h4>
+                                <p>Raised with our full 2.5-year process—same care, same quality</p>
                             </div>
                         </div>
                     </div>
 
+                    <!-- PRICING SECTION: QUARTER BEEF -->
+                    <!-- TO UPDATE: Replace the <p> content below with your actual pricing -->
                     <div class="pricing-note">
-                        <h4>Investment & Value</h4>
-                        <p>Quarter beef is a great way to experience Rocky Mountain Wagyu quality. Contact us for current pricing and availability.</p>
+                        <h4>Pricing & Processing</h4>
+                        <p><strong>Beef Price:</strong> Contact us for current pricing<br>
+                        <strong>Processing Fee:</strong> Additional fee applies (contact for estimate)<br>
+                        <strong>Delivery Fee:</strong> Based on distance (if applicable)</p>
+                        <p style="margin-top: 15px;">The purchase price covers your quarter of the animal. Processing is separate—either arranged through us for an additional fee, or you can use your own butcher.</p>
+                        
+                        <!-- EXAMPLE when you have pricing:
+                        <p><strong>Beef Price:</strong> $8.50/lb hanging weight (approximately $850-$1,063 per quarter beef)<br>
+                        <strong>Processing Fee:</strong> $1.25/lb hanging weight (if using our butcher)<br>
+                        <strong>Delivery Fee:</strong> Starting at $50 (based on distance)</p>
+                        -->
                     </div>
+                    <!-- END PRICING SECTION: QUARTER BEEF -->
 
-                    <h4 style="font-size: 1.5rem; color: var(--black); margin: 30px 0 20px;">Perfect For</h4>
-                    <p>Smaller households, first-time bulk beef buyers, or anyone wanting to sample our quality before committing to larger quantities. Requires approximately 4-5 cubic feet of freezer space.</p>
-                </div>
-            </div>
-
-            <!-- Individual Cuts -->
-            <div class="product-detail" id="individual-cuts">
-                <div class="product-detail-header">
-                    <h3>Individual Cuts & Ground Beef</h3>
-                    <p>Select premium cuts as available</p>
-                </div>
-                <div class="product-detail-content">
-                    
-                    <h4 style="font-size: 1.8rem; color: var(--black); margin: 30px 0 20px; text-align: center;">Premium Steaks Available</h4>
-                    <div class="showcase-gallery" style="margin-bottom: 50px;">
-                        <div class="showcase-item">
-                            <img src="documents/product_images/ribeye.jpg" alt="Ribeye Steak">
-                            <div class="showcase-label">Ribeye</div>
-                        </div>
-                        <div class="showcase-item">
-                            <img src="documents/product_images/nystrip.jpg" alt="NY Strip">
-                            <div class="showcase-label">NY Strip</div>
-                        </div>
-                        <div class="showcase-item">
-                            <img src="documents/product_images/sirloin.jpg" alt="Sirloin">
-                            <div class="showcase-label">Sirloin</div>
-                        </div>
-                        <div class="showcase-item">
-                            <img src="documents/product_images/tbone.jpg" alt="T-Bone">
-                            <div class="showcase-label">T-Bone</div>
-                        </div>
-                        <div class="showcase-item">
-                            <img src="documents/product_images/randomsteak.jpg" alt="Premium Steak">
-                            <div class="showcase-label">Premium Cuts</div>
-                        </div>
-                    </div>
-
-                    <h4 style="font-size: 1.8rem; color: var(--black); margin: 30px 0 20px; text-align: center;">Roasts & Specialty Cuts</h4>
-                    <div class="showcase-gallery" style="margin-bottom: 50px;">
-                        <div class="showcase-item">
-                            <img src="documents/product_images/brisket1.jpg" alt="Premium Brisket">
-                            <div class="showcase-label">Brisket</div>
-                        </div>
-                        <div class="showcase-item">
-                            <img src="documents/product_images/tritip.jpg" alt="Tri-Tip Roast">
-                            <div class="showcase-label">Tri-Tip</div>
-                        </div>
-                        <div class="showcase-item">
-                            <img src="documents/product_images/chuckroast.jpg" alt="Chuck Roast">
-                            <div class="showcase-label">Chuck Roast</div>
-                        </div>
-                        <div class="showcase-item">
-                            <img src="documents/product_images/rumproast.jpg" alt="Rump Roast">
-                            <div class="showcase-label">Rump Roast</div>
-                        </div>
-                        <div class="showcase-item">
-                            <img src="documents/product_images/shortrib.jpg" alt="Short Ribs">
-                            <div class="showcase-label">Short Ribs</div>
-                        </div>
-                        <div class="showcase-item">
-                            <img src="documents/product_images/shortrib 2.jpg" alt="Premium Short Ribs">
-                            <div class="showcase-label">Short Ribs</div>
-                        </div>
-                        <div class="showcase-item">
-                            <img src="documents/product_images/brisket2.jpg" alt="Multiple Briskets Available">
-                            <div class="showcase-label">Brisket Available</div>
-                        </div>
-                    </div>
-
-                    <h4 style="font-size: 1.8rem; color: var(--black); margin: 50px 0 20px; text-align: center;">Premium Ground Beef</h4>
-                    <p style="text-align: center; font-size: 1.1rem; margin-bottom: 30px;">Our Wagyu ground beef features exceptional marbling throughout, making it perfect for burgers, meatballs, tacos, and any recipe calling for ground beef.</p>
-                    
-                    <div class="ground-beef-showcase">
-                        <div class="ground-beef-item">
-                            <img src="documents/product_images/ground beef.jpg" alt="Premium Ground Beef">
-                            <h4>Ground Beef Packages</h4>
-                            <p>Available in 1 lb, 2 lb, and 5 lb packages</p>
-                        </div>
-                        <div class="ground-beef-item">
-                            <img src="documents/product_images/beefpatties.jpg" alt="Wagyu Beef Patties">
-                            <h4>Pre-Formed Patties</h4>
-                            <p>Convenient burger patties ready for the grill</p>
-                        </div>
-                    </div>
-
-                    <div class="pricing-note">
-                        <h4>How to Order Individual Cuts</h4>
-                        <p>Individual cuts and ground beef are available on a limited basis depending on our processing schedule. Contact us to check current availability and pricing for specific cuts. We recommend ordering ahead for special occasions or specific needs.</p>
-                    </div>
-
-                    <h4 style="font-size: 1.5rem; color: var(--black); margin: 30px 0 20px;">Perfect For</h4>
-                    <p>Special occasions, trying specific cuts before committing to larger quantities, supplementing your current beef supply with premium Wagyu quality, or gifting premium steaks to family and friends.</p>
+                    <h4 style="font-size: 1.5rem; color: var(--black); margin: 30px 0 20px;">Ideal For</h4>
+                    <p>Smaller households, couples, or first-time bulk beef buyers wanting to experience our quality. Also great if you're curious about the difference Wagyu makes but aren't ready for larger quantities. You'll need approximately 4-5 cubic feet of freezer space for the final packaged product.</p>
                 </div>
             </div>
         </section>
@@ -1092,43 +1074,43 @@
         <section class="presale-section" id="presale">
             <div class="section-header">
                 <h2>Pre-Sale Program</h2>
-                <p>Reserve your beef from our next generation of calves</p>
+                <p>Reserve beef from our next generation of calves</p>
             </div>
 
             <div class="presale-content">
-                <h3 style="font-size: 2rem; color: var(--black); margin-bottom: 20px;">How Pre-Sales Work</h3>
-                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px;">Our pre-sale program allows you to reserve beef from calves currently being raised. Each calf takes 2.5 years from birth to reach optimal quality and weight for processing.</p>
+                <h3 style="font-size: 2rem; color: var(--black); margin-bottom: 20px;">How It Works</h3>
+                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px;">Our pre-sale program lets you reserve beef from calves currently being raised. Each calf requires 2.5 years from birth to reach optimal quality and weight for processing. During this time, they receive the same care and attention that makes our beef exceptional.</p>
 
                 <h4 style="font-size: 1.5rem; color: var(--black); margin: 30px 0 20px;">Program Benefits</h4>
                 <div class="product-features">
                     <div class="feature-item">
                         <h4>Lock In Pricing</h4>
-                        <p>Secure today's prices for future delivery</p>
+                        <p>Secure today's prices for future delivery, protecting you from market increases</p>
                     </div>
                     <div class="feature-item">
                         <h4>Payment Plans</h4>
-                        <p>Flexible monthly payment options available</p>
+                        <p>Spread payments over time with flexible monthly options</p>
                     </div>
                     <div class="feature-item">
                         <h4>Track Your Calf</h4>
-                        <p>Updates on your calf's growth and development</p>
+                        <p>Receive periodic updates on your calf's growth and development</p>
                     </div>
                     <div class="feature-item">
                         <h4>Guaranteed Quality</h4>
-                        <p>Same premium raising standards applied</p>
+                        <p>Your calf receives our full 2.5-year raising process with no shortcuts</p>
                     </div>
                 </div>
 
-                <h4 style="font-size: 1.5rem; color: var(--black); margin: 30px 0 20px;">Important Stipulations</h4>
-                <p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 15px;">Our pre-sale program includes specific terms regarding animal loss, quality variations, refund policies, and weight guarantees. These protections ensure both you and our ranch are treated fairly throughout the 2.5-year raising period.</p>
-                <p style="font-size: 1.05rem; line-height: 1.8;"><strong>Contact us to learn more about pre-sale terms, current availability, and payment plan options.</strong></p>
+                <h4 style="font-size: 1.5rem; color: var(--black); margin: 30px 0 20px;">Program Terms</h4>
+                <p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 15px;">Our pre-sale program includes specific terms regarding animal loss, natural weight variations, refund policies, and timing guarantees. These protections ensure fairness for both you and our ranch throughout the 2.5-year raising period.</p>
+                <p style="font-size: 1.05rem; line-height: 1.8;"><strong>Contact us to discuss pre-sale options, learn about current availability, and explore payment plan details.</strong></p>
             </div>
         </section>
 
         <!-- Call to Action -->
         <section class="cta-section" id="order">
             <h2>Ready to Order?</h2>
-            <p>Contact us today to check availability, discuss your needs, and place your order for premium Rocky Mountain Wagyu beef.</p>
+            <p>Get in touch to check availability, discuss which option fits your needs, and reserve your beef. We're here to answer questions and help you make the best choice for your family.</p>
             <a href="Contact.html" class="btn btn-primary">Contact Us to Order</a>
         </section>
     </main>
