@@ -189,42 +189,61 @@
             font-weight: 600;
         }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
-            color: var(--white);
-            padding: 60px 40px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            min-height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+      /* Hero Section */
+.hero {
+    background-image: url('documents/hero_section.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--white);
+    padding: 60px 40px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.7) 100%);
+    pointer-events: none;
+}
 
-        .hero h1 {
-            font-size: 3.5rem;
-            color: var(--yellow);
-            margin-bottom: 20px;
-            font-weight: 700;
-            letter-spacing: 3px;
-            text-shadow: 0 4px 10px rgba(0,0,0,0.8);
-        }
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1000px;
+    margin: 0 auto;
+}
 
-        .hero-subtitle {
-            font-size: 1.8rem;
-            color: var(--white);
-            font-weight: 500;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
-        }
+.hero h1 {
+    font-size: 3.5rem;
+    color: var(--yellow);
+    margin-bottom: 25px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.hero-subtitle {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.hero-tagline {
+    font-size: 1.5rem;
+    color: var(--yellow);
+    font-style: italic;
+    font-weight: 600;
+}
 
         /* Section Styling */
         .section-header {
@@ -730,12 +749,13 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Ordering Process</h1>
-                <p class="hero-subtitle">Simple Steps to Premium Wagyu Beef</p>
-            </div>
-        </section>
+<section class="hero">
+    <div class="hero-content">
+        <h1>Our Beef Options</h1>
+        <p class="hero-subtitle">Choose the perfect size for your family</p>
+        <p class="hero-tagline">Pasture to plate, The Rocky Mountain Way</p>
+    </div>
+</section>
 
         <!-- Process Steps -->
         <section class="process-section" id="process">
