@@ -125,26 +125,72 @@
             margin-top: 94px;
         }
 
+        /* Table of Contents Hamburger Button */
+        .toc-hamburger {
+            position: fixed;
+            left: 20px;
+            top: 150px;
+            z-index: 501;
+            background: var(--yellow);
+            border: 3px solid var(--black);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(253, 185, 19, 0.5);
+            transition: all 0.3s;
+        }
+
+        .toc-hamburger:hover {
+            background: var(--white);
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(253, 185, 19, 0.7);
+        }
+
+        .toc-hamburger span {
+            width: 30px;
+            height: 3px;
+            background: var(--black);
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        .toc-hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(7px, 7px);
+        }
+
+        .toc-hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .toc-hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
         /* Table of Contents Sidebar */
         .toc-sidebar {
             position: fixed;
-            left: 20px;
+            left: -250px;
             top: 50%;
             transform: translateY(-50%);
             z-index: 500;
-            background: rgba(0, 0, 0, 0.85);
+            background: rgba(0, 0, 0, 0.95);
             padding: 20px 15px;
             border-radius: 12px;
             border: 2px solid var(--yellow);
             backdrop-filter: blur(10px);
             max-width: 200px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-            transition: all 0.3s;
+            transition: all 0.4s ease;
         }
 
-        .toc-sidebar:hover {
-            background: rgba(0, 0, 0, 0.95);
-            box-shadow: 0 6px 30px rgba(253, 185, 19, 0.3);
+        .toc-sidebar.active {
+            left: 20px;
         }
 
         .toc-title {
@@ -189,61 +235,61 @@
             font-weight: 600;
         }
 
-      /* Hero Section */
-.hero {
-    background-image: url('documents/hero_section.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: var(--white);
-    padding: 60px 40px 40px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    min-height: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+        /* Hero Section */
+        .hero {
+            background-image: url('documents/hero_section.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: var(--white);
+            padding: 60px 40px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.7) 100%);
-    pointer-events: none;
-}
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.7) 100%);
+            pointer-events: none;
+        }
 
-.hero-content {
-    position: relative;
-    z-index: 1;
-    max-width: 1000px;
-    margin: 0 auto;
-}
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
 
-.hero h1 {
-    font-size: 3.5rem;
-    color: var(--yellow);
-    margin-bottom: 25px;
-    font-weight: 700;
-    letter-spacing: 2px;
-}
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--yellow);
+            margin-bottom: 25px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
 
-.hero-subtitle {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    line-height: 1.6;
-}
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
 
-.hero-tagline {
-    font-size: 1.5rem;
-    color: var(--yellow);
-    font-style: italic;
-    font-weight: 600;
-}
+        .hero-tagline {
+            font-size: 1.5rem;
+            color: var(--yellow);
+            font-style: italic;
+            font-weight: 600;
+        }
 
         /* Section Styling */
         .section-header {
@@ -348,6 +394,32 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+
+        /* Options Box */
+        .options-box {
+            background: var(--light-gray);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--yellow);
+            margin-top: 20px;
+        }
+
+        .options-box h4 {
+            font-size: 1.3rem;
+            color: var(--black);
+            margin-bottom: 12px;
+        }
+
+        .options-box ul {
+            list-style-position: inside;
+            margin-left: 10px;
+        }
+
+        .options-box li {
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+            line-height: 1.6;
         }
 
         /* Packaging Options */
@@ -652,8 +724,19 @@
 
         /* Responsive */
         @media (max-width: 1024px) {
+            .toc-hamburger {
+                top: 120px;
+                left: 15px;
+                width: 50px;
+                height: 50px;
+            }
+
+            .toc-hamburger span {
+                width: 25px;
+            }
+
             .toc-sidebar {
-                display: none;
+                max-width: 180px;
             }
         }
 
@@ -692,8 +775,46 @@
                 margin-top: 82px;
             }
 
+            .toc-hamburger {
+                top: 100px;
+                left: 10px;
+                width: 45px;
+                height: 45px;
+            }
+
+            .toc-hamburger span {
+                width: 22px;
+                height: 2px;
+            }
+
+            .toc-sidebar {
+                max-width: 160px;
+                padding: 15px 10px;
+            }
+
+            .toc-sidebar.active {
+                left: 10px;
+            }
+
+            .toc-title {
+                font-size: 0.8rem;
+            }
+
+            .toc-links a {
+                font-size: 0.8rem;
+                padding: 6px 10px;
+            }
+
             .hero h1 {
                 font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.4rem;
+            }
+
+            .hero-tagline {
+                font-size: 1.2rem;
             }
 
             .section-header h2 {
@@ -736,12 +857,19 @@
         </div>
     </header>
 
+    <!-- Table of Contents Hamburger Button -->
+    <button class="toc-hamburger" onclick="toggleTOC()" aria-label="Toggle quick guide">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
     <!-- Table of Contents Sidebar -->
-    <aside class="toc-sidebar">
+    <aside class="toc-sidebar" id="tocSidebar">
         <div class="toc-title">Quick Guide</div>
         <ul class="toc-links">
             <li><a href="#process" class="toc-link">How to Order</a></li>
-            <li><a href="#packaging" class="toc-link">Packaging Options</a></li>
+            <li><a href="#packaging" class="toc-link">Butcher Options</a></li>
             <li><a href="#timeline" class="toc-link">What to Expect</a></li>
             <li><a href="#contact" class="toc-link">Place Your Order</a></li>
         </ul>
@@ -749,13 +877,13 @@
 
     <main>
         <!-- Hero Section -->
-<section class="hero">
-    <div class="hero-content">
-        <h1>Our Beef Options</h1>
-        <p class="hero-subtitle">Choose the perfect size for your family</p>
-        <p class="hero-tagline">Pasture to plate, The Rocky Mountain Way</p>
-    </div>
-</section>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Ordering Process</h1>
+                <p class="hero-subtitle">Choose the perfect size for your family</p>
+                <p class="hero-tagline">Pasture to plate, The Rocky Mountain Way</p>
+            </div>
+        </section>
 
         <!-- Process Steps -->
         <section class="process-section" id="process">
@@ -770,8 +898,8 @@
                     <div class="step-number">1</div>
                     <div class="step-content">
                         <h3>Contact Us</h3>
-                        <p>Give us a call at <strong>801-301-3850</strong> or email us at <strong>rockymtnwagyu@gmail.com</strong> to discuss your needs. We'll help you determine the right option for your family—whether that's a whole beef, half, quarter, or individual cuts.</p>
-                        <p>We operate on a farming timeline, so don't worry about rushing. We're happy to take the time to answer all your questions and explain the process in detail.</p>
+                        <p>Give us a call at <strong>801-301-3850</strong> or email us at <strong>rockymtnwagyu@gmail.com</strong> to discuss your needs. We'll help you determine the right option for your family—whether that's a whole beef, half, or quarter.</p>
+                        <p>We operate on a farming timeline, so don't worry about rushing. We're happy to take the time to answer all your questions and explain the process in detail, including pricing and butcher options.</p>
                     </div>
                     <div class="step-image">
                         <img src="documents/orders_images/ordering1.jpg" alt="Contact us to start your order">
@@ -784,7 +912,7 @@
                     <div class="step-content">
                         <h3>Select Your Beef</h3>
                         <p>Choose from our available cattle or reserve a spot in our pre-sale program. Each animal is raised for a full 2.5 years to ensure optimal marbling and flavor.</p>
-                        <p>If you're ordering a whole, half, or quarter beef, we'll discuss timing and availability. For individual cuts, we'll let you know what's currently in stock from our most recent processing.</p>
+                        <p>We sell whole, half, and quarter beef only. This ensures you get the best value and complete control over how your beef is cut and packaged.</p>
                     </div>
                     <div class="step-image">
                         <img src="documents/orders_images/cows lined up.jpg" alt="Select your beef from our cattle">
@@ -795,12 +923,41 @@
                 <div class="step">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <h3>Customize Your Cuts</h3>
-                        <p>For whole, half, and quarter beef orders, you'll work directly with our butcher to specify exactly how you want your beef cut and packaged. Choose your preferred steak thickness, roast sizes, and ground beef package amounts.</p>
-                        <p>We'll provide you with a cutting instructions form that walks you through all the options. Don't worry if you're not sure what to choose—we're happy to provide recommendations based on your family's cooking preferences.</p>
+                        <h3>Choose Your Butcher Option</h3>
+                        <p>You have three options for processing your beef:</p>
+                        
+                        <div class="options-box">
+                            <h4>Standard: Use Your Own Butcher</h4>
+                            <ul>
+                                <li>Pick up your beef from our ranch</li>
+                                <li>Take it to your preferred butcher</li>
+                                <li>Work directly with them on cutting instructions</li>
+                                <li>Most economical option</li>
+                            </ul>
+                        </div>
+
+                        <div class="options-box" style="margin-top: 15px;">
+                            <h4>Premium: Delivery to Your Butcher</h4>
+                            <ul>
+                                <li>We deliver to your chosen butcher</li>
+                                <li>You specify cutting instructions with your butcher</li>
+                                <li>Saves you the transport hassle</li>
+                                <li>Additional delivery fee based on distance</li>
+                            </ul>
+                        </div>
+
+                        <div class="options-box" style="margin-top: 15px;">
+                            <h4>Premium: Use Our Butcher</h4>
+                            <ul>
+                                <li>We coordinate everything with our trusted local butcher</li>
+                                <li>You choose your cuts and package sizes</li>
+                                <li>Choice of vacuum sealed or butcher paper packaging</li>
+                                <li>Additional processing fee (discussed when ordering)</li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="step-image">
-                        <img src="documents/orders_images/ordering 3.jpg" alt="Customize your cuts and packaging">
+                        <img src="documents/orders_images/ordering 3.jpg" alt="Choose your butcher options">
                     </div>
                 </div>
 
@@ -808,12 +965,12 @@
                 <div class="step">
                     <div class="step-number">4</div>
                     <div class="step-content">
-                        <h3>Processing & Packaging</h3>
-                        <p>Your beef will be professionally processed by our trusted local butcher who specializes in premium cuts. All meat is carefully inspected, cut to your specifications, and packaged to preserve freshness.</p>
-                        <p>You can choose between vacuum-sealed packaging for maximum freezer life or traditional butcher paper wrapping. Both options keep your beef fresh for months in the freezer.</p>
+                        <h3>Specify Your Cuts</h3>
+                        <p>If you're using your own butcher or having us deliver to your butcher, you'll work directly with them to specify how you want your beef cut and packaged.</p>
+                        <p>If you're using our butcher service, we'll provide you with a cutting instructions form. Choose your preferred steak thickness, roast sizes, and ground beef package amounts. We're happy to provide recommendations based on your family's cooking preferences if this is your first time.</p>
                     </div>
                     <div class="step-image">
-                        <img src="documents/orders_images/whole live cow ordering.jpg" alt="Professional processing">
+                        <img src="documents/orders_images/whole live cow ordering.jpg" alt="Specify your preferred cuts">
                     </div>
                 </div>
 
@@ -821,8 +978,9 @@
                 <div class="step">
                     <div class="step-number">5</div>
                     <div class="step-content">
-                        <h3>Pickup or Delivery</h3>
-                        <p>Once your beef is processed and packaged, we'll contact you to arrange pickup. We'll coordinate a convenient time that works with your schedule.</p>
+                        <h3>Pickup Your Beef</h3>
+                        <p><strong>Standard Option:</strong> Pick up your live animal or hanging carcass from our ranch and transport to your butcher.</p>
+                        <p><strong>Using Our Butcher:</strong> We'll contact you when your beef is processed, packaged, and ready for pickup. We'll coordinate a convenient time that works with your schedule.</p>
                         <p>Make sure you have adequate freezer space ready—we recommend 16-20 cubic feet for a whole beef, 8-10 cubic feet for a half, and 4-5 cubic feet for a quarter.</p>
                     </div>
                     <div class="step-image">
@@ -835,8 +993,8 @@
         <!-- Packaging Options -->
         <section class="packaging-section" id="packaging">
             <div class="section-header">
-                <h2>Packaging Options</h2>
-                <p>Choose the packaging method that best suits your needs. Both options preserve quality and freshness.</p>
+                <h2>Our Butcher Service Options</h2>
+                <p>If you choose to use our butcher service (premium option), you can select your packaging method. Both options preserve quality and freshness.</p>
             </div>
 
             <div class="packaging-grid">
@@ -846,6 +1004,7 @@
                         <h3>Vacuum Sealed</h3>
                         <p>Our vacuum-sealed packaging removes all air from the package, providing maximum protection against freezer burn and extending shelf life up to 2-3 years in the freezer.</p>
                         <p><strong>Benefits:</strong> Longest freezer life, prevents freezer burn, easy to see contents, space-efficient stacking</p>
+                        <p style="margin-top: 15px; font-size: 0.95rem; font-style: italic;">*Available only when using our butcher service</p>
                     </div>
                 </div>
 
@@ -855,8 +1014,15 @@
                         <h3>Butcher Paper</h3>
                         <p>Traditional butcher paper wrapping provides excellent protection while being more eco-friendly. Beef stays fresh for 6-12 months in the freezer when properly wrapped.</p>
                         <p><strong>Benefits:</strong> Traditional method, environmentally friendly, easy to label, classic presentation</p>
+                        <p style="margin-top: 15px; font-size: 0.95rem; font-style: italic;">*Available only when using our butcher service</p>
                     </div>
                 </div>
+            </div>
+
+            <div style="max-width: 900px; margin: 40px auto; background: var(--white); padding: 30px; border-radius: 12px; border-left: 6px solid var(--yellow); box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                <h3 style="font-size: 1.8rem; color: var(--black); margin-bottom: 15px;">Pricing Information</h3>
+                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 15px;">Butcher service pricing varies based on the size of your order and packaging preferences. We'll provide a detailed cost breakdown when you place your order.</p>
+                <p style="font-size: 1.1rem; line-height: 1.8;"><strong>Contact us to discuss:</strong> Current processing fees, delivery charges (if applicable), and estimated total costs for your specific order.</p>
             </div>
         </section>
 
@@ -872,7 +1038,7 @@
                     <div class="timeline-icon">📞</div>
                     <div class="timeline-text">
                         <h4>Initial Contact</h4>
-                        <p>Reach out to us and we'll discuss your needs, answer questions, and help you select the right option for your family.</p>
+                        <p>Reach out to us and we'll discuss your needs, answer questions, and help you select the right option—whole, half, or quarter beef. We'll also explain butcher options and pricing.</p>
                     </div>
                 </div>
 
@@ -885,26 +1051,26 @@
                 </div>
 
                 <div class="timeline-item">
-                    <div class="timeline-icon">📋</div>
-                    <div class="timeline-text">
-                        <h4>Cutting Instructions (1-2 weeks before processing)</h4>
-                        <p>You'll receive a cutting instructions form to specify how you want your beef prepared. We'll help you through this process if it's your first time.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
                     <div class="timeline-icon">🔪</div>
                     <div class="timeline-text">
-                        <h4>Processing (2-3 weeks)</h4>
-                        <p>Your beef is professionally butchered and aged to perfection, then cut and packaged according to your specifications.</p>
+                        <h4>Butcher Coordination</h4>
+                        <p>Depending on your choice: coordinate with your own butcher, or we'll handle everything with our butcher service. If using our butcher, you'll receive cutting instructions to specify your preferences.</p>
                     </div>
                 </div>
 
                 <div class="timeline-item">
                     <div class="timeline-icon">📦</div>
                     <div class="timeline-text">
-                        <h4>Pickup Notification</h4>
-                        <p>We'll contact you when your beef is ready and arrange a convenient pickup time. Bring your coolers and get ready to stock your freezer with premium Wagyu!</p>
+                        <h4>Processing (If Using Our Butcher: 2-3 weeks)</h4>
+                        <p>Your beef is professionally butchered and aged to perfection, then cut and packaged according to your specifications.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">✅</div>
+                    <div class="timeline-text">
+                        <h4>Pickup</h4>
+                        <p>Standard option: Pick up from our ranch and transport to your butcher. Premium option: We'll notify you when your processed beef is ready for pickup. Bring your coolers and get ready to stock your freezer with premium Wagyu!</p>
                     </div>
                 </div>
             </div>
@@ -993,12 +1159,28 @@
             document.getElementById('navMenu').classList.toggle('active');
         }
 
+        function toggleTOC() {
+            const sidebar = document.getElementById('tocSidebar');
+            const hamburger = document.querySelector('.toc-hamburger');
+            sidebar.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
         document.addEventListener('click', function(event) {
             const nav = document.getElementById('navMenu');
             const toggle = document.querySelector('.mobile-menu-toggle');
+            const tocSidebar = document.getElementById('tocSidebar');
+            const tocHamburger = document.querySelector('.toc-hamburger');
             
+            // Close main menu if clicking outside
             if (!nav.contains(event.target) && !toggle.contains(event.target)) {
                 nav.classList.remove('active');
+            }
+
+            // Close TOC menu if clicking outside
+            if (!tocSidebar.contains(event.target) && !tocHamburger.contains(event.target)) {
+                tocSidebar.classList.remove('active');
+                tocHamburger.classList.remove('active');
             }
         });
 
@@ -1026,6 +1208,10 @@
                         top: offsetPosition,
                         behavior: 'smooth'
                     });
+
+                    // Close the TOC sidebar after clicking a link
+                    document.getElementById('tocSidebar').classList.remove('active');
+                    document.querySelector('.toc-hamburger').classList.remove('active');
                 }
             });
         });
