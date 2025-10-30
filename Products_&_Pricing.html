@@ -151,10 +151,45 @@
             margin-top: 94px;
         }
 
+        /* Table of Contents Toggle Button */
+        .toc-toggle {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 501;
+            background: rgba(0, 0, 0, 0.85);
+            padding: 12px 10px;
+            border-radius: 8px;
+            border: 2px solid var(--yellow);
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .toc-toggle:hover {
+            background: rgba(253, 185, 19, 0.9);
+        }
+
+        .toc-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: var(--yellow);
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        .toc-toggle:hover span {
+            background: var(--black);
+        }
+
         /* Table of Contents Sidebar */
         .toc-sidebar {
             position: fixed;
-            left: 20px;
+            left: -220px;
             top: 50%;
             transform: translateY(-50%);
             z-index: 500;
@@ -163,12 +198,14 @@
             border-radius: 12px;
             border: 2px solid var(--yellow);
             backdrop-filter: blur(10px);
-            max-width: 200px;
+            width: 200px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
             transition: all 0.3s;
         }
 
+        .toc-toggle:hover + .toc-sidebar,
         .toc-sidebar:hover {
+            left: 20px;
             background: rgba(0, 0, 0, 0.95);
             box-shadow: 0 6px 30px rgba(253, 185, 19, 0.3);
         }
@@ -223,10 +260,21 @@
             text-align: center;
             position: relative;
             overflow: hidden;
-            min-height: 300px;
+            min-height: 400px;
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.2) 100%);
+            pointer-events: none;
         }
 
         .hero-content {
@@ -685,6 +733,7 @@
 
         /* Responsive */
         @media (max-width: 1024px) {
+            .toc-toggle,
             .toc-sidebar {
                 display: none;
             }
@@ -717,6 +766,18 @@
                 transform: translateX(0);
             }
 
+            nav li {
+                width: 100%;
+                text-align: center;
+                padding: 15px 0;
+                border-bottom: 1px solid var(--dark-gray);
+            }
+
+            nav a {
+                display: block;
+                font-size: 1.1rem;
+            }
+
             .mobile-menu-toggle {
                 display: block;
             }
@@ -725,8 +786,18 @@
                 margin-top: 82px;
             }
 
+            .hero {
+                min-height: 300px;
+                padding: 50px 20px;
+            }
+
             .hero h1 {
                 font-size: 2.5rem;
+                letter-spacing: 2px;
+            }
+
+            .hero-subtitle {
+                font-size: 1.4rem;
             }
 
             .section-header h2 {
@@ -762,6 +833,13 @@
             </nav>
         </div>
     </header>
+
+    <!-- Table of Contents Toggle Button -->
+    <div class="toc-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 
     <!-- Table of Contents Sidebar -->
     <aside class="toc-sidebar">
