@@ -148,67 +148,75 @@
         }
 
         main {
-    margin-top: 134;
-}
+            margin-top: 94px;
+        }
 
-
-        /* Table of Contents Toggle Button */
-        .toc-toggle {
+        /* Table of Contents Hamburger Button */
+        .toc-hamburger {
             position: fixed;
             left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
+            top: 150px;
             z-index: 501;
-            background: rgba(0, 0, 0, 0.85);
-            padding: 12px 10px;
-            border-radius: 8px;
-            border: 2px solid var(--yellow);
-            cursor: pointer;
-            transition: all 0.3s;
+            background: var(--yellow);
+            border: 3px solid var(--black);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
             display: flex;
             flex-direction: column;
-            gap: 4px;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(253, 185, 19, 0.5);
+            transition: all 0.3s;
         }
 
-        .toc-toggle:hover {
-            background: rgba(253, 185, 19, 0.9);
+        .toc-hamburger:hover {
+            background: var(--white);
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(253, 185, 19, 0.7);
         }
 
-        .toc-toggle span {
-            display: block;
-            width: 25px;
+        .toc-hamburger span {
+            width: 30px;
             height: 3px;
-            background: var(--yellow);
+            background: var(--black);
             border-radius: 2px;
             transition: all 0.3s;
         }
 
-        .toc-toggle:hover span {
-            background: var(--black);
+        .toc-hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(7px, 7px);
+        }
+
+        .toc-hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .toc-hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
         }
 
         /* Table of Contents Sidebar */
         .toc-sidebar {
             position: fixed;
-            left: -220px;
+            left: -250px;
             top: 50%;
             transform: translateY(-50%);
             z-index: 500;
-            background: rgba(0, 0, 0, 0.85);
+            background: rgba(0, 0, 0, 0.95);
             padding: 20px 15px;
             border-radius: 12px;
             border: 2px solid var(--yellow);
             backdrop-filter: blur(10px);
-            width: 200px;
+            max-width: 200px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-            transition: all 0.3s;
+            transition: all 0.4s ease;
         }
 
-        .toc-toggle:hover + .toc-sidebar,
-        .toc-sidebar:hover {
+        .toc-sidebar.active {
             left: 20px;
-            background: rgba(0, 0, 0, 0.95);
-            box-shadow: 0 6px 30px rgba(253, 185, 19, 0.3);
         }
 
         .toc-title {
@@ -746,9 +754,19 @@
 
         /* Responsive */
         @media (max-width: 1024px) {
-            .toc-toggle,
+            .toc-hamburger {
+                top: 120px;
+                left: 15px;
+                width: 50px;
+                height: 50px;
+            }
+
+            .toc-hamburger span {
+                width: 25px;
+            }
+
             .toc-sidebar {
-                display: none;
+                max-width: 180px;
             }
         }
 
@@ -799,23 +817,53 @@
                 margin-top: 82px;
             }
 
+            .toc-hamburger {
+                top: 100px;
+                left: 10px;
+                width: 45px;
+                height: 45px;
+            }
+
+            .toc-hamburger span {
+                width: 22px;
+                height: 2px;
+            }
+
+            .toc-sidebar {
+                max-width: 160px;
+                padding: 15px 10px;
+            }
+
+            .toc-sidebar.active {
+                left: 10px;
+            }
+
+            .toc-title {
+                font-size: 0.8rem;
+            }
+
+            .toc-links a {
+                font-size: 0.8rem;
+                padding: 6px 10px;
+            }
+
             .hero {
-    min-height: 450px;
-    padding: 50px 20px;
-}
+                min-height: 450px;
+                padding: 50px 20px;
+            }
 
-.hero h1 {
-    font-size: 2.5rem;
-    letter-spacing: 1.5px;
-}
+            .hero h1 {
+                font-size: 2.5rem;
+                letter-spacing: 1.5px;
+            }
 
-.hero-subtitle {
-    font-size: 1.4rem;
-}
+            .hero-subtitle {
+                font-size: 1.4rem;
+            }
 
-.hero-tagline {
-    font-size: 1.2rem;
-}
+            .hero-tagline {
+                font-size: 1.2rem;
+            }
 
             .section-header h2 {
                 font-size: 2.2rem;
@@ -851,15 +899,15 @@
         </div>
     </header>
 
-    <!-- Table of Contents Toggle Button -->
-    <div class="toc-toggle">
+    <!-- Table of Contents Hamburger Button -->
+    <button class="toc-hamburger" onclick="toggleTOC()" aria-label="Toggle quick guide">
         <span></span>
         <span></span>
         <span></span>
-    </div>
+    </button>
 
     <!-- Table of Contents Sidebar -->
-    <aside class="toc-sidebar">
+    <aside class="toc-sidebar" id="tocSidebar">
         <div class="toc-title">Quick Guide</div>
         <ul class="toc-links">
             <li><a href="#overview" class="toc-link">Overview</a></li>
@@ -1272,12 +1320,28 @@
             document.getElementById('navMenu').classList.toggle('active');
         }
 
+        function toggleTOC() {
+            const sidebar = document.getElementById('tocSidebar');
+            const hamburger = document.querySelector('.toc-hamburger');
+            sidebar.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
         document.addEventListener('click', function(event) {
             const nav = document.getElementById('navMenu');
             const toggle = document.querySelector('.mobile-menu-toggle');
+            const tocSidebar = document.getElementById('tocSidebar');
+            const tocHamburger = document.querySelector('.toc-hamburger');
             
+            // Close main menu if clicking outside
             if (!nav.contains(event.target) && !toggle.contains(event.target)) {
                 nav.classList.remove('active');
+            }
+
+            // Close TOC menu if clicking outside
+            if (!tocSidebar.contains(event.target) && !tocHamburger.contains(event.target)) {
+                tocSidebar.classList.remove('active');
+                tocHamburger.classList.remove('active');
             }
         });
 
@@ -1305,6 +1369,10 @@
                         top: offsetPosition,
                         behavior: 'smooth'
                     });
+
+                    // Close the TOC sidebar after clicking a link
+                    document.getElementById('tocSidebar').classList.remove('active');
+                    document.querySelector('.toc-hamburger').classList.remove('active');
                 }
             });
         });
