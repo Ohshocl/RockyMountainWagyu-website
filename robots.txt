@@ -1,0 +1,16 @@
+# robots.txt for Rocky Mountain Wagyu
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://rockymountainwagyufarm.com/sitemap.xml
+
+# Block unnecessary folders
+Disallow: /documents/
+Disallow: /images/
+Disallow: /assets/
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
