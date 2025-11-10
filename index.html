@@ -1320,223 +1320,145 @@
       ]
     }
     </script>
+<!-- FIXED PRODUCT SCHEMA - Replace the existing RanchOrFarm schema with this version -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RanchOrFarm",
+  "name": "Rocky Mountain Wagyu",
+  "alternateName": ["Rocky Mountain Wagyu Farm", "Rocky Mountain Wagyu Ranch"],
+  "description": "Premium organic Wagyu beef ranch in Utah specializing in whole, half, and quarter beef sales. Cattle raised for 2.5 years without hormones or antibiotics in mountain pastures.",
+  "url": "https://rockymountainwagyufarm.com",
+  "logo": "https://rockymountainwagyufarm.com/documents/Rocky%20Mountain%20Wagyu%20Logo.png",
+  "image": "https://rockymountainwagyufarm.com/documents/Rocky%20Mountain%20Wagyu%20Logo.png",
+  "telephone": "+1-801-301-3850",
+  "email": "rockymtnwagyu@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Utah",
+    "addressRegion": "UT",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "40.5852602",
+    "longitude": "-111.9387235"
+  },
+  "openingHours": "Mo-Su",
+  "priceRange": "$$-$$$",
+  "servesCuisine": "American",
+  "slogan": "Pasture to plate, The Rocky Mountain Way",
+  "founder": {
+    "@type": "Person",
+    "name": "Anthony (Bob)"
+  },
+  "areaServed": {
+    "@type": "State",
+    "name": "Utah"
+  },
+  "sameAs": [
+    "https://www.instagram.com/RockymtnWagyu",
+    "https://www.tiktok.com/@Rockymtnwagyu"
+  ],
+  "knowsAbout": [
+    "Wagyu Beef",
+    "Organic Beef",
+    "American Wagyu",
+    "Sustainable Farming",
+    "Mountain Raised Cattle",
+    "Utah Ranch"
+  ]
+}
+</script>
 
-    <!-- Whole Wagyu Beef Product Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Product",
-      "name": "Whole Wagyu Beef",
-      "description": "Complete animal, perfect for large families or shared purchases. Premium organic Wagyu beef raised for 2.5 years in Utah's mountains. No hormones, no antibiotics.",
-      "image": [
-        "https://rockymountainwagyufarm.com/documents/wagyu_steaks.jpg",
-        "https://rockymountainwagyufarm.com/documents/cooked%20wagyu.jpg",
-        "https://rockymountainwagyufarm.com/documents/Rocky%20Mountain%20Wagyu%20Logo.png"
-      ],
-      "brand": {
-        "@type": "Brand",
-        "name": "Rocky Mountain Wagyu"
-      },
-      "offers": {
-        "@type": "Offer",
-        "url": "https://rockymountainwagyufarm.com/Products_&_Pricing.html",
-        "priceCurrency": "USD",
-        "price": "15.99",
-        "priceSpecification": {
-          "@type": "UnitPriceSpecification",
-          "price": "15.99",
-          "priceCurrency": "USD",
-          "unitCode": "LBR",
-          "unitText": "per pound hanging weight"
-        },
-        "availability": "https://schema.org/InStock",
-        "priceValidUntil": "2025-12-31",
-        "shippingDetails": {
-          "@type": "OfferShippingDetails",
-          "shippingRate": {
-            "@type": "MonetaryAmount",
-            "value": "0",
-            "currency": "USD"
-          },
-          "deliveryTime": {
-            "@type": "ShippingDeliveryTime",
-            "handlingTime": {
-              "@type": "QuantitativeValue",
-              "minValue": "7",
-              "maxValue": "14",
-              "unitCode": "DAY"
-            }
-          }
-        },
-        "hasMerchantReturnPolicy": {
-          "@type": "MerchantReturnPolicy",
-          "applicableCountry": "US",
-          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-          "merchantReturnDays": "7"
-        },
-        "seller": {
-          "@type": "Organization",
-          "name": "Rocky Mountain Wagyu",
-          "url": "https://rockymountainwagyufarm.com"
-        }
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "ratingCount": "1",
-        "bestRating": "5"
-      },
-      "category": "Food & Beverage > Meat & Seafood > Beef",
-      "gtin": "N/A",
-      "mpn": "RMW-WHOLE",
-      "sku": "RMW-WHOLE-BEEF"
+<!-- SEPARATE INDIVIDUAL PRODUCT SCHEMAS - Add these as separate schemas -->
+
+<!-- Whole Wagyu Beef Product Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Whole Wagyu Beef",
+  "description": "Complete animal, perfect for large families or shared purchases. Premium organic Wagyu beef raised for 2.5 years in Utah's mountains.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Rocky Mountain Wagyu"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://rockymountainwagyufarm.com/Products_&_Pricing.html",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "seller": {
+      "@type": "Organization",
+      "name": "Rocky Mountain Wagyu"
     }
-    </script>
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "ratingCount": "1"
+  }
+}
+</script>
 
-    <!-- Half Wagyu Beef Product Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Product", 
-      "name": "Half Wagyu Beef",
-      "description": "Balanced selection of roasts, steaks, and ground beef. Our most popular option with excellent value for families. Premium organic Wagyu beef raised for 2.5 years in Utah's mountains.",
-      "image": [
-        "https://rockymountainwagyufarm.com/documents/wagyu_steaks.jpg",
-        "https://rockymountainwagyufarm.com/documents/cooked%20wagyu.jpg",
-        "https://rockymountainwagyufarm.com/documents/Rocky%20Mountain%20Wagyu%20Logo.png"
-      ],
-      "brand": {
-        "@type": "Brand",
-        "name": "Rocky Mountain Wagyu"
-      },
-      "offers": {
-        "@type": "Offer",
-        "url": "https://rockymountainwagyufarm.com/Products_&_Pricing.html",
-        "priceCurrency": "USD",
-        "price": "15.99",
-        "priceSpecification": {
-          "@type": "UnitPriceSpecification",
-          "price": "15.99", 
-          "priceCurrency": "USD",
-          "unitCode": "LBR",
-          "unitText": "per pound hanging weight"
-        },
-        "availability": "https://schema.org/InStock",
-        "priceValidUntil": "2025-12-31",
-        "shippingDetails": {
-          "@type": "OfferShippingDetails",
-          "shippingRate": {
-            "@type": "MonetaryAmount",
-            "value": "0",
-            "currency": "USD"
-          },
-          "deliveryTime": {
-            "@type": "ShippingDeliveryTime",
-            "handlingTime": {
-              "@type": "QuantitativeValue",
-              "minValue": "7",
-              "maxValue": "14",
-              "unitCode": "DAY"
-            }
-          }
-        },
-        "hasMerchantReturnPolicy": {
-          "@type": "MerchantReturnPolicy",
-          "applicableCountry": "US",
-          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-          "merchantReturnDays": "7"
-        },
-        "seller": {
-          "@type": "Organization",
-          "name": "Rocky Mountain Wagyu",
-          "url": "https://rockymountainwagyufarm.com"
-        }
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "ratingCount": "1",
-        "bestRating": "5"
-      },
-      "category": "Food & Beverage > Meat & Seafood > Beef",
-      "gtin": "N/A",
-      "mpn": "RMW-HALF",
-      "sku": "RMW-HALF-BEEF"
+<!-- Half Wagyu Beef Product Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Half Wagyu Beef",
+  "description": "Balanced selection of roasts, steaks, and ground beef. Our most popular option with excellent value for families.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Rocky Mountain Wagyu"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://rockymountainwagyufarm.com/Products_&_Pricing.html",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "seller": {
+      "@type": "Organization",
+      "name": "Rocky Mountain Wagyu"
     }
-    </script>
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "ratingCount": "1"
+  }
+}
+</script>
 
-    <!-- Quarter Wagyu Beef Product Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Product",
-      "name": "Quarter Wagyu Beef", 
-      "description": "Perfect introduction to premium quality without committing to a full or half. Great way to experience the difference. Premium organic Wagyu beef raised for 2.5 years in Utah's mountains.",
-      "image": [
-        "https://rockymountainwagyufarm.com/documents/wagyu_steaks.jpg",
-        "https://rockymountainwagyufarm.com/documents/cooked%20wagyu.jpg", 
-        "https://rockymountainwagyufarm.com/documents/Rocky%20Mountain%20Wagyu%20Logo.png"
-      ],
-      "brand": {
-        "@type": "Brand",
-        "name": "Rocky Mountain Wagyu"
-      },
-      "offers": {
-        "@type": "Offer",
-        "url": "https://rockymountainwagyufarm.com/Products_&_Pricing.html",
-        "priceCurrency": "USD",
-        "price": "15.99",
-        "priceSpecification": {
-          "@type": "UnitPriceSpecification",
-          "price": "15.99",
-          "priceCurrency": "USD", 
-          "unitCode": "LBR",
-          "unitText": "per pound hanging weight"
-        },
-        "availability": "https://schema.org/InStock",
-        "priceValidUntil": "2025-12-31",
-        "shippingDetails": {
-          "@type": "OfferShippingDetails",
-          "shippingRate": {
-            "@type": "MonetaryAmount",
-            "value": "0",
-            "currency": "USD"
-          },
-          "deliveryTime": {
-            "@type": "ShippingDeliveryTime",
-            "handlingTime": {
-              "@type": "QuantitativeValue",
-              "minValue": "7",
-              "maxValue": "14",
-              "unitCode": "DAY"
-            }
-          }
-        },
-        "hasMerchantReturnPolicy": {
-          "@type": "MerchantReturnPolicy",
-          "applicableCountry": "US",
-          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-          "merchantReturnDays": "7"
-        },
-        "seller": {
-          "@type": "Organization",
-          "name": "Rocky Mountain Wagyu",
-          "url": "https://rockymountainwagyufarm.com"
-        }
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "ratingCount": "1", 
-        "bestRating": "5"
-      },
-      "category": "Food & Beverage > Meat & Seafood > Beef",
-      "gtin": "N/A",
-      "mpn": "RMW-QUARTER",
-      "sku": "RMW-QUARTER-BEEF"
+<!-- Quarter Wagyu Beef Product Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Quarter Wagyu Beef",
+  "description": "Perfect introduction to premium quality without committing to a full or half. Great way to experience the difference.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Rocky Mountain Wagyu"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://rockymountainwagyufarm.com/Products_&_Pricing.html",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "seller": {
+      "@type": "Organization",
+      "name": "Rocky Mountain Wagyu"
     }
-    </script>
-
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "ratingCount": "1"
+  }
+}
+</script>
     <!-- LocalBusiness Schema -->
     <script type="application/ld+json">
     {
@@ -1667,3 +1589,404 @@
       ]
     }
     </script>
+</head>
+<body>
+    <!-- Header with Logo and Navigation -->
+    <header>
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="documents/Rocky Mountain Wagyu Logo.png" alt="Rocky Mountain Wagyu - Premium organic Wagyu beef ranch in Utah">
+            </div>
+            <button class="mobile-menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About_us.html">About</a></li>
+                    <li><a href="Products_&_Pricing.html">Products</a></li>
+                    <li><a href="Ordering_Process.html">Ordering</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Table of Contents Hamburger Button -->
+    <button class="toc-hamburger" onclick="toggleTOC()" aria-label="Toggle quick guide">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Table of Contents Sidebar -->
+    <aside class="toc-sidebar" id="tocSidebar">
+        <div class="toc-title">Quick Guide</div>
+        <ul class="toc-links">
+            <li><a href="#home" class="toc-link">Home</a></li>
+            <li><a href="#why" class="toc-link">Why Wagyu</a></li>
+            <li><a href="#special" class="toc-link">What's Special</a></li>
+            <li><a href="#quality" class="toc-link">Our Quality</a></li>
+            <li><a href="#products" class="toc-link">Products</a></li>
+            <li><a href="#faq" class="toc-link">FAQ</a></li>
+            <li><a href="#social" class="toc-link">Follow Us</a></li>
+            <li><a href="#contact" class="toc-link">Contact</a></li>
+        </ul>
+    </aside>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1>Rocky Mountain Wagyu</h1>
+                <p class="hero-subtitle">Premium Organic Wagyu Beef from Utah</p>
+                <p class="hero-tagline">Pasture to plate, The Rocky Mountain Way</p>
+                <p class="hero-mission">We deliver premium, organic beef raised with care for 2.5 years in Utah's pristine mountains—from our family ranch straight to your table.</p>
+                <div class="hero-cta">
+                    <a href="Products_&_Pricing.html" class="btn btn-primary">Shop Our Beef</a>
+                    <a href="About_us.html" class="btn btn-secondary">Our Story</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Bar -->
+        <div class="trust-bar">
+            <p>Family-Owned Utah Ranch • 2.5 Year Raising Period • No Hormones • No Antibiotics • 100% Mountain-Raised</p>
+        </div>
+
+        <!-- Why We Raise Wagyu -->
+        <section class="why-section" id="why">
+            <div class="section-header">
+                <h2>Why We Raise Wagyu</h2>
+                <p>At our ranch, the mission is simple: feed families healthy, organic beef they can trust.</p>
+            </div>
+            
+            <!-- Calf Showcase -->
+            <div style="max-width: 800px; margin: 0 auto 50px; text-align: center;">
+                <img src="documents/baby%20cow%201.PNG" alt="Wagyu calf at Utah ranch receiving individual care" style="width: 100%; max-width: 600px; height: auto; border-radius: 15px; box-shadow: 0 10px 35px rgba(0,0,0,0.2); border: 4px solid var(--yellow);">
+                <p style="margin-top: 20px; font-size: 1.1rem; color: var(--dark-gray); font-style: italic;">Meet one of our calves—each animal receives individual attention throughout their 2.5-year journey</p>
+            </div>
+            
+            <div class="why-content">
+                <p>We started this ranch because families deserve access to premium, healthy beef raised with integrity and care. Every decision we make is guided by one principle: <strong>would we serve this to our own families?</strong></p>
+                
+                <p>The answer is always yes. From Utah's mountain pastures to your dinner table, we maintain the highest standards of animal welfare, environmental stewardship, and quality control. Our cattle roam freely on natural mountain grazing lands, producing superior marbling and rich flavor without hormones or antibiotics.</p>
+                
+                <p>This isn't just a business—it's our commitment to your family's health and happiness through exceptional beef you can trust.</p>
+            </div>
+        </section>
+
+        <!-- What Makes Wagyu Special -->
+        <section class="wagyu-section" id="special">
+            <div class="section-header">
+                <h2 style="color: var(--yellow);">What Makes Our Wagyu Special</h2>
+                <p style="color: var(--white);">Renowned for exceptional marbling, buttery texture, and rich flavor, this beef represents the finest American cattle raised in Utah's pristine mountain environment.</p>
+            </div>
+
+            <!-- Visual Showcase of Quality -->
+            <div class="wagyu-visual-showcase">
+                <div class="wagyu-image-card">
+                    <img src="documents/wagyu_steaks.jpg" alt="Premium Wagyu beef steak with perfect marbling from Utah ranch">
+                    <div class="wagyu-image-label">Perfect Marbling</div>
+                </div>
+                <div class="wagyu-image-card">
+                    <img src="documents/cooked%20wagyu.jpg" alt="Beautifully cooked Wagyu steak from Utah mountains">
+                    <div class="wagyu-image-label">Expert Quality</div>
+                </div>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>Superior Marbling</h3>
+                    <p>Intense intramuscular fat creates exceptional tenderness and that signature buttery texture that melts in your mouth with every bite.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Healthier Fat Profile</h3>
+                    <p>Higher ratio of monounsaturated fats and omega-3 fatty acids compared to conventional beef, making it a healthier choice for your family.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Unmatched Flavor</h3>
+                    <p>Experience rich, buttery taste with deep umami notes that create a truly memorable dining experience unlike any other beef.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Utah Mountain Raised</h3>
+                    <p>Our cattle thrive in pristine mountain pastures with clean air and natural grazing, contributing to superior meat quality you can taste.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quality Promise -->
+        <section class="quality-section" id="quality">
+            <div class="section-header">
+                <h2>Our Quality Promise</h2>
+                <p>Each animal receives individual attention throughout its 2.5-year journey to ensure the exceptional beef your family deserves.</p>
+            </div>
+            
+            <div class="quality-cards">
+                <div class="quality-card">
+                    <h3>2.5 Year Raising Period</h3>
+                    <p>Each animal is raised for a full 2.5 years to ensure optimal marbling, flavor development, and tenderness. This extended timeline is significantly longer than standard beef production, resulting in superior quality that's worth the wait.</p>
+                </div>
+                <div class="quality-card">
+                    <h3>Organic & Natural</h3>
+                    <p>No hormones, no antibiotics, no shortcuts. Just pure, natural raising practices that honor the land, respect our animals, and deliver the healthiest beef possible for your family's table.</p>
+                </div>
+                <div class="quality-card">
+                    <h3>Family Operated Ranch</h3>
+                    <p>We provide personal attention to every animal with traditional raising practices and a commitment to quality over quantity that only a family operation can deliver.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products -->
+        <section class="products-section" id="products">
+            <div class="section-header">
+                <h2>Buy Premium Wagyu Beef</h2>
+                <p>Order directly from our Utah ranch. Choose from whole, half, or quarter beef options to fit your family's needs.</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <h3>Whole Beef</h3>
+                    <p>Complete animal, perfect for large families or shared purchases. Maximum value and the widest variety of premium cuts from roasts to steaks.</p>
+                </div>
+                <div class="product-card">
+                    <h3>Half Beef</h3>
+                    <p>Our most popular option—excellent value with a balanced selection of roasts, steaks, and ground beef. Perfect for most families.</p>
+                </div>
+                <div class="product-card">
+                    <h3>Quarter Beef</h3>
+                    <p>Perfect introduction to premium quality without committing to a full or half. Great way to experience the difference for yourself.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 35px;">
+                <a href="Products_&_Pricing.html" class="btn btn-primary">View Pricing & Details</a>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section" id="faq">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Common questions about buying beef from our Utah ranch answered</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3 class="faq-question">Where can I buy Wagyu beef in Utah?</h3>
+                    <p class="faq-answer">You can buy premium organic beef directly from our Utah ranch. We offer whole, half, and quarter options for families of all sizes. Contact us at 801-301-3850 or rockymtnwagyu@gmail.com to place your order today.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">What makes your beef different from regular beef?</h3>
+                    <p class="faq-answer">Our cattle are raised for 2.5 years in Utah's Rocky Mountains without hormones or antibiotics. The beef features superior marbling, healthier fat content, and exceptional flavor compared to conventional beef. All meat is organic and mountain-raised on our family ranch with traditional farming practices.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">How long does it take to raise your cattle?</h3>
+                    <p class="faq-answer">Our cattle are raised for a full 2.5 years from birth on our Utah ranch. This ensures optimal marbling and flavor development. This extended raising period is significantly longer than standard beef production, resulting in superior quality that's worth the wait.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">Do you use hormones or antibiotics?</h3>
+                    <p class="faq-answer">Absolutely not. We are 100% organic and committed to natural farming. We never use hormones or antibiotics on our cattle. The beef is raised naturally in Utah's pristine mountain pastures with traditional, ethical practices.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">What products do you offer?</h3>
+                    <p class="faq-answer">We offer whole, half, and quarter beef options to fit different family sizes and needs. All products are organic and raised in Utah's mountain pastures. Order today from our family ranch for farm-fresh delivery straight to your door!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Media -->
+        <section class="social-section" id="social">
+            <h2>Follow Our Journey</h2>
+            <p>See daily life on our Utah ranch, meet our cattle, and learn about raising premium beef the right way</p>
+            
+            <div class="social-links">
+                <a href="https://www.instagram.com/RockymtnWagyu" target="_blank" class="social-link" rel="noopener">
+                    <div class="social-icon">
+                        <svg width="45" height="45" viewBox="0 0 24 24" fill="currentColor" aria-label="Instagram">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </div>
+                    <span class="social-handle">@RockymtnWagyu</span>
+                </a>
+
+                <a href="https://www.tiktok.com/@Rockymtnwagyu" target="_blank" class="social-link" rel="noopener">
+                    <div class="social-icon">
+                        <svg width="45" height="45" viewBox="0 0 24 24" fill="currentColor" aria-label="TikTok">
+                            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                        </svg>
+                    </div>
+                    <span class="social-handle">@Rockymtnwagyu</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="business-card-section" id="contact">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <p>Ready to experience premium beef from our Utah ranch? We're here to help you select the perfect option for your family.</p>
+            </div>
+            <div class="business-card-showcase">
+                <h3>Order Today</h3>
+                <img src="documents/rocky mountiany wagyu business card.jpeg" alt="Rocky Mountain Wagyu contact information business card" class="business-card-image">
+                <div class="contact-info-highlight">
+                    <p><strong>Phone:</strong> <a href="tel:8013013850">801-301-3850</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:rockymtnwagyu@gmail.com">rockymtnwagyu@gmail.com</a></p>
+                    <p style="margin-top: 25px;">We operate on a farming timeline and we're happy to take time to discuss your needs, answer questions about our beef, or walk you through the ordering process step by step.</p>
+                </div>
+                <div style="margin-top: 40px;">
+                    <a href="Contact.html" class="btn btn-primary">Get In Touch</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <!-- About -->
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="documents/Rocky Mountain Wagyu Logo.png" alt="Rocky Mountain Wagyu family ranch logo">
+                </div>
+                <div class="footer-brand">
+                    <p>Premium, organic beef raised with care in Utah's pristine mountain environment.</p>
+                    <p>We're a family-operated ranch with a commitment to quality that exceeds industry standards in every way.</p>
+                    <p class="footer-tagline">Pasture to plate, The Rocky Mountain Way</p>
+                </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <ul class="footer-contact-info">
+                    <li><strong>Phone:</strong><br><a href="tel:8013013850">801-301-3850</a></li>
+                    <li><strong>Email:</strong><br><a href="mailto:rockymtnwagyu@gmail.com">rockymtnwagyu@gmail.com</a></li>
+                    <li><strong>Location:</strong><br>Utah's Rocky Mountains</li>
+                    <li><strong>Hours:</strong><br>By appointment</li>
+                </ul>
+            </div>
+
+            <!-- Follow Us -->
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="footer-social-links">
+                    <a href="https://www.instagram.com/RockymtnWagyu" target="_blank" class="footer-social-link" rel="noopener">
+                        <div class="footer-social-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </div>
+                        <span>@RockymtnWagyu</span>
+                    </a>
+
+                    <a href="https://www.tiktok.com/@Rockymtnwagyu" target="_blank" class="footer-social-link" rel="noopener">
+                        <div class="footer-social-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                            </svg>
+                        </div>
+                        <span>@Rockymtnwagyu</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Rocky Mountain Wagyu. All rights reserved.</p>
+            <p style="margin-top: 10px;">Premium Mountain-Raised American Wagyu Beef | Utah Family Ranch | Organic Beef</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navMenu').classList.toggle('active');
+        }
+
+        function toggleTOC() {
+            const sidebar = document.getElementById('tocSidebar');
+            const hamburger = document.querySelector('.toc-hamburger');
+            sidebar.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        document.addEventListener('click', function(event) {
+            const nav = document.getElementById('navMenu');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            const tocSidebar = document.getElementById('tocSidebar');
+            const tocHamburger = document.querySelector('.toc-hamburger');
+            
+            // Close main menu if clicking outside
+            if (!nav.contains(event.target) && !toggle.contains(event.target)) {
+                nav.classList.remove('active');
+            }
+
+            // Close TOC menu if clicking outside
+            if (!tocSidebar.contains(event.target) && !tocHamburger.contains(event.target)) {
+                tocSidebar.classList.remove('active');
+                tocHamburger.classList.remove('active');
+            }
+        });
+
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+
+        const tocLinks = document.querySelectorAll('.toc-link');
+        const sections = document.querySelectorAll('section[id]');
+
+        tocLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    const headerOffset = 94;
+                    const elementPosition = targetSection.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+
+                    // Close the TOC sidebar after clicking a link
+                    document.getElementById('tocSidebar').classList.remove('active');
+                    document.querySelector('.toc-hamburger').classList.remove('active');
+                }
+            });
+        });
+
+        function highlightActiveSection() {
+            const scrollPos = window.scrollY + 150;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    tocLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }
+
+        let scrollTimeout;
+        window.addEventListener('scroll', function() {
+            if (scrollTimeout) {
+                window.cancelAnimationFrame(scrollTimeout);
+            }
+            scrollTimeout = window.requestAnimationFrame(function() {
+                highlightActiveSection();
+            });
+        });
+
+        highlightActiveSection();
+    </script>
+</body>
+</html>
