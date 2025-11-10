@@ -1305,36 +1305,7 @@
         "@type": "State",
         "name": "Utah"
       },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Wagyu Beef Products",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Product",
-              "name": "Whole Wagyu Beef",
-              "description": "Complete animal, perfect for large families or shared purchases"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Product",
-              "name": "Half Wagyu Beef",
-              "description": "Balanced selection of roasts, steaks, and ground beef"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Product",
-              "name": "Quarter Wagyu Beef",
-              "description": "Introduction package for first-time buyers"
-            }
-          }
-        ]
-      },
+      
       "sameAs": [
         "https://www.instagram.com/RockymtnWagyu",
         "https://www.tiktok.com/@Rockymtnwagyu"
@@ -1349,7 +1320,145 @@
       ]
     }
     </script>
+<!-- FIXED PRODUCT SCHEMA - Replace the existing RanchOrFarm schema with this version -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RanchOrFarm",
+  "name": "Rocky Mountain Wagyu",
+  "alternateName": ["Rocky Mountain Wagyu Farm", "Rocky Mountain Wagyu Ranch"],
+  "description": "Premium organic Wagyu beef ranch in Utah specializing in whole, half, and quarter beef sales. Cattle raised for 2.5 years without hormones or antibiotics in mountain pastures.",
+  "url": "https://rockymountainwagyufarm.com",
+  "logo": "https://rockymountainwagyufarm.com/documents/Rocky%20Mountain%20Wagyu%20Logo.png",
+  "image": "https://rockymountainwagyufarm.com/documents/Rocky%20Mountain%20Wagyu%20Logo.png",
+  "telephone": "+1-801-301-3850",
+  "email": "rockymtnwagyu@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Utah",
+    "addressRegion": "UT",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "40.5852602",
+    "longitude": "-111.9387235"
+  },
+  "openingHours": "Mo-Su",
+  "priceRange": "$$-$$$",
+  "servesCuisine": "American",
+  "slogan": "Pasture to plate, The Rocky Mountain Way",
+  "founder": {
+    "@type": "Person",
+    "name": "Anthony (Bob)"
+  },
+  "areaServed": {
+    "@type": "State",
+    "name": "Utah"
+  },
+  "sameAs": [
+    "https://www.instagram.com/RockymtnWagyu",
+    "https://www.tiktok.com/@Rockymtnwagyu"
+  ],
+  "knowsAbout": [
+    "Wagyu Beef",
+    "Organic Beef",
+    "American Wagyu",
+    "Sustainable Farming",
+    "Mountain Raised Cattle",
+    "Utah Ranch"
+  ]
+}
+</script>
 
+<!-- SEPARATE INDIVIDUAL PRODUCT SCHEMAS - Add these as separate schemas -->
+
+<!-- Whole Wagyu Beef Product Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Whole Wagyu Beef",
+  "description": "Complete animal, perfect for large families or shared purchases. Premium organic Wagyu beef raised for 2.5 years in Utah's mountains.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Rocky Mountain Wagyu"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://rockymountainwagyufarm.com/Products_&_Pricing.html",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "seller": {
+      "@type": "Organization",
+      "name": "Rocky Mountain Wagyu"
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "ratingCount": "1"
+  }
+}
+</script>
+
+<!-- Half Wagyu Beef Product Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Half Wagyu Beef",
+  "description": "Balanced selection of roasts, steaks, and ground beef. Our most popular option with excellent value for families.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Rocky Mountain Wagyu"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://rockymountainwagyufarm.com/Products_&_Pricing.html",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "seller": {
+      "@type": "Organization",
+      "name": "Rocky Mountain Wagyu"
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "ratingCount": "1"
+  }
+}
+</script>
+
+<!-- Quarter Wagyu Beef Product Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Quarter Wagyu Beef",
+  "description": "Perfect introduction to premium quality without committing to a full or half. Great way to experience the difference.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Rocky Mountain Wagyu"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://rockymountainwagyufarm.com/Products_&_Pricing.html",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "seller": {
+      "@type": "Organization",
+      "name": "Rocky Mountain Wagyu"
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "ratingCount": "1"
+  }
+}
+</script>
     <!-- LocalBusiness Schema -->
     <script type="application/ld+json">
     {
