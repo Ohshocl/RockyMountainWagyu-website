@@ -1,16 +1,61 @@
 # robots.txt for Rocky Mountain Wagyu
+# Website: https://rockymountainwagyufarm.com
+# Updated: January 2025
+
+# ============================================
+# ALLOW ALL SEARCH ENGINES TO INDEX SITE
+# ============================================
 User-agent: *
 Allow: /
 
-# Sitemap location
+# ============================================
+# SITEMAP LOCATION (CRITICAL FOR SEO)
+# ============================================
 Sitemap: https://rockymountainwagyufarm.com/sitemap.xml
 
-# Block unnecessary folders
+# ============================================
+# BLOCK UNNECESSARY FOLDERS/FILES
+# ============================================
+# Block image folders (images will still be indexed via pages)
 Disallow: /documents/
 Disallow: /images/
 Disallow: /assets/
+
+# Block any backup files
+Disallow: /*.bak$
+Disallow: /*~$
+
+# ============================================
+# SPECIFIC SEARCH ENGINE INSTRUCTIONS
+# ============================================
 
 # Google
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 0
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+
+# ============================================
+# BLOCK BAD BOTS (RECOMMENDED)
+# ============================================
+# These bots scrape content or waste bandwidth
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
