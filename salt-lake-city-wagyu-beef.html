@@ -159,6 +159,116 @@
             margin-top: 134px;
         }
 
+        /* Table of Contents Hamburger Button */
+        .toc-hamburger {
+            position: fixed;
+            left: 20px;
+            top: 150px;
+            z-index: 501;
+            background: var(--yellow);
+            border: 3px solid var(--black);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(253, 185, 19, 0.5);
+            transition: all 0.3s;
+        }
+
+        .toc-hamburger:hover {
+            background: var(--white);
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(253, 185, 19, 0.7);
+        }
+
+        .toc-hamburger span {
+            width: 30px;
+            height: 3px;
+            background: var(--black);
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        .toc-hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(7px, 7px);
+        }
+
+        .toc-hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .toc-hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Table of Contents Sidebar */
+        .toc-sidebar {
+            position: fixed;
+            left: -250px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 500;
+            background: rgba(0, 0, 0, 0.95);
+            padding: 20px 15px;
+            border-radius: 12px;
+            border: 2px solid var(--yellow);
+            backdrop-filter: blur(10px);
+            max-width: 200px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            transition: all 0.4s ease;
+        }
+
+        .toc-sidebar.active {
+            left: 20px;
+        }
+
+        .toc-title {
+            color: var(--yellow);
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .toc-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .toc-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.85rem;
+            padding: 8px 12px;
+            border-left: 3px solid transparent;
+            transition: all 0.3s;
+            display: block;
+            line-height: 1.3;
+        }
+
+        .toc-links a:hover {
+            color: var(--yellow);
+            border-left-color: var(--yellow);
+            padding-left: 16px;
+            background: rgba(253, 185, 19, 0.1);
+        }
+
+        .toc-links a.active {
+            color: var(--yellow);
+            border-left-color: var(--yellow);
+            background: rgba(253, 185, 19, 0.15);
+            font-weight: 600;
+        }
+
         /* Hero Section */
         .hero {
             background-image: url('documents/hero_section.jpeg');
@@ -166,7 +276,7 @@
             background-position: center;
             background-repeat: no-repeat;
             color: var(--white);
-            padding: 0px 40px 40px;
+            padding: 80px 40px 40px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -312,7 +422,7 @@
         }
 
         .btn-secondary {
-            background: transparent;
+            background: var(--black);
             color: var(--white);
             border: 3px solid var(--white);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
@@ -321,6 +431,7 @@
         .btn-secondary:hover {
             background: var(--white);
             color: var(--black);
+            border-color: var(--white);
             transform: translateY(-3px);
             box-shadow: 0 12px 35px rgba(255, 255, 255, 0.4);
         }
@@ -645,6 +756,21 @@
             nav ul {
                 gap: 30px;
             }
+
+            .toc-hamburger {
+                top: 120px;
+                left: 15px;
+                width: 50px;
+                height: 50px;
+            }
+
+            .toc-hamburger span {
+                width: 25px;
+            }
+
+            .toc-sidebar {
+                max-width: 180px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -694,9 +820,39 @@
                 margin-top: 82px;
             }
 
+            .toc-hamburger {
+                top: 100px;
+                left: 10px;
+                width: 45px;
+                height: 45px;
+            }
+
+            .toc-hamburger span {
+                width: 22px;
+                height: 2px;
+            }
+
+            .toc-sidebar {
+                max-width: 160px;
+                padding: 15px 10px;
+            }
+
+            .toc-sidebar.active {
+                left: 10px;
+            }
+
+            .toc-title {
+                font-size: 0.8rem;
+            }
+
+            .toc-links a {
+                font-size: 0.8rem;
+                padding: 6px 10px;
+            }
+
             .hero {
-                padding: 0px 20px 30px;
-                min-height: 350px;
+                padding: 60px 20px 30px;
+                min-height: 400px;
             }
 
             .hero h1 {
@@ -750,6 +906,11 @@
         }
 
         @media (max-width: 480px) {
+            .hero {
+                padding: 50px 20px 30px;
+                min-height: 350px;
+            }
+
             .hero h1 {
                 font-size: 2rem;
             }
@@ -784,6 +945,26 @@
         </div>
     </header>
 
+    <!-- Table of Contents Hamburger Button -->
+    <button class="toc-hamburger" onclick="toggleTOC()" aria-label="Toggle quick guide">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Table of Contents Sidebar -->
+    <aside class="toc-sidebar" id="tocSidebar">
+        <div class="toc-title">Quick Guide</div>
+        <ul class="toc-links">
+            <li><a href="#why" class="toc-link">Why Choose Us</a></li>
+            <li><a href="#special" class="toc-link">What's Special</a></li>
+            <li><a href="#quality" class="toc-link">Our Quality</a></li>
+            <li><a href="#ordering" class="toc-link">How to Order</a></li>
+            <li><a href="#service-area" class="toc-link">Service Area</a></li>
+            <li><a href="#contact" class="toc-link">Get Started</a></li>
+        </ul>
+    </aside>
+
     <!-- HERO SECTION -->
     <section class="hero">
         <div class="hero-container">
@@ -797,7 +978,7 @@
             <p>Experience the difference of authentic Wagyu beef raised right here in Utah's Rocky Mountains. We deliver farm-fresh, organic beef directly to Salt Lake City homes—no hormones, no antibiotics, just pure quality your family deserves.</p>
             
             <div class="cta-buttons">
-                <a href="Products-Pricing.html" class="btn btn-primary">
+                <a href="Products_&_Pricing.html" class="btn btn-primary">
                     <i class="fas fa-shopping-cart"></i> View Products & Pricing
                 </a>
                 <a href="Contact.html" class="btn btn-secondary">
@@ -808,7 +989,7 @@
     </section>
 
     <!-- WHY CHOOSE US SECTION -->
-    <section class="section section-light">
+    <section class="section section-light" id="why">
         <div class="container">
             <div class="section-header">
                 <h2>Why Salt Lake City Families Choose Our Wagyu Beef</h2>
@@ -868,7 +1049,7 @@
     </section>
 
     <!-- ABOUT OUR BEEF SECTION -->
-    <section class="section section-gray">
+    <section class="section section-gray" id="special">
         <div class="container">
             <div class="two-column">
                 <div class="column-content">
@@ -886,20 +1067,22 @@
                         <li>Available in whole, half, or quarter portions</li>
                     </ul>
 
-                    <a href="About_Us.html" class="btn btn-primary" style="margin-top: 20px;">
-                        Learn More About Our Farm
-                    </a>
+                    <div style="margin-top: 30px;">
+                        <a href="About_Us.html" class="btn btn-primary">
+                            Learn More About Our Farm
+                        </a>
+                    </div>
                 </div>
 
                 <div class="column-image">
-                    <img src="https://images.unsplash.com/photo-1560781290-7dc94c0f8f4f?w=800" alt="Premium Wagyu beef cattle grazing in Rocky Mountain pastures in Utah">
+                    <img src="documents/baby cow 1.PNG" alt="Wagyu calf raised on our Utah farm in the Rocky Mountains">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- STATS SECTION -->
-    <section class="section section-light">
+    <section class="section section-light" id="quality">
         <div class="container">
             <div class="section-header">
                 <h2>Our Commitment to Quality</h2>
@@ -930,12 +1113,47 @@
         </div>
     </section>
 
+    <!-- VISUAL QUALITY SHOWCASE -->
+    <section class="section" style="background: linear-gradient(135deg, var(--dark-gray) 0%, var(--black) 100%); padding: 80px 40px;">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="color: var(--yellow);">Premium Quality You Can See</h2>
+                <p style="color: var(--white);">From raw marbling to perfectly cooked perfection—experience the difference of authentic Utah Wagyu beef.</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; max-width: 1200px; margin: 50px auto 0;">
+                <div style="position: relative; overflow: hidden; border-radius: 15px; border: 3px solid var(--yellow); box-shadow: 0 8px 25px rgba(0,0,0,0.3); transition: all 0.4s;">
+                    <img src="documents/wagyu_steaks.jpg" alt="Raw Wagyu beef steaks showing exceptional marbling" style="width: 100%; height: 320px; object-fit: cover; display: block;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.95), transparent); padding: 25px 20px 20px; color: var(--yellow); font-size: 1.4rem; font-weight: 700; text-align: center;">
+                        Perfect Marbling
+                    </div>
+                </div>
+
+                <div style="position: relative; overflow: hidden; border-radius: 15px; border: 3px solid var(--yellow); box-shadow: 0 8px 25px rgba(0,0,0,0.3); transition: all 0.4s;">
+                    <img src="documents/cooked wagyu.jpg" alt="Beautifully cooked Wagyu steak from our Utah farm" style="width: 100%; height: 320px; object-fit: cover; display: block;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.95), transparent); padding: 25px 20px 20px; color: var(--yellow); font-size: 1.4rem; font-weight: 700; text-align: center;">
+                        Expertly Prepared
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <p style="font-size: 1.2rem; color: var(--white); line-height: 1.8; margin-bottom: 30px;">
+                    The exceptional marbling in our Wagyu beef isn't just beautiful—it creates the buttery texture and rich flavor that makes every bite unforgettable. Raised for 2.5 years in Utah's pristine mountain environment.
+                </p>
+                <a href="Products_&_Pricing.html" class="btn btn-primary">
+                    See Our Products
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- ORDERING SECTION -->
-    <section class="section section-gray">
+    <section class="section section-gray" id="ordering">
         <div class="container">
             <div class="two-column">
                 <div class="column-image">
-                    <img src="https://images.unsplash.com/photo-1603048719539-9ecb4aa395e3?w=800" alt="Fresh Wagyu beef cuts ready for Salt Lake City delivery">
+                    <img src="documents/wagyu_steaks.jpg" alt="Fresh premium Wagyu beef steaks with beautiful marbling">
                 </div>
 
                 <div class="column-content">
@@ -967,7 +1185,7 @@
     </section>
 
     <!-- SERVICE AREA -->
-    <section class="section section-light">
+    <section class="section section-light" id="service-area">
         <div class="container">
             <div class="service-area">
                 <h3><i class="fas fa-map-marked-alt"></i> Proudly Serving the Greater Salt Lake City Area</h3>
@@ -996,7 +1214,7 @@
     </section>
 
     <!-- FINAL CTA SECTION -->
-    <section class="section section-gray">
+    <section class="section section-gray" id="contact">
         <div class="container">
             <div class="section-header">
                 <h2>Ready to Experience Rocky Mountain Wagyu?</h2>
@@ -1010,6 +1228,21 @@
                 <a href="Contact.html" class="btn btn-secondary">
                     <i class="fas fa-envelope"></i> Request Information
                 </a>
+            </div>
+
+            <!-- Contact Information with Business Card -->
+            <div style="max-width: 900px; margin: 60px auto 0; background: var(--white); padding: 50px 40px; border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.15); border: 4px solid var(--black); position: relative;">
+                <div style="position: absolute; top: 0; left: 0; right: 0; height: 8px; background: var(--yellow);"></div>
+                
+                <h3 style="font-size: 2rem; color: var(--black); margin-bottom: 30px; text-align: center;">Contact Our Salt Lake City Farm</h3>
+                
+                <img src="documents/rocky mountiany wagyu business card.jpeg" alt="Rocky Mountain Wagyu contact information" style="max-width: 700px; width: 100%; height: auto; margin: 30px auto; border-radius: 15px; box-shadow: 0 10px 35px rgba(0,0,0,0.2); border: 3px solid var(--yellow); display: block;">
+                
+                <div style="margin-top: 40px; font-size: 1.2rem; color: var(--dark-gray); line-height: 2; text-align: center;">
+                    <p><strong style="color: var(--black); font-size: 1.3rem;">Phone:</strong> <a href="tel:8013013850" style="color: var(--black); text-decoration: none; border-bottom: 2px solid var(--yellow); transition: all 0.3s;">801-301-3850</a></p>
+                    <p><strong style="color: var(--black); font-size: 1.3rem;">Email:</strong> <a href="mailto:rockymtnwagyu@gmail.com" style="color: var(--black); text-decoration: none; border-bottom: 2px solid var(--yellow); transition: all 0.3s;">rockymtnwagyu@gmail.com</a></p>
+                    <p style="margin-top: 25px;">We operate on a farming timeline and we're happy to take the time to discuss your needs, answer questions about our beef, or walk you through our ordering process.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -1139,13 +1372,29 @@
             document.getElementById('navMenu').classList.toggle('active');
         }
 
+        // Table of Contents toggle function
+        function toggleTOC() {
+            const sidebar = document.getElementById('tocSidebar');
+            const hamburger = document.querySelector('.toc-hamburger');
+            sidebar.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
         // Close menu when clicking outside
         document.addEventListener('click', function(event) {
             const nav = document.getElementById('navMenu');
             const toggle = document.querySelector('.mobile-menu-toggle');
+            const tocSidebar = document.getElementById('tocSidebar');
+            const tocHamburger = document.querySelector('.toc-hamburger');
             
             if (nav && toggle && !nav.contains(event.target) && !toggle.contains(event.target)) {
                 nav.classList.remove('active');
+            }
+
+            // Close TOC menu if clicking outside
+            if (tocSidebar && tocHamburger && !tocSidebar.contains(event.target) && !tocHamburger.contains(event.target)) {
+                tocSidebar.classList.remove('active');
+                tocHamburger.classList.remove('active');
             }
         });
 
@@ -1158,6 +1407,66 @@
                 }
             });
         });
+
+        // TOC link smooth scrolling
+        const tocLinks = document.querySelectorAll('.toc-link');
+        const sections = document.querySelectorAll('section[id]');
+
+        tocLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    const headerOffset = 134;
+                    const elementPosition = targetSection.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+
+                    // Close the TOC sidebar after clicking a link
+                    document.getElementById('tocSidebar').classList.remove('active');
+                    document.querySelector('.toc-hamburger').classList.remove('active');
+                }
+            });
+        });
+
+        // Highlight active section in TOC
+        function highlightActiveSection() {
+            const scrollPos = window.scrollY + 200;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    tocLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }
+
+        let scrollTimeout;
+        window.addEventListener('scroll', function() {
+            if (scrollTimeout) {
+                window.cancelAnimationFrame(scrollTimeout);
+            }
+            scrollTimeout = window.requestAnimationFrame(function() {
+                highlightActiveSection();
+            });
+        });
+
+        // Initialize on page load
+        highlightActiveSection();
 
         // Track page view
         if (typeof gtag !== 'undefined') {
