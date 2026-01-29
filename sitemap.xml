@@ -3,7 +3,7 @@
   <!-- Homepage - Highest Priority -->
   <url>
     <loc>https://rockymountainwagyufarm.com/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2025-01-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -11,7 +11,7 @@
   <!-- Homepage with index.html (some crawlers prefer this) -->
   <url>
     <loc>https://rockymountainwagyufarm.com/index.html</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2025-01-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -19,7 +19,29 @@
   <!-- Products Page - Second Highest Priority (Commercial Intent) -->
   <url>
     <loc>https://rockymountainwagyufarm.com/Products-Pricing.html</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2025-01-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- City Landing Pages - High Priority for Local SEO -->
+  <url>
+    <loc>https://rockymountainwagyufarm.com/salt-lake-city-wagyu-beef.html</loc>
+    <lastmod>2025-01-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://rockymountainwagyufarm.com/provo-wagyu-beef.html</loc>
+    <lastmod>2025-01-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://rockymountainwagyufarm.com/ogden-wagyu-beef.html</loc>
+    <lastmod>2025-01-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -27,7 +49,7 @@
   <!-- About Us Page - Important for Brand/Local SEO -->
   <url>
     <loc>https://rockymountainwagyufarm.com/About_us.html</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2025-01-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -35,7 +57,7 @@
   <!-- Ordering Process - High Commercial Value -->
   <url>
     <loc>https://rockymountainwagyufarm.com/Ordering_Process.html</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2025-01-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -43,7 +65,7 @@
   <!-- Contact Page - Important for Local SEO -->
   <url>
     <loc>https://rockymountainwagyufarm.com/Contact.html</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2025-01-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
