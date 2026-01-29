@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO OPTIMIZED TITLE: Under 60 characters -->
+    <title>Wagyu Beef Ogden | Rocky Mountain Wagyu</title>
+    
+    <!-- NATURAL META DESCRIPTION: 150-160 characters -->
+    <meta name="description" content="Premium Wagyu beef delivered to Ogden families. Organic, hormone-free beef raised for 2.5 years in Utah's Rocky Mountains. Order whole, half, or quarter beef.">
+    
+    <!-- KEYWORDS: Natural, not stuffed -->
+    <meta name="keywords" content="wagyu beef Ogden, Utah wagyu, organic beef delivery, premium beef SLC, Rocky Mountain beef">
+    
+    <!-- CANONICAL URL -->
+    <link rel="canonical" href="https://rockymountainwagyufarm.com/salt-lake-city-wagyu-beef.html">
+    
+<!-- LOCATION TARGETING -->
+<meta name="geo.region" content="US-UT">
+<meta name="geo.placename" content="Ogden, Utah">
+<meta name="geo.position" content="41.2230;-111.9738">
+<meta name="ICBM" content="41.2230, -111.9738">
+    
+    <!-- OPEN GRAPH / SOCIAL SHARING -->
+    <meta property="og:title" content="Premium Wagyu Beef for Ogden | Rocky Mountain Wagyu">
+    <meta property="og:description" content="Family farm delivering premium organic Wagyu beef to Ogden. Raised naturally for 2.5 years in Utah's mountains.">
+    <meta property="og:url" content="https://rockymountainwagyufarm.com/salt-lake-city-wagyu-beef.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- GOOGLE ANALYTICS -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTRHVGFDEY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-LTRHVGFDEY');
+    </script>
+    
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* ROCKY MOUNTAIN WAGYU BRAND COLORS */
+        :root {
+            --yellow: #FDB913;
+            --black: #000000;
+            --white: #FFFFFF;
+            --light-gray: #f8f9fa;
+            --dark-gray: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+        }
+
+        /* Header with Logo and Navigation */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: var(--black);
+            border-bottom: 4px solid var(--yellow);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .header-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-logo img {
+            height: 100px;
+            width: auto;
+            filter: drop-shadow(0 2px 8px rgba(253, 185, 19, 0.4));
+        }
+
+        nav ul {
+            display: flex;
+            gap: 15px;
+            list-style: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            padding: 12px 28px;
+            background: transparent;
+            border: 3px solid var(--yellow);
+            border-radius: 50px;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        nav a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--yellow);
+            transition: left 0.4s;
+            z-index: -1;
+        }
+
+        nav a:hover::before {
+            left: 0;
+        }
+
+        nav a:hover {
+            color: var(--black);
+            transform: translateY(-3px) rotate(-2deg);
+            box-shadow: 0 6px 20px rgba(253, 185, 19, 0.5);
+        }
+
+        nav li:nth-child(even) a:hover {
+            transform: translateY(-3px) rotate(2deg);
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--yellow);
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        main {
+            margin-top: 134px;
+        }
+
+        /* Table of Contents Hamburger Button */
+        .toc-hamburger {
+            position: fixed;
+            left: 20px;
+            top: 150px;
+            z-index: 501;
+            background: var(--yellow);
+            border: 3px solid var(--black);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(253, 185, 19, 0.5);
+            transition: all 0.3s;
+        }
+
+        .toc-hamburger:hover {
+            background: var(--white);
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(253, 185, 19, 0.7);
+        }
+
+        .toc-hamburger span {
+            width: 30px;
+            height: 3px;
+            background: var(--black);
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        .toc-hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(7px, 7px);
+        }
+
+        .toc-hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .toc-hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Table of Contents Sidebar */
+        .toc-sidebar {
+            position: fixed;
+            left: -250px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 500;
+            background: rgba(0, 0, 0, 0.95);
+            padding: 20px 15px;
+            border-radius: 12px;
+            border: 2px solid var(--yellow);
+            backdrop-filter: blur(10px);
+            max-width: 200px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            transition: all 0.4s ease;
+        }
+
+        .toc-sidebar.active {
+            left: 20px;
+        }
+
+        .toc-title {
+            color: var(--yellow);
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .toc-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .toc-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.85rem;
+            padding: 8px 12px;
+            border-left: 3px solid transparent;
+            transition: all 0.3s;
+            display: block;
+            line-height: 1.3;
+        }
+
+        .toc-links a:hover {
+            color: var(--yellow);
+            border-left-color: var(--yellow);
+            padding-left: 16px;
+            background: rgba(253, 185, 19, 0.1);
+        }
+
+        .toc-links a.active {
+            color: var(--yellow);
+            border-left-color: var(--yellow);
+            background: rgba(253, 185, 19, 0.15);
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url('documents/hero_section.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: var(--white);
+            padding: 80px 40px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.7) 100%);
+            pointer-events: none;
+        }
+
+        .hero-container,
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            color: var(--yellow);
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.8);
+        }
+
+        .hero .highlight {
+            color: var(--yellow);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .hero-subtitle {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--white);
+            font-weight: 600;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+        }
+
+        .hero-tagline {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--yellow);
+            font-style: italic;
+            font-weight: 500;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+        }
+
+        .hero-mission {
+            font-size: 1.3rem;
+            margin-bottom: 35px;
+            color: var(--white);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+        }
+
+        /* LOCATION BADGE */
+        .location-badge {
+            display: inline-block;
+            background: var(--yellow);
+            color: var(--black);
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+
+        /* CTA BUTTONS */
+        .cta-buttons,
+        .hero-cta {
+            display: flex;
+            gap: 25px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 18px 45px;
+            font-size: 1.15rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        .btn-primary {
+            background: var(--yellow);
+            color: var(--black);
+            box-shadow: 0 8px 25px rgba(253, 185, 19, 0.4);
+            border: 3px solid var(--yellow);
+        }
+
+        .btn-primary:hover {
+            background: var(--white);
+            color: var(--black);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(253, 185, 19, 0.6);
+        }
+
+        .btn-secondary {
+            background: var(--black);
+            color: var(--white);
+            border: 3px solid var(--white);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--black);
+            border-color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 255, 255, 0.4);
+        }
+
+        /* CONTENT SECTIONS */
+        .section {
+            padding: 80px 20px;
+        }
+
+        .section-light {
+            background: var(--white);
+        }
+
+        .section-gray {
+            background: var(--light-gray);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--black);
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--dark-gray);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* BENEFITS GRID */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .benefit-card {
+            background: var(--white);
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid var(--yellow);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            color: var(--yellow);
+            margin-bottom: 20px;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--black);
+        }
+
+        .benefit-card p {
+            line-height: 1.7;
+        }
+
+        /* TWO COLUMN LAYOUT */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .column-content h3 {
+            font-size: 2rem;
+            color: var(--black);
+            margin-bottom: 20px;
+        }
+
+        .column-content p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .column-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .column-content ul li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .column-content ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--yellow);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .column-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .column-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* STATS SECTION */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--yellow);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+        }
+
+        /* SERVICE AREA */
+        .service-area {
+            background: var(--black);
+            color: var(--white);
+            padding: 50px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .service-area h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--yellow);
+        }
+
+        .service-area p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .areas-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .area-tag {
+            background: var(--yellow);
+            color: var(--black);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+            color: var(--white);
+            padding: 60px 40px 30px;
+            border-top: 6px solid var(--yellow);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            text-align: left;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            color: var(--yellow);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            max-width: 180px;
+            height: auto;
+            filter: drop-shadow(0 3px 12px rgba(253, 185, 19, 0.4));
+        }
+
+        .footer-brand p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .footer-tagline {
+            color: var(--yellow);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        .footer-contact-info {
+            list-style: none;
+        }
+
+        .footer-contact-info li {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .footer-contact-info a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-contact-info a:hover {
+            color: var(--yellow);
+        }
+
+        .footer-social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .footer-social-link {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: var(--white);
+            transition: all 0.3s;
+            font-size: 1.05rem;
+        }
+
+        .footer-social-link:hover {
+            color: var(--yellow);
+            transform: translateX(5px);
+        }
+
+        .footer-social-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--white);
+            border: 2px solid var(--yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--black);
+            transition: all 0.3s;
+        }
+
+        .footer-social-link:hover .footer-social-icon {
+            background: var(--yellow);
+            transform: rotate(5deg);
+        }
+
+        .footer-bottom {
+            border-top: 2px solid var(--dark-gray);
+            padding-top: 25px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 1024px) {
+            .header-container {
+                padding: 15px 30px;
+            }
+
+            nav ul {
+                gap: 30px;
+            }
+
+            .toc-hamburger {
+                top: 120px;
+                left: 15px;
+                width: 50px;
+                height: 50px;
+            }
+
+            .toc-hamburger span {
+                width: 25px;
+            }
+
+            .toc-sidebar {
+                max-width: 180px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 12px 20px;
+            }
+
+            .header-logo img {
+                height: 50px;
+            }
+
+            nav ul {
+                position: fixed;
+                top: 82px;
+                left: 0;
+                right: 0;
+                background: var(--black);
+                flex-direction: column;
+                gap: 0;
+                padding: 20px;
+                border-bottom: 4px solid var(--yellow);
+                transform: translateX(-100%);
+                transition: transform 0.3s;
+            }
+
+            nav ul.active {
+                transform: translateX(0);
+            }
+
+            nav li {
+                width: 100%;
+                text-align: center;
+                padding: 15px 0;
+                border-bottom: 1px solid var(--dark-gray);
+            }
+
+            nav a {
+                display: block;
+                font-size: 1.1rem;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            main {
+                margin-top: 82px;
+            }
+
+            .toc-hamburger {
+                top: 100px;
+                left: 10px;
+                width: 45px;
+                height: 45px;
+            }
+
+            .toc-hamburger span {
+                width: 22px;
+                height: 2px;
+            }
+
+            .toc-sidebar {
+                max-width: 160px;
+                padding: 15px 10px;
+            }
+
+            .toc-sidebar.active {
+                left: 10px;
+            }
+
+            .toc-title {
+                font-size: 0.8rem;
+            }
+
+            .toc-links a {
+                font-size: 0.8rem;
+                padding: 6px 10px;
+            }
+
+            .hero {
+                padding: 60px 20px 30px;
+                min-height: 400px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+                letter-spacing: 1px;
+            }
+
+            .hero-subtitle {
+                font-size: 1.4rem;
+            }
+
+            .hero-tagline {
+                font-size: 1.1rem;
+            }
+
+            .hero-mission {
+                font-size: 1.1rem;
+            }
+
+            .cta-buttons,
+            .hero-cta {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 16px 30px;
+                font-size: 1rem;
+            }
+
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+
+            .benefits-grid,
+            .stats-grid,
+            .quality-cards,
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-logo img {
+                max-width: 140px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 50px 20px 30px;
+                min-height: 350px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Logo and Navigation -->
+    <header>
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="documents/Rocky Mountain Wagyu Logo.png" alt="Rocky Mountain Wagyu - Premium Wagyu beef farm in Utah">
+            </div>
+            <button class="mobile-menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About_Us.html">About</a></li>
+                    <li><a href="Products_&_Pricing.html">Products</a></li>
+                    <li><a href="Ordering_Process.html">Ordering</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Table of Contents Hamburger Button -->
+    <button class="toc-hamburger" onclick="toggleTOC()" aria-label="Toggle quick guide">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Table of Contents Sidebar -->
+    <aside class="toc-sidebar" id="tocSidebar">
+        <div class="toc-title">Quick Guide</div>
+        <ul class="toc-links">
+            <li><a href="#why" class="toc-link">Why Choose Us</a></li>
+            <li><a href="#special" class="toc-link">What's Special</a></li>
+            <li><a href="#quality" class="toc-link">Our Quality</a></li>
+            <li><a href="#ordering" class="toc-link">How to Order</a></li>
+            <li><a href="#service-area" class="toc-link">Service Area</a></li>
+            <li><a href="#contact" class="toc-link">Get Started</a></li>
+        </ul>
+    </aside>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="location-badge">
+                <i class="fas fa-map-marker-alt"></i> Serving Ogden
+            </div>
+            
+            <!-- H1: Primary keyword focus -->
+            <h1>Premium <span class="highlight">Wagyu Beef</span> for Ogden Families</h1>
+            
+            <p>Experience the difference of authentic Wagyu beef raised right here in Utah's Rocky Mountains. We deliver farm-fresh, organic beef directly to Ogden homes—no hormones, no antibiotics, just pure quality your family deserves.</p>
+            
+            <div class="cta-buttons">
+                <a href="Products_&_Pricing.html" class="btn btn-primary">
+                    <i class="fas fa-shopping-cart"></i> View Products & Pricing
+                </a>
+                <a href="Contact.html" class="btn btn-secondary">
+                    <i class="fas fa-phone"></i> Contact Us Today
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US SECTION -->
+    <section class="section section-light" id="why">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Ogden Families Choose Our Wagyu Beef</h2>
+                <p>We're a local Utah family farm committed to raising the finest beef in the Rocky Mountains. Our cattle enjoy 2.5 years of natural growth—far longer than industry standards—resulting in exceptional flavor and tenderness.</p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3>Raised in Utah</h3>
+                    <p>Born and raised right here in the Rocky Mountains, our cattle graze on pristine Utah land. Your beef travels less than 50 miles from our farm to your Ogden home.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>100% Organic</h3>
+                    <p>No hormones, no antibiotics, no shortcuts. We raise our cattle the natural way, ensuring every cut of beef meets the highest organic standards your family expects.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>2.5 Year Timeline</h3>
+                    <p>Unlike commercial operations that rush cattle to market, we allow our Wagyu a full 2.5 years to mature naturally. This extended timeline creates superior marbling and unforgettable flavor.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Family Farm Values</h3>
+                    <p>We're not a corporation—we're a Utah family dedicated to quality over quantity. When you order from us, you're supporting local agriculture and getting beef we're proud to serve our own families.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Three Butcher Options</h3>
+                    <p>Choose what works best for you: pick up from our farm and use your own butcher, have us deliver to your chosen butcher, or use our butcher service where we coordinate everything for you.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Transparency First</h3>
+                    <p>Know exactly where your beef comes from. We believe in complete transparency about our raising practices, timeline, and commitment to organic standards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT OUR BEEF SECTION -->
+    <section class="section section-gray" id="special">
+        <div class="container">
+            <div class="two-column">
+                <div class="column-content">
+                    <h3>What Makes Our Wagyu Special</h3>
+                    <p>Wagyu beef is renowned worldwide for its incredible marbling, tenderness, and rich flavor. Our Rocky Mountain location provides the perfect environment for raising exceptional cattle.</p>
+                    
+                    <p>We believe in doing things differently. While most beef operations focus on speed and volume, we focus on quality and care. Our extended 2.5-year raising period allows for natural development and superior marbling that you can see and taste in every bite.</p>
+
+                    <ul>
+                        <li>American Wagyu genetics for superior marbling</li>
+                        <li>Grass-fed and grain-finished for optimal flavor</li>
+                        <li>Stress-free environment in Utah's mountains</li>
+                        <li>No growth hormones or unnecessary antibiotics</li>
+                        <li>Locally processed by trusted Utah butchers</li>
+                        <li>Available in whole, half, or quarter portions</li>
+                    </ul>
+
+                    <div style="margin-top: 30px;">
+                        <a href="About_Us.html" class="btn btn-primary">
+                            Learn More About Our Farm
+                        </a>
+                    </div>
+                </div>
+
+                <div class="column-image">
+                    <img src="documents/baby cow 1.PNG" alt="Wagyu calf raised on our Utah farm in the Rocky Mountains">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS SECTION -->
+    <section class="section section-light" id="quality">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Commitment to Quality</h2>
+                <p>Numbers that reflect our dedication to raising the finest Wagyu beef in Utah</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">2.5</span>
+                    <span class="stat-label">Years Raising Time</span>
+                </div>
+
+                <div class="stat-card">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Organic & Natural</span>
+                </div>
+
+                <div class="stat-card">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Hormones Used</span>
+                </div>
+
+                <div class="stat-card">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">Utah Family Farm</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VISUAL QUALITY SHOWCASE -->
+    <section class="section" style="background: linear-gradient(135deg, var(--dark-gray) 0%, var(--black) 100%); padding: 80px 40px;">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="color: var(--yellow);">Premium Quality You Can See</h2>
+                <p style="color: var(--white);">From raw marbling to perfectly cooked perfection—experience the difference of authentic Utah Wagyu beef.</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; max-width: 1200px; margin: 50px auto 0;">
+                <div style="position: relative; overflow: hidden; border-radius: 15px; border: 3px solid var(--yellow); box-shadow: 0 8px 25px rgba(0,0,0,0.3); transition: all 0.4s;">
+                    <img src="documents/wagyu_steaks.jpg" alt="Raw Wagyu beef steaks showing exceptional marbling" style="width: 100%; height: 320px; object-fit: cover; display: block;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.95), transparent); padding: 25px 20px 20px; color: var(--yellow); font-size: 1.4rem; font-weight: 700; text-align: center;">
+                        Perfect Marbling
+                    </div>
+                </div>
+
+                <div style="position: relative; overflow: hidden; border-radius: 15px; border: 3px solid var(--yellow); box-shadow: 0 8px 25px rgba(0,0,0,0.3); transition: all 0.4s;">
+                    <img src="documents/cooked wagyu.jpg" alt="Beautifully cooked Wagyu steak from our Utah farm" style="width: 100%; height: 320px; object-fit: cover; display: block;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.95), transparent); padding: 25px 20px 20px; color: var(--yellow); font-size: 1.4rem; font-weight: 700; text-align: center;">
+                        Expertly Prepared
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <p style="font-size: 1.2rem; color: var(--white); line-height: 1.8; margin-bottom: 30px;">
+                    The exceptional marbling in our Wagyu beef isn't just beautiful—it creates the buttery texture and rich flavor that makes every bite unforgettable. Raised for 2.5 years in Utah's pristine mountain environment.
+                </p>
+                <a href="Products_&_Pricing.html" class="btn btn-primary">
+                    See Our Products
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ORDERING SECTION -->
+    <section class="section section-gray" id="ordering">
+        <div class="container">
+            <div class="two-column">
+                <div class="column-image">
+                    <img src="documents/wagyu_steaks.jpg" alt="Fresh premium Wagyu beef steaks with beautiful marbling">
+                </div>
+
+                <div class="column-content">
+                    <h3>Easy Ordering for Ogden Residents</h3>
+                    <p>Getting premium Wagyu beef for your family is simple. We offer whole, half, and quarter beef options to fit your needs.</p>
+
+                    <p>You have three butcher options: pick up from our farm and take to your own butcher, have us deliver to your chosen butcher, or use our butcher service where we coordinate everything. Each order includes a variety of premium cuts—steaks, roasts, ground beef, and more.</p>
+
+                    <ul>
+                        <li>Choose your portion size (whole, half, or quarter)</li>
+                        <li>Select from three butcher service options</li>
+                        <li>Specify your cutting instructions and preferences</li>
+                        <li>Choose vacuum sealed or butcher paper packaging</li>
+                        <li>Flexible pickup arrangements</li>
+                        <li>Personal service from our family to yours</li>
+                    </ul>
+
+                    <div class="cta-buttons" style="justify-content: flex-start; margin-top: 25px;">
+                        <a href="Products_&_Pricing.html" class="btn btn-primary">
+                            See Pricing Options
+                        </a>
+                        <a href="Ordering_Process.html" class="btn btn-secondary">
+                            How Ordering Works
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICE AREA -->
+    <section class="section section-light" id="service-area">
+        <div class="container">
+            <div class="service-area">
+                <h3><i class="fas fa-map-marked-alt"></i> Proudly Serving the Greater Ogden Area</h3>
+                <p>We deliver premium Wagyu beef throughout Utah County and surrounding communities. From downtown Salt Lake to the foothills and valleys, we bring farm-fresh quality to your neighborhood.</p>
+                
+                <div class="areas-list">
+                    <span class="area-tag">Ogden</span>
+                    <span class="area-tag">Murray</span>
+                    <span class="area-tag">Sandy</span>
+                    <span class="area-tag">West Jordan</span>
+                    <span class="area-tag">South Jordan</span>
+                    <span class="area-tag">Draper</span>
+                    <span class="area-tag">Riverton</span>
+                    <span class="area-tag">Herriman</span>
+                    <span class="area-tag">Taylorsville</span>
+                    <span class="area-tag">Cottonwood Heights</span>
+                </div>
+
+                <p style="margin-top: 30px; font-size: 1.1rem;">
+                    <i class="fas fa-phone"></i> Questions about delivery to your area? 
+                    <a href="Contact.html" style="color: var(--yellow); text-decoration: underline;">Contact us</a> 
+                    and we'll be happy to help.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA SECTION -->
+    <section class="section section-gray" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Ready to Experience Rocky Mountain Wagyu?</h2>
+                <p>Join Ogden families who trust us for premium, organic beef raised right here in Utah. Order today and taste the difference that quality and care make.</p>
+            </div>
+
+            <div class="cta-buttons">
+                <a href="Products-Pricing.html" class="btn btn-primary">
+                    <i class="fas fa-shopping-cart"></i> View Products & Pricing
+                </a>
+                <a href="Contact.html" class="btn btn-secondary">
+                    <i class="fas fa-envelope"></i> Request Information
+                </a>
+            </div>
+
+            <!-- Contact Information with Business Card -->
+            <div style="max-width: 900px; margin: 60px auto 0; background: var(--white); padding: 50px 40px; border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.15); border: 4px solid var(--black); position: relative;">
+                <div style="position: absolute; top: 0; left: 0; right: 0; height: 8px; background: var(--yellow);"></div>
+                
+                <h3 style="font-size: 2rem; color: var(--black); margin-bottom: 30px; text-align: center;">Contact Our Ogden Farm</h3>
+                
+                <img src="documents/rocky mountiany wagyu business card.jpeg" alt="Rocky Mountain Wagyu contact information" style="max-width: 700px; width: 100%; height: auto; margin: 30px auto; border-radius: 15px; box-shadow: 0 10px 35px rgba(0,0,0,0.2); border: 3px solid var(--yellow); display: block;">
+                
+                <div style="margin-top: 40px; font-size: 1.2rem; color: var(--dark-gray); line-height: 2; text-align: center;">
+                    <p><strong style="color: var(--black); font-size: 1.3rem;">Phone:</strong> <a href="tel:8013013850" style="color: var(--black); text-decoration: none; border-bottom: 2px solid var(--yellow); transition: all 0.3s;">801-301-3850</a></p>
+                    <p><strong style="color: var(--black); font-size: 1.3rem;">Email:</strong> <a href="mailto:rockymtnwagyu@gmail.com" style="color: var(--black); text-decoration: none; border-bottom: 2px solid var(--yellow); transition: all 0.3s;">rockymtnwagyu@gmail.com</a></p>
+                    <p style="margin-top: 25px;">We operate on a farming timeline and we're happy to take the time to discuss your needs, answer questions about our beef, or walk you through our ordering process.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <!-- About -->
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="documents/Rocky Mountain Wagyu Logo.png" alt="Rocky Mountain Wagyu Logo">
+                </div>
+                <div class="footer-brand">
+                    <p>Premium, organic Wagyu beef raised with care in Utah's Rocky Mountains.</p>
+                    <p>We're a family-operated farm with a commitment to quality that exceeds industry standards.</p>
+                    <p class="footer-tagline">Pasture to plate, The Rocky Mountain Way</p>
+                </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <ul class="footer-contact-info">
+                    <li><strong>Phone:</strong><br><a href="tel:8013013850">801-301-3850</a></li>
+                    <li><strong>Email:</strong><br><a href="mailto:rockymtnwagyu@gmail.com">rockymtnwagyu@gmail.com</a></li>
+                    <li><strong>Location:</strong><br>Utah Rocky Mountains</li>
+                    <li><strong>Service Area:</strong><br>Ogden & Statewide</li>
+                </ul>
+            </div>
+
+            <!-- Follow Us -->
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="footer-social-links">
+                    <a href="https://www.instagram.com/RockymtnWagyu" target="_blank" class="footer-social-link" rel="noopener">
+                        <div class="footer-social-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </div>
+                        <span>@RockymtnWagyu</span>
+                    </a>
+
+                    <a href="https://www.tiktok.com/@Rockymtnwagyu" target="_blank" class="footer-social-link" rel="noopener">
+                        <div class="footer-social-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                            </svg>
+                        </div>
+                        <span>@Rockymtnwagyu</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Rocky Mountain Wagyu. All rights reserved.</p>
+            <p style="margin-top: 10px;">Premium Wagyu Beef Ogden | Utah Family Farm | Organic Beef Delivery</p>
+        </div>
+    </footer>
+
+    <!-- LOCALBUSINESS SCHEMA FOR Ogden -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Rocky Mountain Wagyu - Ogden",
+        "image": "https://rockymountainwagyufarm.com/images/logo.jpg",
+        "description": "Premium organic Wagyu beef delivered to Ogden families. Raised naturally for 2.5 years in Utah's Rocky Mountains without hormones or antibiotics. Family farm offering whole, half, and quarter beef with three butcher service options.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Ogden",
+            "addressRegion": "UT",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 40.7608,
+            "longitude": -111.8910
+        },
+        "url": "https://rockymountainwagyufarm.com/salt-lake-city-wagyu-beef.html",
+        "telephone": "+1-801-301-3850",
+        "email": "rockymtnwagyu@gmail.com",
+        "areaServed": {
+            "@type": "City",
+            "name": "Ogden"
+        },
+        "priceRange": "$$$$",
+        "servesCuisine": "American",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Wagyu Beef Products",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Product",
+                        "name": "Whole Wagyu Beef",
+                        "description": "Complete Wagyu animal raised for 2.5 years, with three butcher service options"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Product",
+                        "name": "Half Wagyu Beef",
+                        "description": "Half portion of premium Wagyu beef with flexible butcher options"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Product",
+                        "name": "Quarter Wagyu Beef",
+                        "description": "Quarter portion perfect for smaller families"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+
+    <!-- ANALYTICS PAGE VIEW TRACKING -->
+    <script>
+        // Mobile menu toggle function
+        function toggleMenu() {
+            document.getElementById('navMenu').classList.toggle('active');
+        }
+
+        // Table of Contents toggle function
+        function toggleTOC() {
+            const sidebar = document.getElementById('tocSidebar');
+            const hamburger = document.querySelector('.toc-hamburger');
+            sidebar.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.getElementById('navMenu');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            const tocSidebar = document.getElementById('tocSidebar');
+            const tocHamburger = document.querySelector('.toc-hamburger');
+            
+            if (nav && toggle && !nav.contains(event.target) && !toggle.contains(event.target)) {
+                nav.classList.remove('active');
+            }
+
+            // Close TOC menu if clicking outside
+            if (tocSidebar && tocHamburger && !tocSidebar.contains(event.target) && !tocHamburger.contains(event.target)) {
+                tocSidebar.classList.remove('active');
+                tocHamburger.classList.remove('active');
+            }
+        });
+
+        // Close menu when clicking nav links
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                const nav = document.getElementById('navMenu');
+                if (nav) {
+                    nav.classList.remove('active');
+                }
+            });
+        });
+
+        // TOC link smooth scrolling
+        const tocLinks = document.querySelectorAll('.toc-link');
+        const sections = document.querySelectorAll('section[id]');
+
+        tocLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    const headerOffset = 134;
+                    const elementPosition = targetSection.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+
+                    // Close the TOC sidebar after clicking a link
+                    document.getElementById('tocSidebar').classList.remove('active');
+                    document.querySelector('.toc-hamburger').classList.remove('active');
+                }
+            });
+        });
+
+        // Highlight active section in TOC
+        function highlightActiveSection() {
+            const scrollPos = window.scrollY + 200;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    tocLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }
+
+        let scrollTimeout;
+        window.addEventListener('scroll', function() {
+            if (scrollTimeout) {
+                window.cancelAnimationFrame(scrollTimeout);
+            }
+            scrollTimeout = window.requestAnimationFrame(function() {
+                highlightActiveSection();
+            });
+        });
+
+        // Initialize on page load
+        highlightActiveSection();
+
+        // Track page view
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'page_view', {
+                'page_title': 'Ogden Wagyu Beef',
+                'page_location': window.location.href,
+                'page_path': '/salt-lake-city-wagyu-beef.html'
+            });
+        }
+
+        // Track CTA button clicks
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const buttonText = this.textContent.trim();
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'cta_click', {
+                        'event_category': 'CTA',
+                        'event_label': buttonText,
+                        'value': 1
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
