@@ -307,6 +307,72 @@
             display: block;
         }
 
+        /* === NEW: Herd Spotlight Section === */
+        .herd-spotlight {
+            background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+            padding: 70px 40px;
+            text-align: center;
+        }
+
+        .herd-spotlight-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .herd-spotlight-image {
+            position: relative;
+            display: inline-block;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+            border: 4px solid var(--yellow);
+            transition: all 0.4s;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .herd-spotlight-image:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(253, 185, 19, 0.35);
+        }
+
+        .herd-spotlight-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .herd-spotlight-caption {
+            margin-top: 30px;
+        }
+
+        .herd-spotlight-caption h3 {
+            font-size: 2rem;
+            color: var(--black);
+            margin-bottom: 12px;
+        }
+
+        .herd-spotlight-caption h3 span {
+            color: var(--yellow);
+        }
+
+        .herd-spotlight-caption p {
+            font-size: 1.2rem;
+            color: var(--dark-gray);
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .herd-spotlight-caption .spotlight-tagline {
+            font-size: 1.1rem;
+            color: var(--yellow);
+            font-weight: 700;
+            font-style: italic;
+            margin-top: 15px;
+        }
+        /* === END: Herd Spotlight Section === */
+
         /* Mission, Values, Why Section */
         .mission-section {
             background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
@@ -749,6 +815,19 @@
             .package-info-box p {
                 font-size: 1.1rem;
             }
+
+            /* Herd Spotlight responsive */
+            .herd-spotlight {
+                padding: 50px 20px;
+            }
+
+            .herd-spotlight-caption h3 {
+                font-size: 1.6rem;
+            }
+
+            .herd-spotlight-caption p {
+                font-size: 1.05rem;
+            }
         }
     </style>
 
@@ -905,6 +984,20 @@
                         <!-- SEO OPTIMIZED: Improved alt text with Utah Farm keywords -->
                         <img src="documents/the_farm/5_cows.jpeg" alt="Wagyu cattle on our Utah family Farm in the Rocky Mountains">
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW: Meet Our Herd Spotlight -->
+        <section class="herd-spotlight">
+            <div class="herd-spotlight-inner">
+                <div class="herd-spotlight-image">
+                    <img src="documents/the_farm/cow_16l.jpeg" alt="Wagyu cow 16L up close at Rocky Mountain Wagyu Farm in Utah" loading="lazy">
+                </div>
+                <div class="herd-spotlight-caption">
+                    <h3>Meet the Herd: <span>16L</span></h3>
+                    <p>Every animal on our Utah farm has a name, a story, and our full attention. We raise each one for 2.5 years with no hormones and no antibiotics—just clean mountain air, quality feed, and genuine care. That's the Rocky Mountain Wagyu difference you can taste.</p>
+                    <p class="spotlight-tagline">Raised with care. Fed with purpose. Trusted by Utah families.</p>
                 </div>
             </div>
         </section>
