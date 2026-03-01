@@ -671,6 +671,46 @@
             line-height: 1.8;
         }
 
+        /* Quality Calf Showcase */
+        .quality-calf-showcase {
+            max-width: 900px;
+            margin: 50px auto 0;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            background: var(--light-gray);
+            padding: 40px;
+            border-radius: 15px;
+            border: 3px solid var(--medium-gray);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+
+        .quality-calf-showcase img {
+            width: 350px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 4px solid var(--yellow);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            flex-shrink: 0;
+        }
+
+        .quality-calf-text {
+            flex: 1;
+        }
+
+        .quality-calf-text h3 {
+            font-size: 1.5rem;
+            color: var(--black);
+            margin-bottom: 15px;
+        }
+
+        .quality-calf-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--dark-gray);
+        }
+
         /* Products Section */
         .products-section {
             background: linear-gradient(180deg, var(--light-gray) 0%, var(--white) 100%);
@@ -1224,6 +1264,19 @@
                 height: 250px;
             }
 
+            /* Quality calf showcase responsive */
+            .quality-calf-showcase {
+                flex-direction: column;
+                padding: 30px 20px;
+                gap: 25px;
+            }
+
+            .quality-calf-showcase img {
+                width: 100%;
+                height: auto;
+                max-height: 300px;
+            }
+
             .social-links {
                 flex-direction: column;
                 gap: 35px;
@@ -1484,7 +1537,7 @@
     </aside>
 
     <main>
-        <!-- Hero Section -->
+        <!-- Hero Section - UNCHANGED -->
         <section class="hero" id="home">
             <div class="hero-content">
                 <h1>Rocky Mountain Wagyu</h1>
@@ -1510,10 +1563,10 @@
                 <p>At our  premier Utah farm, the mission is simple: feed families healthy, organic beef they can trust.</p>
             </div>
             
-            <!-- Calf Showcase -->
+            <!-- CHANGED: Replaced baby cow with index_top_3cows image -->
             <div style="max-width: 800px; margin: 0 auto 50px; text-align: center;">
-                <img src="documents/baby%20cow%201.PNG" alt="Wagyu calf at Utah family farm" style="width: 100%; max-width: 600px; height: auto; border-radius: 15px; box-shadow: 0 10px 35px rgba(0,0,0,0.2); border: 4px solid var(--yellow);">
-                <p style="margin-top: 20px; font-size: 1.1rem; color: var(--dark-gray); font-style: italic;">Meet one of our calves—each animal receives individual care throughout their 2.5-year journey</p>
+                <img src="documents/the_farm/index_top_3cows.jpeg" alt="Three Wagyu cattle grazing on our Utah family farm" style="width: 100%; max-width: 700px; height: auto; border-radius: 15px; box-shadow: 0 10px 35px rgba(0,0,0,0.2); border: 4px solid var(--yellow);">
+                <p style="margin-top: 20px; font-size: 1.1rem; color: var(--dark-gray); font-style: italic;">Our Wagyu cattle thriving on Utah's mountain pastures—raised with care for 2.5 years</p>
             </div>
             
             <div class="why-content">
@@ -1530,7 +1583,7 @@
                 <p style="color: var(--white);">Our beef is renowned for exceptional marbling, buttery texture, and rich flavor—representing the finest American Wagyu raised in Utah's pristine mountains.</p>
             </div>
 
-            <!-- Visual Showcase of Quality -->
+            <!-- Visual Showcase of Quality - ADDED Gertrude as 3rd card -->
             <div class="wagyu-visual-showcase">
                 <div class="wagyu-image-card">
                     <img src="documents/wagyu_steaks.jpg" alt="Premium prime-grade Wagyu beef with perfect marbling">
@@ -1539,6 +1592,10 @@
                 <div class="wagyu-image-card">
                     <img src="documents/cooked%20wagyu.jpg" alt="Beautifully cooked prime Wagyu steak from Utah">
                     <div class="wagyu-image-label">Expert Quality</div>
+                </div>
+                <div class="wagyu-image-card">
+                    <img src="documents/the_farm/purewagyu_gertrude3.jpeg" alt="Gertrude, purebred Wagyu cow on our Utah mountain farm">
+                    <div class="wagyu-image-label">Our Pure Wagyu Cattle</div>
                 </div>
             </div>
 
@@ -1583,6 +1640,15 @@
                     <p>We provide personal attention to every animal, traditional raising practices, and a commitment to quality over quantity that only a family farm can provide.</p>
                 </div>
             </div>
+
+            <!-- MOVED: Baby cow now lives here in the Quality section -->
+            <div class="quality-calf-showcase">
+                <img src="documents/the_farm/baby_cow%201.PNG" alt="Wagyu calf receiving individual care on our Utah family farm">
+                <div class="quality-calf-text">
+                    <h3>Individual Care From Day One</h3>
+                    <p>Every calf born on our farm receives personal attention from the very beginning. This hands-on approach is what sets our beef apart—we know each animal individually and ensure they're healthy, well-fed, and stress-free throughout their entire 2.5-year journey on our Utah farm.</p>
+                </div>
+            </div>
         </section>
 
         <!-- Products -->
@@ -1619,7 +1685,7 @@
             <div class="faq-container">
                 <div class="faq-item">
                     <h3 class="faq-question">Where can I find Wagyu beef near me in Utah?</h3>
-                    <p class="faq-answer">You can buy premium organic Wagyu beef directly from our Utah farm. We serve the Salt Lake area and deliver throughout the state. We offer whole, half, and quarter beef options. Contact us at 801-301-3850 or <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e1938e828a988c958f9680869894a1868c80888dcf828e8c">[email&#160;protected]</a>.</p>
+                    <p class="faq-answer">You can buy premium organic Wagyu beef directly from our Utah farm. We serve the Salt Lake area and deliver throughout the state. We offer whole, half, and quarter beef options. Contact us at 801-301-3850 or rockymtnwagyu@gmail.com.</p>
                 </div>
                 <div class="faq-item">
                     <h3 class="faq-question">What makes your Wagyu different from regular beef?</h3>
@@ -1707,7 +1773,7 @@
                 <h4>Contact Us</h4>
                 <ul class="footer-contact-info">
                     <li><strong>Phone:</strong><br><a href="tel:8013013850">801-301-3850</a></li>
-                    <li><strong>Email:</strong><br><a href="/cdn-cgi/l/email-protection#55273a363e2c38213b2234322c20153238343c397b363a38"><span class="__cf_email__" data-cfemail="e2908d81899b8f968c9583859b97a2858f838b8ecc818d8f">[email&#160;protected]</span></a></li>
+                    <li><strong>Email:</strong><br><a href="mailto:rockymtnwagyu@gmail.com">rockymtnwagyu@gmail.com</a></li>
                     <li><strong>Location:</strong><br>Utah Rocky Mountains</li>
                     <li><strong>Hours:</strong><br>By appointment</li>
                 </ul>
@@ -1744,7 +1810,7 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         function toggleMenu() {
             document.getElementById('navMenu').classList.toggle('active');
         }
@@ -1798,3 +1864,32 @@
                     tocLinks.forEach(link => {
                         link.classList.remove('active');
                         if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }
+
+        window.addEventListener('scroll', highlightActiveSection);
+        highlightActiveSection();
+
+        function toggleTOC() {
+            const sidebar = document.getElementById('tocSidebar');
+            const hamburger = document.querySelector('.toc-hamburger');
+            sidebar.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        document.addEventListener('click', function(event) {
+            const sidebar = document.getElementById('tocSidebar');
+            const hamburger = document.querySelector('.toc-hamburger');
+            
+            if (!sidebar.contains(event.target) && !hamburger.contains(event.target)) {
+                sidebar.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
