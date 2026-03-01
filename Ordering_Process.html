@@ -162,7 +162,7 @@
         .toc-hamburger {
             position: fixed;
             left: 20px;
-            top: 150px;
+            top: 160px;
             z-index: 501;
             background: var(--yellow);
             border: 3px solid var(--black);
@@ -427,6 +427,11 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+
+        /* Fix for Step 4 image (Gertrude) - prevent subject from being cropped */
+        .step:nth-child(4) .step-image img {
+            object-position: top center;
         }
 
         /* Options Box */
@@ -758,7 +763,7 @@
         /* Responsive */
         @media (max-width: 1024px) {
             .toc-hamburger {
-                top: 120px;
+                top: 130px;
                 left: 15px;
                 width: 50px;
                 height: 50px;
@@ -809,7 +814,7 @@
             }
 
             .toc-hamburger {
-                top: 100px;
+                top: 110px;
                 left: 10px;
                 width: 45px;
                 height: 45px;
@@ -1012,7 +1017,7 @@
                     </div>
                     <div class="step-image">
                         <!-- SEO OPTIMIZED: Improved alt text -->
-                        <img src="documents/the_farm/cow_f5.jpeg" alt="Select your Utah Wagyu beef from our farm cattle">
+                        <img src="documents/orders_images/cows lined up.jpg" alt="Select your Utah Wagyu beef from our farm cattle">
                     </div>
                 </div>
 
@@ -1071,7 +1076,7 @@
                     </div>
                     <div class="step-image">
                         <!-- SEO OPTIMIZED: Improved alt text -->
-                        <img src="documents/the_farm/purewagyu_gertrude2.jpeg" alt="Specify preferred cuts for your Utah Wagyu beef order">
+                        <img src="documents/orders_images/whole live cow ordering.jpg" alt="Specify preferred cuts for your Utah Wagyu beef order">
                     </div>
                 </div>
 
