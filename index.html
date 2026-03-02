@@ -549,6 +549,12 @@
             transform: scale(1.1);
         }
 
+        /* Fix: Show full Gertrude image without cropping */
+        .wagyu-image-card:nth-child(3) img {
+            object-fit: contain;
+            background: #1a1a1a;
+        }
+
         .wagyu-image-label {
             position: absolute;
             bottom: 0;
