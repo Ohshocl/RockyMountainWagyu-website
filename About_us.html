@@ -159,6 +159,112 @@
             margin-top: 94px;
         }
 
+        /* Table of Contents Hamburger Button */
+        .toc-hamburger {
+            position: fixed;
+            left: 20px;
+            top: 150px;
+            z-index: 501;
+            background: var(--yellow);
+            border: 3px solid var(--black);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(253, 185, 19, 0.5);
+            transition: all 0.3s;
+        }
+
+        .toc-hamburger:hover {
+            background: var(--white);
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(253, 185, 19, 0.7);
+        }
+
+        .toc-hamburger span {
+            width: 30px;
+            height: 3px;
+            background: var(--black);
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        .toc-hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(7px, 7px);
+        }
+
+        .toc-hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .toc-hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Table of Contents Sidebar */
+        .toc-sidebar {
+            position: fixed;
+            left: -250px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 500;
+            background: rgba(0, 0, 0, 0.95);
+            padding: 20px 15px;
+            border-radius: 12px;
+            border: 2px solid var(--yellow);
+            backdrop-filter: blur(10px);
+            max-width: 200px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            transition: all 0.4s ease;
+        }
+
+        .toc-sidebar.active {
+            left: 20px;
+        }
+
+        .toc-title {
+            color: var(--yellow);
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--yellow);
+        }
+
+        .toc-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc-links li {
+            margin-bottom: 4px;
+        }
+
+        .toc-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.85rem;
+            padding: 8px 12px;
+            display: block;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .toc-links a:hover,
+        .toc-links a.active {
+            background: var(--yellow);
+            color: var(--black);
+            font-weight: 600;
+        }
+
         /* Hero Section */
         .hero {
             background-image: url('documents/hero_section.jpeg');
@@ -761,6 +867,21 @@
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
+
+            .toc-hamburger {
+                top: 120px;
+                left: 15px;
+                width: 50px;
+                height: 50px;
+            }
+
+            .toc-hamburger span {
+                width: 25px;
+            }
+
+            .toc-sidebar {
+                max-width: 180px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -871,6 +992,37 @@
 
             .herd-card-caption h3 {
                 font-size: 1.4rem;
+            }
+
+            /* TOC responsive */
+            .toc-hamburger {
+                top: 100px;
+                left: 10px;
+                width: 45px;
+                height: 45px;
+            }
+
+            .toc-hamburger span {
+                width: 22px;
+                height: 2px;
+            }
+
+            .toc-sidebar {
+                max-width: 160px;
+                padding: 15px 10px;
+            }
+
+            .toc-sidebar.active {
+                left: 10px;
+            }
+
+            .toc-title {
+                font-size: 0.8rem;
+            }
+
+            .toc-links a {
+                font-size: 0.8rem;
+                padding: 6px 10px;
             }
         }
     </style>
@@ -1001,6 +1153,26 @@
         </div>
     </header>
 
+    <!-- Table of Contents Hamburger Button -->
+    <button class="toc-hamburger" onclick="toggleTOC()" aria-label="Toggle quick guide">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Table of Contents Sidebar -->
+    <aside class="toc-sidebar" id="tocSidebar">
+        <div class="toc-title">Quick Guide</div>
+        <ul class="toc-links">
+            <li><a href="#story" class="toc-link">Our Story</a></li>
+            <li><a href="#herd" class="toc-link">Meet Our Herd</a></li>
+            <li><a href="#mission" class="toc-link">Mission & Values</a></li>
+            <li><a href="#excellence" class="toc-link">Why Wagyu</a></li>
+            <li><a href="#showcase" class="toc-link">What You Get</a></li>
+            <li><a href="#approach" class="toc-link">Our Approach</a></li>
+        </ul>
+    </aside>
+
     <main>
         <!-- Hero Section -->
         <section class="hero">
@@ -1013,7 +1185,7 @@
         </section>
 
         <!-- Our Story Section -->
-        <section class="section section-light">
+        <section class="section section-light" id="story">
             <div class="content-wrapper">
                 <div class="story-grid">
                     <div class="story-content">
@@ -1033,7 +1205,7 @@
         </section>
 
         <!-- Meet Our Herd Spotlight -->
-        <section class="herd-spotlight">
+        <section class="herd-spotlight" id="herd">
             <div class="herd-spotlight-inner">
                 <div class="herd-spotlight-header">
                     <h2>Meet Our Herd</h2>
@@ -1061,7 +1233,7 @@
         </section>
 
         <!-- Mission, Why, Values Section -->
-        <section class="mission-section">
+        <section class="mission-section" id="mission">
             <div class="content-wrapper">
                 <div class="mission-grid">
                     <div class="mission-card">
@@ -1087,7 +1259,7 @@
         </section>
 
         <!-- What Makes Wagyu Superior -->
-        <section class="section section-dark">
+        <section class="section section-dark" id="excellence">
             <div class="section-header">
                 <h2>Why Utah Wagyu is Superior</h2>
                 <!-- SEO OPTIMIZED: Added Utah mountain environment benefits -->
@@ -1144,7 +1316,7 @@
         </section>
 
         <!-- Quality Showcase -->
-        <section class="section section-light">
+        <section class="section section-light" id="showcase">
             <div class="section-header">
                 <h2>What You'll Receive</h2>
                 <!-- SEO OPTIMIZED: Added Utah Farm source -->
@@ -1193,7 +1365,7 @@
         </section>
 
         <!-- Our Approach -->
-        <section class="section section-dark">
+        <section class="section section-dark" id="approach">
             <div class="content-wrapper">
                 <div class="team-section">
                     <div class="section-header">
@@ -1287,22 +1459,96 @@
             document.getElementById('navMenu').classList.toggle('active');
         }
 
-        // Close menu when clicking outside
+        function toggleTOC() {
+            const sidebar = document.getElementById('tocSidebar');
+            const hamburger = document.querySelector('.toc-hamburger');
+            sidebar.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        // Close menus when clicking outside
         document.addEventListener('click', function(event) {
             const nav = document.getElementById('navMenu');
             const toggle = document.querySelector('.mobile-menu-toggle');
+            const tocSidebar = document.getElementById('tocSidebar');
+            const tocHamburger = document.querySelector('.toc-hamburger');
             
+            // Close main menu if clicking outside
             if (!nav.contains(event.target) && !toggle.contains(event.target)) {
                 nav.classList.remove('active');
             }
+
+            // Close TOC menu if clicking outside
+            if (!tocSidebar.contains(event.target) && !tocHamburger.contains(event.target)) {
+                tocSidebar.classList.remove('active');
+                tocHamburger.classList.remove('active');
+            }
         });
 
-        // Close menu when clicking a link
+        // Close menu when clicking a nav link
         document.querySelectorAll('nav a').forEach(link => {
             link.addEventListener('click', function() {
                 document.getElementById('navMenu').classList.remove('active');
             });
         });
+
+        // TOC smooth scrolling and active section highlighting
+        const tocLinks = document.querySelectorAll('.toc-link');
+        const sections = document.querySelectorAll('section[id]');
+
+        tocLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    const headerOffset = 94;
+                    const elementPosition = targetSection.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+
+                    // Close the TOC sidebar after clicking a link
+                    document.getElementById('tocSidebar').classList.remove('active');
+                    document.querySelector('.toc-hamburger').classList.remove('active');
+                }
+            });
+        });
+
+        function highlightActiveSection() {
+            const scrollPos = window.scrollY + 150;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    tocLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }
+
+        let scrollTimeout;
+        window.addEventListener('scroll', function() {
+            if (scrollTimeout) {
+                window.cancelAnimationFrame(scrollTimeout);
+            }
+            scrollTimeout = window.requestAnimationFrame(function() {
+                highlightActiveSection();
+            });
+        });
+
+        highlightActiveSection();
     </script>
 </body>
 </html>
