@@ -14,27 +14,18 @@
   gtag('config', 'G-LTRHVGFDEY');
 </script>
     
-    <!-- SEO OPTIMIZED: Title under 60 chars with primary keyword and contact intent -->
     <title>Contact Utah Wagyu Farm | Rocky Mountain Wagyu</title>
-    
-    <!-- SEO OPTIMIZED: Meta description 150-160 chars with strong CTA and contact info -->
     <meta name="description" content="Contact our Utah family farm for premium Wagyu beef orders. Call 801-301-3850 or email rockymtnwagyu@gmail.com. Personal service guaranteed.">
-    
-    <!-- SEO OPTIMIZED: Canonical URL -->
     <link rel="canonical" href="https://rockymountainwagyufarm.com/Contact.html">
-    
-    <!-- Additional SEO Meta Tags -->
     <meta name="keywords" content="contact Utah Wagyu farm, Rocky Mountain Wagyu contact, Utah Wagyu beef phone number, order Wagyu beef Utah, Utah family farm contact">
     <meta name="author" content="Rocky Mountain Wagyu">
     
-    <!-- Open Graph Tags for Social Sharing -->
     <meta property="og:title" content="Contact Utah Wagyu farm | Rocky Mountain Wagyu">
     <meta property="og:description" content="Contact our Utah family farm for premium Wagyu beef orders. Personal service from our family to yours.">
     <meta property="og:url" content="https://rockymountainwagyufarm.com/Contact.html">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://rockymountainwagyufarm.com/documents/Rocky%20Mountain%20Wagyu%20Logo.png">
     
-    <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Contact Utah Wagyu farm | Rocky Mountain Wagyu">
     <meta name="twitter:description" content="Contact our Utah family farm for premium Wagyu beef orders. Personal service guaranteed.">
@@ -63,7 +54,6 @@
             line-height: 1.6;
         }
 
-        /* Header with Logo and Navigation */
         header {
             position: fixed;
             width: 100%;
@@ -144,7 +134,6 @@
             transform: translateY(-3px) rotate(2deg);
         }
 
-        /* Mobile Menu Toggle */
         .mobile-menu-toggle {
             display: none;
             background: none;
@@ -159,11 +148,121 @@
             margin-top: 94px;
         }
 
-        /* Hero Section */
+        /* Table of Contents Hamburger Button */
+        .toc-hamburger {
+            position: fixed;
+            left: 20px;
+            top: 150px;
+            z-index: 501;
+            background: var(--yellow);
+            border: 3px solid var(--black);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(253, 185, 19, 0.5);
+            transition: all 0.3s;
+        }
+
+        .toc-hamburger:hover {
+            background: var(--white);
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(253, 185, 19, 0.7);
+        }
+
+        .toc-hamburger span {
+            width: 30px;
+            height: 3px;
+            background: var(--black);
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        .toc-hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(7px, 7px);
+        }
+
+        .toc-hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .toc-hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Table of Contents Sidebar */
+        .toc-sidebar {
+            position: fixed;
+            left: -250px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 500;
+            background: rgba(0, 0, 0, 0.95);
+            padding: 20px 15px;
+            border-radius: 12px;
+            border: 2px solid var(--yellow);
+            backdrop-filter: blur(10px);
+            max-width: 200px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            transition: all 0.4s ease;
+        }
+
+        .toc-sidebar.active {
+            left: 20px;
+        }
+
+        .toc-title {
+            color: var(--yellow);
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .toc-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .toc-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.85rem;
+            padding: 8px 12px;
+            border-left: 3px solid transparent;
+            transition: all 0.3s;
+            display: block;
+            line-height: 1.3;
+        }
+
+        .toc-links a:hover {
+            color: var(--yellow);
+            border-left-color: var(--yellow);
+            padding-left: 16px;
+            background: rgba(253, 185, 19, 0.1);
+        }
+
+        .toc-links a.active {
+            color: var(--yellow);
+            border-left-color: var(--yellow);
+            background: rgba(253, 185, 19, 0.15);
+            font-weight: 600;
+        }
+
+        /* HERO — fixed: cover + center center so full image shows */
         .hero {
             background-image: url('documents/hero_section.jpeg');
-            background-size: 100% auto;
-            background-position: center top;
+            background-size: cover;
+            background-position: center center;
             background-repeat: no-repeat;
             color: var(--white);
             padding: 60px 40px 40px;
@@ -289,7 +388,7 @@
             color: var(--yellow);
         }
 
-        /* ===== Gertrude Cattle Showcase Banner ===== */
+        /* Gertrude Cattle Showcase Banner */
         .cattle-showcase {
             position: relative;
             overflow: hidden;
@@ -476,7 +575,7 @@
             margin-bottom: 25px;
         }
 
-        /* ===== Calves Image in Business Section ===== */
+        /* Calves Image in Business Section */
         .calves-showcase {
             max-width: 700px;
             margin: 0 auto 50px;
@@ -697,6 +796,31 @@
                 margin-top: 82px;
             }
 
+            .toc-hamburger {
+                width: 45px;
+                height: 45px;
+                left: 10px;
+                top: 100px;
+            }
+
+            .toc-hamburger span {
+                width: 22px;
+                height: 2px;
+            }
+
+            .toc-sidebar.active {
+                left: 10px;
+            }
+
+            .toc-title {
+                font-size: 0.8rem;
+            }
+
+            .toc-links a {
+                font-size: 0.8rem;
+                padding: 6px 10px;
+            }
+
             .hero h1 {
                 font-size: 2.5rem;
                 letter-spacing: 1px;
@@ -757,7 +881,7 @@
         }
     </style>
 
-    <!-- SEO OPTIMIZED: LocalBusiness Schema Markup with contact focus -->
+    <!-- LocalBusiness Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -782,23 +906,12 @@
       },
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday", 
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday"
-        ],
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
         "opens": "00:00",
         "closes": "23:59"
       },
       "priceRange": "$$-$$$",
-      "areaServed": {
-        "@type": "State",
-        "name": "Utah"
-      },
+      "areaServed": { "@type": "State", "name": "Utah" },
       "contactPoint": [
         {
           "@type": "ContactPoint",
@@ -823,36 +936,15 @@
         "@type": "OfferCatalog",
         "name": "Utah Wagyu Beef Products",
         "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Product",
-              "name": "Whole Utah Wagyu Beef",
-              "description": "Complete Wagyu animal from Utah family farm"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Product", 
-              "name": "Half Utah Wagyu Beef",
-              "description": "Half beef with balanced selection of cuts"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Product",
-              "name": "Quarter Utah Wagyu Beef", 
-              "description": "Quarter beef perfect for first-time buyers"
-            }
-          }
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Whole Utah Wagyu Beef", "description": "Complete Wagyu animal from Utah family farm" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Half Utah Wagyu Beef", "description": "Half beef with balanced selection of cuts" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Quarter Utah Wagyu Beef", "description": "Quarter beef perfect for first-time buyers" } }
         ]
       }
     }
     </script>
 
-    <!-- FAQ Schema for Contact Page -->
+    <!-- FAQ Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -861,33 +953,23 @@
         {
           "@type": "Question",
           "name": "How do I contact Rocky Mountain Wagyu in Utah?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "You can contact our Utah Wagyu farm by calling 801-301-3850 or emailing rockymtnwagyu@gmail.com. We respond within 24 hours and provide personal service for all Wagyu beef orders."
-          }
+          "acceptedAnswer": { "@type": "Answer", "text": "You can contact our Utah Wagyu farm by calling 801-301-3850 or emailing rockymtnwagyu@gmail.com. We respond within 24 hours and provide personal service for all Wagyu beef orders." }
         },
         {
           "@type": "Question",
           "name": "What is Rocky Mountain Wagyu's phone number?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Our phone number is 801-301-3850. Call us to discuss Wagyu beef orders, ask questions, or learn more about our Utah family farm."
-          }
+          "acceptedAnswer": { "@type": "Answer", "text": "Our phone number is 801-301-3850. Call us to discuss Wagyu beef orders, ask questions, or learn more about our Utah family farm." }
         },
         {
           "@type": "Question",
           "name": "How quickly does Rocky Mountain Wagyu respond to contact?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We typically respond to inquiries within 24 hours during business days. We operate on a farming timeline and provide thoughtful, personalized service."
-          }
+          "acceptedAnswer": { "@type": "Answer", "text": "We typically respond to inquiries within 24 hours during business days. We operate on a farming timeline and provide thoughtful, personalized service." }
         }
       ]
     }
     </script>
 </head>
 <body>
-    <!-- Header with Logo and Navigation -->
     <header>
         <div class="header-container">
             <div class="header-logo">
@@ -906,9 +988,28 @@
         </div>
     </header>
 
+    <!-- Table of Contents Hamburger Button -->
+    <button class="toc-hamburger" onclick="toggleTOC()" aria-label="Toggle quick guide">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Table of Contents Sidebar -->
+    <aside class="toc-sidebar" id="tocSidebar">
+        <div class="toc-title">Quick Guide</div>
+        <ul class="toc-links">
+            <li><a href="#hero" class="toc-link">Welcome</a></li>
+            <li><a href="#contact-info" class="toc-link">Contact Info</a></li>
+            <li><a href="#cattle" class="toc-link">Our Cattle</a></li>
+            <li><a href="#message" class="toc-link">Send a Message</a></li>
+            <li><a href="#approach" class="toc-link">Our Approach</a></li>
+        </ul>
+    </aside>
+
     <main>
         <!-- Hero Section -->
-        <section class="hero">
+        <section class="hero" id="hero">
             <div class="hero-content">
                 <h1>Contact Our Utah farm</h1>
                 <p class="hero-subtitle">Personal Service from Our Family to Yours</p>
@@ -917,7 +1018,7 @@
         </section>
 
         <!-- Contact Information Cards -->
-        <section class="contact-info-section">
+        <section class="contact-info-section" id="contact-info">
             <div class="contact-grid">
                 <div class="contact-card">
                     <div class="contact-icon">📞</div>
@@ -942,8 +1043,8 @@
             </div>
         </section>
 
-        <!-- ===== Gertrude Cattle Showcase Banner ===== -->
-        <section class="cattle-showcase">
+        <!-- Gertrude 3 — Full-width cattle showcase banner -->
+        <section class="cattle-showcase" id="cattle">
             <img src="documents/the_farm/purewagyu_gertrude3.jpeg" alt="Gertrude, premium Wagyu cow at Rocky Mountain Wagyu Utah farm" loading="lazy">
             <div class="cattle-showcase-overlay">
                 <h2>Meet Our Wagyu Cattle</h2>
@@ -952,7 +1053,7 @@
         </section>
 
         <!-- Contact Form -->
-        <section class="form-section">
+        <section class="form-section" id="message">
             <div class="section-header">
                 <h2>Send Us a Message</h2>
                 <p>Have questions about our Utah Wagyu beef, ordering process, or availability? Fill out the form below and we'll get back to you from our family farm soon.</p>
@@ -999,12 +1100,12 @@
         </section>
 
         <!-- Business Information -->
-        <section class="business-info-section">
+        <section class="business-info-section" id="approach">
             <div class="business-info-content">
                 <h2>Our Utah Family farm Approach</h2>
                 <p>At our Utah farm, we operate on a farming timeline. This means we take the time necessary to provide you with thoughtful, personalized service—the same care and attention we give to raising our Wagyu cattle.</p>
 
-                <!-- ===== Calves Showcase ===== -->
+                <!-- 2 Calves showcase -->
                 <div class="calves-showcase">
                     <img src="documents/the_farm/2calfs.jpeg" alt="Wagyu calves raised on Rocky Mountain Wagyu Utah family farm" loading="lazy">
                     <p>Our calves are raised with care from day one—the foundation of premium Wagyu beef</p>
@@ -1037,7 +1138,6 @@
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <!-- About Section -->
             <div class="footer-section">
                 <div class="footer-logo">
                     <img src="documents/Rocky Mountain Wagyu Logo.png" alt="Rocky Mountain Wagyu Utah Family farm Logo">
@@ -1049,7 +1149,6 @@
                 </div>
             </div>
 
-            <!-- Contact Section -->
             <div class="footer-section">
                 <h4>Contact Our Utah farm</h4>
                 <ul class="footer-contact-info">
@@ -1059,7 +1158,6 @@
                 </ul>
             </div>
 
-            <!-- Social Media Section -->
             <div class="footer-section">
                 <h4>Follow Our Utah farm Journey</h4>
                 <div class="footer-social-links">
@@ -1095,20 +1193,63 @@
             document.getElementById('navMenu').classList.toggle('active');
         }
 
-        // Close menu when clicking outside
+        function toggleTOC() {
+            const sidebar = document.getElementById('tocSidebar');
+            const hamburger = document.querySelector('.toc-hamburger');
+            sidebar.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        // Close menus when clicking outside
         document.addEventListener('click', function(event) {
             const nav = document.getElementById('navMenu');
             const toggle = document.querySelector('.mobile-menu-toggle');
-            
+            const tocSidebar = document.getElementById('tocSidebar');
+            const tocHamburger = document.querySelector('.toc-hamburger');
+
             if (!nav.contains(event.target) && !toggle.contains(event.target)) {
                 nav.classList.remove('active');
             }
+
+            if (!tocSidebar.contains(event.target) && !tocHamburger.contains(event.target)) {
+                tocSidebar.classList.remove('active');
+                tocHamburger.classList.remove('active');
+            }
         });
 
-        // Close menu when clicking a link
+        // Close nav menu when clicking a link
         document.querySelectorAll('nav a').forEach(link => {
             link.addEventListener('click', function() {
                 document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+
+        // Close TOC when clicking a TOC link + smooth scroll
+        document.querySelectorAll('.toc-link').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('tocSidebar').classList.remove('active');
+                document.querySelector('.toc-hamburger').classList.remove('active');
+            });
+        });
+
+        // Highlight active TOC link on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const tocLinks = document.querySelectorAll('.toc-link');
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 200;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
             });
         });
     </script>
