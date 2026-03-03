@@ -258,7 +258,7 @@
             font-weight: 600;
         }
 
-        /* HERO — fixed: cover + center center so full image shows */
+        /* HERO */
         .hero {
             background-image: url('documents/hero_section.jpeg');
             background-size: cover;
@@ -388,45 +388,40 @@
             color: var(--yellow);
         }
 
-        /* Gertrude Cattle Showcase Banner */
+        /* Gertrude Cattle Showcase — Full contained image */
         .cattle-showcase {
-            position: relative;
-            overflow: hidden;
-            max-height: 480px;
-        }
-
-        .cattle-showcase img {
-            width: 100%;
-            height: 480px;
-            object-fit: cover;
-            object-position: center;
-            display: block;
-        }
-
-        .cattle-showcase-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.8) 100%);
-            padding: 50px 40px 30px;
+            padding: 80px 40px;
+            background: var(--light-gray);
             text-align: center;
         }
 
-        .cattle-showcase-overlay h2 {
-            color: var(--yellow);
-            font-size: 2rem;
-            margin-bottom: 6px;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+        .cattle-showcase-inner {
+            max-width: 900px;
+            margin: 0 auto;
         }
 
-        .cattle-showcase-overlay p {
-            color: var(--white);
-            font-size: 1.1rem;
+        .cattle-showcase-inner img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+            border: 4px solid var(--yellow);
+            display: block;
+        }
+
+        .cattle-showcase-inner h2 {
+            color: var(--black);
+            font-size: 2.2rem;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .cattle-showcase-inner p {
+            color: var(--dark-gray);
+            font-size: 1.15rem;
             max-width: 650px;
             margin: 0 auto;
-            line-height: 1.5;
-            text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+            line-height: 1.6;
         }
 
         /* Contact Form Section */
@@ -836,12 +831,17 @@
 
             .contact-info-section,
             .form-section,
-            .business-info-section {
+            .business-info-section,
+            .cattle-showcase {
                 padding: 60px 20px;
             }
 
             .section-header h2 {
                 font-size: 2.2rem;
+            }
+
+            .cattle-showcase-inner h2 {
+                font-size: 1.8rem;
             }
 
             .contact-form-container {
@@ -851,18 +851,6 @@
             .contact-grid,
             .business-info-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .cattle-showcase img {
-                height: 300px;
-            }
-
-            .cattle-showcase-overlay h2 {
-                font-size: 1.5rem;
-            }
-
-            .cattle-showcase-overlay p {
-                font-size: 1rem;
             }
         }
 
@@ -875,8 +863,8 @@
                 font-size: 1.9rem;
             }
 
-            .cattle-showcase img {
-                height: 220px;
+            .cattle-showcase-inner h2 {
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -1043,10 +1031,10 @@
             </div>
         </section>
 
-        <!-- Gertrude 3 — Full-width cattle showcase banner -->
+        <!-- Gertrude 3 — Full contained image -->
         <section class="cattle-showcase" id="cattle">
-            <img src="documents/the_farm/purewagyu_gertrude3.jpeg" alt="Gertrude, premium Wagyu cow at Rocky Mountain Wagyu Utah farm" loading="lazy">
-            <div class="cattle-showcase-overlay">
+            <div class="cattle-showcase-inner">
+                <img src="documents/the_farm/purewagyu_gertrude3.jpeg" alt="Gertrude, premium Wagyu cow at Rocky Mountain Wagyu Utah farm" loading="lazy">
                 <h2>Meet Our Wagyu Cattle</h2>
                 <p>Every animal on our Utah farm receives individual attention throughout their 2.5-year journey from pasture to plate.</p>
             </div>
@@ -1224,7 +1212,7 @@
             });
         });
 
-        // Close TOC when clicking a TOC link + smooth scroll
+        // Close TOC when clicking a TOC link
         document.querySelectorAll('.toc-link').forEach(link => {
             link.addEventListener('click', function() {
                 document.getElementById('tocSidebar').classList.remove('active');
