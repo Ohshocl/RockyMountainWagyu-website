@@ -549,12 +549,6 @@
             transform: scale(1.1);
         }
 
-        /* Fix: Show full Gertrude image without cropping */
-        .wagyu-image-card:nth-child(3) img {
-            object-fit: contain;
-            background: #1a1a1a;
-        }
-
         .wagyu-image-label {
             position: absolute;
             bottom: 0;
@@ -1419,13 +1413,13 @@
         "@type": "Brand",
         "name": "Rocky Mountain Wagyu"
       },
- "offers": {
-    "@type": "Offer",
-    "url": "https://rockymountainwagyufarm.com/Products-Pricing.html",
-    "priceCurrency": "USD",
-    "price": "0",
-    "availability": "https://schema.org/InStock"
-  },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://rockymountainwagyufarm.com/Products-Pricing.html",
+        "priceCurrency": "USD",
+        "price": "0",
+        "availability": "https://schema.org/InStock"
+      },
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5",
@@ -1543,7 +1537,7 @@
     </aside>
 
     <main>
-        <!-- Hero Section - UNCHANGED -->
+        <!-- Hero Section -->
         <section class="hero" id="home">
             <div class="hero-content">
                 <h1>Rocky Mountain Wagyu</h1>
@@ -1566,10 +1560,9 @@
         <section class="why-section" id="why">
             <div class="section-header">
                 <h2>Why We Raise Premium Wagyu</h2>
-                <p>At our  premier Utah farm, the mission is simple: feed families healthy, organic beef they can trust.</p>
+                <p>At our premier Utah farm, the mission is simple: feed families healthy, organic beef they can trust.</p>
             </div>
             
-            <!-- CHANGED: Replaced baby cow with index_top_3cows image -->
             <div style="max-width: 800px; margin: 0 auto 50px; text-align: center;">
                 <img src="documents/the_farm/index_top_3cows.jpeg" alt="Three Wagyu cattle grazing on our Utah family farm" style="width: 100%; max-width: 700px; height: auto; border-radius: 15px; box-shadow: 0 10px 35px rgba(0,0,0,0.2); border: 4px solid var(--yellow);">
                 <p style="margin-top: 20px; font-size: 1.1rem; color: var(--dark-gray); font-style: italic;">Our Wagyu cattle thriving on Utah's mountain pastures—raised with care for 2.5 years</p>
@@ -1589,7 +1582,7 @@
                 <p style="color: var(--white);">Our beef is renowned for exceptional marbling, buttery texture, and rich flavor—representing the finest American Wagyu raised in Utah's pristine mountains.</p>
             </div>
 
-            <!-- Visual Showcase of Quality - ADDED Gertrude as 3rd card -->
+            <!-- Visual Showcase of Quality - FIXED: Swapped to calfslayingdown.jpeg -->
             <div class="wagyu-visual-showcase">
                 <div class="wagyu-image-card">
                     <img src="documents/wagyu_steaks.jpg" alt="Premium prime-grade Wagyu beef with perfect marbling">
@@ -1600,7 +1593,7 @@
                     <div class="wagyu-image-label">Expert Quality</div>
                 </div>
                 <div class="wagyu-image-card">
-                    <img src="documents/the_farm/purewagyu_gertrude3.jpeg" alt="Gertrude, purebred Wagyu cow on our Utah mountain farm">
+                    <img src="documents/the_farm/calfslayingdown.jpeg" alt="Wagyu calf relaxing on our Utah mountain farm" style="object-position: center 30%;">
                     <div class="wagyu-image-label">Our Pure Wagyu Cattle</div>
                 </div>
             </div>
@@ -1647,7 +1640,6 @@
                 </div>
             </div>
 
-            <!-- MOVED: Baby cow now lives here in the Quality section -->
             <div class="quality-calf-showcase">
                 <img src="documents/the_farm/baby_cow%201.PNG" alt="Wagyu calf receiving individual care on our Utah family farm">
                 <div class="quality-calf-text">
@@ -1749,7 +1741,7 @@
                 <img src="documents/rocky mountiany wagyu business card.jpeg" alt="Rocky Mountain Wagyu business card" class="business-card-image">
                 <div class="contact-info-highlight">
                     <p><strong>Phone:</strong> <a href="tel:8013013850">801-301-3850</a></p>
-                    <p><strong>Email:</strong> <a href="mailto:rockymtnwagyu@gmail.com">rockymtnwagyu@gmail.com</a>
+                    <p><strong>Email:</strong> <a href="mailto:rockymtnwagyu@gmail.com">rockymtnwagyu@gmail.com</a></p>
                     <p style="margin-top: 25px;">We operate on a farming timeline and we're happy to take the time to discuss your needs, answer questions about our beef, or walk you through our ordering process.</p>
                 </div>
                 <div style="margin-top: 40px;">
