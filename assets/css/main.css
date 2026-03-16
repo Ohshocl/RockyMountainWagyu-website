@@ -1,1 +1,2951 @@
+/* ============================================================
+   ROCKY MOUNTAIN WAGYU — MAIN STYLESHEET
+   Covers: index, about, products, ordering, contact,
+           and city landing pages (e.g. salt-lake-city)
 
+   MIGRATION NOTES — per-page overrides still needed:
+   - Products-Pricing.html  → add: main { margin-top: 0; }
+   - About_us.html CTA      → add class "cta-section--yellow"
+                              to the yellow CTA <section>
+   ============================================================ */
+
+
+/* ============================================================
+   1. CSS VARIABLES
+   ============================================================ */
+:root {
+    --black:       #000000;
+    --white:       #FFFFFF;
+    --yellow:      #FDB913;
+    --light-gray:  #F5F5F5;
+    --medium-gray: #E0E0E0;
+    --dark-gray:   #333333;
+}
+
+
+/* ============================================================
+   2. RESET & BASE
+   ============================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    color: var(--dark-gray);
+    background-color: var(--white);
+    line-height: 1.6;
+}
+
+
+/* ============================================================
+   3. HEADER & NAVIGATION
+   ============================================================ */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: var(--black);
+    border-bottom: 4px solid var(--yellow);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.header-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo img {
+    height: 100px;
+    width: auto;
+    filter: drop-shadow(0 2px 8px rgba(253, 185, 19, 0.4));
+}
+
+nav ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 12px 28px;
+    background: transparent;
+    border: 3px solid var(--yellow);
+    border-radius: 50px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--yellow);
+    transition: left 0.4s;
+    z-index: -1;
+}
+
+nav a:hover::before {
+    left: 0;
+}
+
+nav a:hover {
+    color: var(--black);
+    transform: translateY(-3px) rotate(-2deg);
+    box-shadow: 0 6px 20px rgba(253, 185, 19, 0.5);
+}
+
+nav li:nth-child(even) a:hover {
+    transform: translateY(-3px) rotate(2deg);
+}
+
+/* Contact button — index.html nav only */
+nav li.nav-contact-item a {
+    background: var(--yellow);
+    color: var(--black);
+    border-color: var(--yellow);
+    font-weight: 700;
+}
+
+nav li.nav-contact-item a::before {
+    background: var(--white);
+}
+
+nav li.nav-contact-item a:hover {
+    background: var(--white);
+    color: var(--black);
+    border-color: var(--white);
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 8px 25px rgba(253, 185, 19, 0.7);
+}
+
+/* Mobile toggle */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--yellow);
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 5px;
+}
+
+
+/* ============================================================
+   4. MAIN CONTENT OFFSET
+   Default matches the header height (100px logo + 15+15 px
+   padding + 4px border = 134px). Products page overrides to 0.
+   ============================================================ */
+main {
+    margin-top: 134px;
+}
+
+
+/* ============================================================
+   5. FLOATING PHONE BUTTON  (index.html only — mobile only)
+   ============================================================ */
+.float-phone {
+    display: none; /* shown via media query below */
+    position: fixed;
+    bottom: 24px;
+    right: 20px;
+    z-index: 999;
+    background: var(--yellow);
+    color: var(--black);
+    border: 3px solid var(--black);
+    border-radius: 50px;
+    padding: 14px 22px;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    text-decoration: none;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.35);
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s;
+    letter-spacing: 0.3px;
+}
+
+.float-phone:hover {
+    background: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
+}
+
+.float-phone-icon {
+    font-size: 1.2rem;
+}
+
+
+/* ============================================================
+   6. TABLE OF CONTENTS (TOC) SYSTEM
+   Shared across all pages. Button is fixed at top: 150px.
+   ============================================================ */
+.toc-hamburger {
+    position: fixed;
+    left: 20px;
+    top: 150px;
+    z-index: 501;
+    background: var(--yellow);
+    border: 3px solid var(--black);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(253, 185, 19, 0.5);
+    transition: all 0.3s;
+}
+
+.toc-hamburger:hover {
+    background: var(--white);
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(253, 185, 19, 0.7);
+}
+
+.toc-hamburger span {
+    width: 30px;
+    height: 3px;
+    background: var(--black);
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+.toc-hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+}
+
+.toc-hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.toc-hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.toc-sidebar {
+    position: fixed;
+    left: -250px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 500;
+    background: rgba(0, 0, 0, 0.95);
+    padding: 20px 15px;
+    border-radius: 12px;
+    border: 2px solid var(--yellow);
+    backdrop-filter: blur(10px);
+    max-width: 200px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s ease;
+}
+
+.toc-sidebar.active {
+    left: 20px;
+}
+
+.toc-title {
+    color: var(--yellow);
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.toc-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toc-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.85rem;
+    padding: 8px 12px;
+    border-left: 3px solid transparent;
+    display: block;
+    line-height: 1.3;
+    transition: all 0.3s;
+}
+
+.toc-links a:hover {
+    color: var(--yellow);
+    border-left-color: var(--yellow);
+    padding-left: 16px;
+    background: rgba(253, 185, 19, 0.1);
+}
+
+.toc-links a.active {
+    color: var(--yellow);
+    border-left-color: var(--yellow);
+    background: rgba(253, 185, 19, 0.15);
+    font-weight: 600;
+}
+
+
+/* ============================================================
+   7. HERO SECTION  (shared base — used on every page)
+   ============================================================ */
+.hero {
+    background-image: url('documents/hero_section.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--white);
+    padding: 60px 40px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(0, 0, 0, 0.5) 50%,
+        rgba(0, 0, 0, 0.7) 100%
+    );
+    pointer-events: none;
+}
+
+/* index.html hero has zero top padding (main already offset 134px) */
+.hero--index {
+    padding-top: 0;
+    padding-bottom: 40px;
+}
+
+.hero-content,
+.hero-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    color: var(--yellow);
+    margin-bottom: 25px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+}
+
+/* index.html has a slightly larger h1 */
+.hero--index h1 {
+    font-size: 4rem;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--white);
+    font-weight: 600;
+    line-height: 1.6;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+/* index specific */
+.hero--index .hero-subtitle {
+    font-size: 2rem;
+}
+
+.hero-tagline {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--yellow);
+    font-style: italic;
+    font-weight: 500;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.hero-mission {
+    font-size: 1.3rem;
+    margin-bottom: 35px;
+    color: var(--white);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.hero-cta,
+.cta-buttons {
+    display: flex;
+    gap: 25px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* SLC landing page — location badge */
+.location-badge {
+    display: inline-block;
+    background: var(--yellow);
+    color: var(--black);
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    font-size: 1rem;
+}
+
+/* SLC landing page — hero highlight */
+.hero .highlight {
+    color: var(--yellow);
+}
+
+
+/* ============================================================
+   8. BUTTONS
+   ============================================================ */
+.btn {
+    padding: 18px 45px;
+    font-size: 1.15rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+    width: 400px;
+    height: 400px;
+}
+
+/* Primary — yellow fill */
+.btn-primary {
+    background: var(--yellow);
+    color: var(--black);
+    border: 3px solid var(--yellow);
+    box-shadow: 0 8px 25px rgba(253, 185, 19, 0.4);
+}
+
+.btn-primary:hover {
+    background: var(--white);
+    color: var(--black);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(253, 185, 19, 0.6);
+}
+
+/* Secondary — transparent / white border (used on dark hero bg) */
+.btn-secondary {
+    background: transparent;
+    color: var(--white);
+    border: 3px solid var(--white);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary:hover {
+    background: var(--white);
+    color: var(--black);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(255, 255, 255, 0.4);
+}
+
+/* SLC landing secondary has black fill */
+.hero .btn-secondary {
+    background: var(--black);
+    color: var(--white);
+    border-color: var(--white);
+}
+
+/* Contact form submit button */
+.contact-form-container .btn {
+    width: 100%;
+    background: var(--yellow);
+    color: var(--black);
+    border: 3px solid var(--yellow);
+}
+
+.contact-form-container .btn:hover {
+    background: var(--black);
+    color: var(--white);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* About page CTA section — black button on yellow bg */
+.cta-section--yellow .btn {
+    background: var(--black);
+    color: var(--white);
+    border: 3px solid var(--black);
+}
+
+.cta-section--yellow .btn:hover {
+    background: var(--white);
+    color: var(--black);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ============================================================
+   9. SECTION HEADERS  (shared)
+   ============================================================ */
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-size: 3rem;
+    color: var(--black);
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: var(--yellow);
+}
+
+.section-header p {
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+    max-width: 800px;
+    margin: 25px auto 0;
+    line-height: 1.8;
+}
+
+
+/* ============================================================
+   10. FOOTER  (shared)
+   ============================================================ */
+footer {
+    background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+    color: var(--white);
+    padding: 60px 40px 30px;
+    border-top: 6px solid var(--yellow);
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    text-align: left;
+}
+
+.footer-section h4 {
+    color: var(--yellow);
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.footer-logo {
+    margin-bottom: 20px;
+}
+
+.footer-logo img {
+    max-width: 180px;
+    height: auto;
+    filter: drop-shadow(0 3px 12px rgba(253, 185, 19, 0.4));
+}
+
+.footer-brand p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.footer-tagline {
+    color: var(--yellow);
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+.footer-contact-info {
+    list-style: none;
+}
+
+.footer-contact-info li {
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.footer-contact-info a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-contact-info a:hover {
+    color: var(--yellow);
+}
+
+.footer-social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-social-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: var(--white);
+    font-size: 1.05rem;
+    transition: all 0.3s;
+}
+
+.footer-social-link:hover {
+    color: var(--yellow);
+    transform: translateX(5px);
+}
+
+.footer-social-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--white);
+    border: 2px solid var(--yellow);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--black);
+    transition: all 0.3s;
+    flex-shrink: 0;
+}
+
+.footer-social-link:hover .footer-social-icon {
+    background: var(--yellow);
+    transform: rotate(5deg);
+}
+
+.footer-bottom {
+    border-top: 2px solid var(--dark-gray);
+    padding-top: 25px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+
+/* ============================================================
+   11. INDEX PAGE — TRUST BAR
+   ============================================================ */
+.trust-bar {
+    background: var(--yellow);
+    padding: 20px 40px;
+    text-align: center;
+    border-bottom: 3px solid var(--black);
+    position: relative;
+    margin-top: 0;
+    z-index: 10;
+}
+
+.trust-bar p {
+    font-size: 1.1rem;
+    color: var(--black);
+    font-weight: 600;
+    margin: 0;
+}
+
+
+/* ============================================================
+   12. INDEX PAGE — CONTACT TOP SECTION
+   ============================================================ */
+.contact-top {
+    background: var(--black);
+    padding: 60px 40px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 4px solid var(--yellow);
+}
+
+.contact-top::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -80px;
+    width: 350px;
+    height: 280px;
+    background-image: url('documents/Rocky Mountain Wagyu Logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.04;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.contact-top-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.contact-top-text {
+    flex: 1;
+    min-width: 280px;
+}
+
+.contact-top-text h2 {
+    font-size: 2.4rem;
+    color: var(--yellow);
+    margin-bottom: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.contact-top-text p {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.7;
+    max-width: 480px;
+}
+
+.contact-top-details {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    flex-shrink: 0;
+}
+
+.contact-top-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(253, 185, 19, 0.08);
+    border: 2px solid rgba(253, 185, 19, 0.3);
+    border-radius: 10px;
+    padding: 16px 24px;
+    text-decoration: none;
+    min-width: 300px;
+    transition: all 0.3s;
+}
+
+.contact-top-item:hover {
+    background: rgba(253, 185, 19, 0.18);
+    border-color: var(--yellow);
+    transform: translateX(4px);
+}
+
+.contact-top-icon {
+    width: 46px;
+    height: 46px;
+    background: var(--yellow);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.3rem;
+}
+
+.contact-top-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-top-label {
+    font-size: 0.8rem;
+    color: var(--yellow);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.contact-top-value {
+    font-size: 1.2rem;
+    color: var(--white);
+    font-weight: 600;
+}
+
+
+/* ============================================================
+   13. INDEX PAGE — WHY WE RAISE WAGYU SECTION
+   ============================================================ */
+.why-section {
+    background: var(--white);
+    padding: 80px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.why-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -100px;
+    width: 400px;
+    height: 300px;
+    background-image: url('documents/Rocky Mountain Wagyu Logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.03;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.why-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: var(--light-gray);
+    padding: 50px;
+    border-radius: 15px;
+    border-left: 8px solid var(--yellow);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.why-content p {
+    font-size: 1.2rem;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+.why-content strong {
+    color: var(--black);
+    font-size: 1.3rem;
+}
+
+
+/* ============================================================
+   14. INDEX PAGE — WAGYU SPECIAL SECTION
+   ============================================================ */
+.wagyu-section {
+    background: linear-gradient(135deg, var(--dark-gray) 0%, var(--black) 100%);
+    color: var(--white);
+    padding: 80px 40px;
+}
+
+.wagyu-visual-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1400px;
+    margin: 40px auto 50px;
+}
+
+.wagyu-image-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    border: 3px solid var(--yellow);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s;
+}
+
+.wagyu-image-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s;
+}
+
+.wagyu-image-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(253, 185, 19, 0.4);
+}
+
+.wagyu-image-card:hover img {
+    transform: scale(1.1);
+}
+
+.wagyu-image-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    padding: 20px 15px 15px;
+    color: var(--yellow);
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 50px auto 0;
+}
+
+.feature-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+    padding: 35px;
+    border-radius: 12px;
+    border: 2px solid rgba(253, 185, 19, 0.3);
+    transition: all 0.4s;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: var(--yellow);
+    box-shadow: 0 12px 40px rgba(253, 185, 19, 0.3);
+    background: linear-gradient(135deg, rgba(253,185,19,0.2), rgba(253,185,19,0.1));
+}
+
+.feature-card h3 {
+    color: var(--yellow);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.feature-card p {
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+
+/* ============================================================
+   15. INDEX PAGE — QUALITY PROMISE SECTION
+   ============================================================ */
+.quality-section {
+    background: var(--white);
+    padding: 80px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.quality-section::before {
+    content: '';
+    position: absolute;
+    top: 50px;
+    right: -100px;
+    width: 400px;
+    height: 300px;
+    background-image: url('documents/Rocky Mountain Wagyu Logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.03;
+    pointer-events: none;
+}
+
+.quality-section::after {
+    content: '';
+    position: absolute;
+    bottom: 50px;
+    left: -100px;
+    width: 400px;
+    height: 300px;
+    background-image: url('documents/Rocky Mountain Wagyu Logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.03;
+    pointer-events: none;
+}
+
+.quality-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
+    max-width: 1400px;
+    margin: 50px auto 0;
+}
+
+.quality-card {
+    background: var(--white);
+    padding: 40px 35px;
+    border-radius: 12px;
+    text-align: center;
+    border: 3px solid var(--black);
+    border-top: 6px solid var(--yellow);
+    border-bottom: 6px solid var(--yellow);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    transition: all 0.4s;
+}
+
+.quality-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(253, 185, 19, 0.25);
+    border-color: var(--yellow);
+}
+
+.quality-card h3 {
+    font-size: 1.6rem;
+    color: var(--black);
+    margin-bottom: 18px;
+}
+
+.quality-card p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.quality-calf-showcase {
+    max-width: 900px;
+    margin: 50px auto 0;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background: var(--light-gray);
+    padding: 40px;
+    border-radius: 15px;
+    border: 3px solid var(--medium-gray);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.quality-calf-showcase img {
+    width: 350px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 4px solid var(--yellow);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    flex-shrink: 0;
+}
+
+.quality-calf-text {
+    flex: 1;
+}
+
+.quality-calf-text h3 {
+    font-size: 1.5rem;
+    color: var(--black);
+    margin-bottom: 15px;
+}
+
+.quality-calf-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--dark-gray);
+}
+
+
+/* ============================================================
+   16. INDEX PAGE — PRODUCTS SECTION
+   ============================================================ */
+.products-section {
+    background: linear-gradient(180deg, var(--light-gray) 0%, var(--white) 100%);
+    padding: 80px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.products-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -150px;
+    width: 500px;
+    height: 400px;
+    background-image: url('documents/rocky mountiany wagyu business card.jpeg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.05;
+    transform: translateY(-50%) rotate(15deg);
+    pointer-events: none;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px;
+    max-width: 1200px;
+    margin: 50px auto 35px;
+}
+
+.product-card {
+    background: var(--white);
+    border: 3px solid var(--black);
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+    transition: all 0.4s;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: var(--yellow);
+    border-radius: 12px 12px 0 0;
+}
+
+.product-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.2);
+    border-color: var(--yellow);
+}
+
+.product-card h3 {
+    color: var(--black);
+    font-size: 1.8rem;
+    margin-bottom: 18px;
+}
+
+.product-card h3::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: var(--yellow);
+    margin: 12px auto 0;
+}
+
+.product-card p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Product card image — Products-Pricing page only */
+.product-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    border: 2px solid var(--yellow);
+}
+
+
+/* ============================================================
+   17. INDEX PAGE — FAQ SECTION
+   ============================================================ */
+.faq-section {
+    background: var(--light-gray);
+    padding: 80px 40px;
+}
+
+.faq-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: var(--white);
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border-left: 5px solid var(--yellow);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.faq-question {
+    font-size: 1.3rem;
+    color: var(--black);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.faq-answer {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--dark-gray);
+}
+
+
+/* ============================================================
+   18. INDEX PAGE — SOCIAL SECTION
+   ============================================================ */
+.social-section {
+    background: var(--black);
+    color: var(--white);
+    padding: 80px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 600px;
+    background-image: url('documents/Rocky Mountain Wagyu Logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.02;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.social-section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    color: var(--yellow);
+}
+
+.social-section > p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+.social-links {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    margin: 50px 0;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    text-decoration: none;
+    color: var(--white);
+    transition: all 0.3s;
+}
+
+.social-link:hover {
+    transform: translateY(-8px);
+}
+
+.social-icon {
+    width: 90px;
+    height: 90px;
+    background: var(--white);
+    border: 3px solid var(--yellow);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.3rem;
+    color: var(--black);
+    transition: all 0.3s;
+    box-shadow: 0 6px 20px rgba(253, 185, 19, 0.3);
+}
+
+.social-link:hover .social-icon {
+    background: var(--yellow);
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 10px 35px rgba(253, 185, 19, 0.5);
+}
+
+.social-handle {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+
+/* ============================================================
+   19. INDEX PAGE — BUSINESS CARD / CONTACT BOTTOM SECTION
+   ============================================================ */
+.business-card-section {
+    background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.business-card-showcase {
+    max-width: 900px;
+    margin: 50px auto;
+    background: var(--white);
+    padding: 60px 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+    border: 4px solid var(--black);
+    position: relative;
+}
+
+.business-card-showcase::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: var(--yellow);
+    border-radius: 20px 20px 0 0;
+}
+
+.business-card-showcase h3 {
+    font-size: 2rem;
+    color: var(--black);
+    margin-bottom: 30px;
+}
+
+.business-card-image {
+    max-width: 700px;
+    width: 100%;
+    height: auto;
+    margin: 30px auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+    border: 3px solid var(--yellow);
+    display: block;
+}
+
+.contact-info-highlight {
+    margin-top: 40px;
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+    line-height: 2;
+}
+
+.contact-info-highlight strong {
+    color: var(--black);
+    font-size: 1.3rem;
+}
+
+.contact-info-highlight a {
+    color: var(--black);
+    text-decoration: none;
+    border-bottom: 2px solid var(--yellow);
+    transition: all 0.3s;
+}
+
+.contact-info-highlight a:hover {
+    color: var(--yellow);
+}
+
+
+/* ============================================================
+   20. PRODUCTS PAGE — OVERVIEW, QUALITY GALLERY, DETAIL CARDS
+   ============================================================ */
+.products-overview {
+    background: var(--white);
+    padding: 80px 40px;
+}
+
+/* Quality showcase gallery */
+.quality-showcase {
+    background: linear-gradient(135deg, var(--dark-gray) 0%, var(--black) 100%);
+    padding: 80px 40px;
+    color: var(--white);
+}
+
+.showcase-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1400px;
+    margin: 50px auto;
+}
+
+.showcase-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 3px solid var(--yellow);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    aspect-ratio: 4 / 3;
+    transition: all 0.4s;
+}
+
+.showcase-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(253, 185, 19, 0.4);
+}
+
+.showcase-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s;
+}
+
+.showcase-item:hover img {
+    transform: scale(1.1);
+}
+
+.showcase-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
+    padding: 25px 15px 15px;
+    color: var(--yellow);
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* Detailed product panels */
+.detailed-products {
+    background: var(--light-gray);
+    padding: 80px 40px;
+}
+
+.product-detail {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    border: 3px solid var(--black);
+}
+
+.product-detail-header {
+    background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+    color: var(--white);
+    padding: 40px;
+    position: relative;
+}
+
+.product-detail-header::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: var(--yellow);
+}
+
+.product-detail-header h3 {
+    font-size: 2.5rem;
+    color: var(--yellow);
+    margin-bottom: 15px;
+}
+
+.product-detail-content {
+    padding: 40px;
+}
+
+.product-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.feature-item {
+    padding: 20px;
+    background: var(--light-gray);
+    border-radius: 8px;
+    border-left: 4px solid var(--yellow);
+}
+
+.feature-item h4 {
+    color: var(--black);
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.feature-item p {
+    color: var(--dark-gray);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.pricing-note {
+    background: var(--yellow);
+    padding: 30px;
+    border-radius: 12px;
+    margin: 40px 0;
+    text-align: center;
+    border: 3px solid var(--black);
+}
+
+.pricing-note h4 {
+    font-size: 1.8rem;
+    color: var(--black);
+    margin-bottom: 15px;
+}
+
+.pricing-note p {
+    font-size: 1.1rem;
+    color: var(--dark-gray);
+    line-height: 1.6;
+}
+
+
+/* ============================================================
+   21. SHARED CTA SECTION  (Products, Ordering, SLC)
+   Dark background version
+   ============================================================ */
+.cta-section {
+    background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+    color: var(--white);
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.cta-section h2 {
+    color: var(--yellow);
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+.cta-section p {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+}
+
+/* About page yellow CTA — add class="cta-section cta-section--yellow" */
+.cta-section--yellow {
+    background: linear-gradient(135deg, var(--yellow) 0%, #f5a800 100%);
+}
+
+.cta-section--yellow h2 {
+    color: var(--black);
+    font-size: 3rem;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.cta-section--yellow p {
+    color: var(--dark-gray);
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.cta-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+
+/* ============================================================
+   22. ORDERING PAGE — PROCESS STEPS
+   ============================================================ */
+.process-section {
+    background: var(--white);
+    padding: 80px 40px;
+}
+
+.steps-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.step {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 60px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.step:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.step-number {
+    flex: 0 0 80px;
+    width: 80px;
+    height: 80px;
+    background: var(--yellow);
+    border: 4px solid var(--black);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--black);
+    box-shadow: 0 8px 25px rgba(253, 185, 19, 0.4);
+}
+
+.step-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.step-content h3 {
+    font-size: 2rem;
+    color: var(--black);
+    margin-bottom: 15px;
+}
+
+.step-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.step-image {
+    flex: 0 0 400px;
+    width: 400px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 3px solid var(--yellow);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.step-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.options-box {
+    background: var(--light-gray);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--yellow);
+    margin-top: 20px;
+}
+
+.options-box h4 {
+    font-size: 1.3rem;
+    color: var(--black);
+    margin-bottom: 12px;
+}
+
+.options-box ul {
+    list-style-position: inside;
+    margin-left: 10px;
+}
+
+.options-box li {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+/* Packaging section */
+.packaging-section {
+    background: var(--light-gray);
+    padding: 80px 40px;
+}
+
+.packaging-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 35px;
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+.packaging-card {
+    background: var(--white);
+    border: 3px solid var(--black);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    transition: all 0.4s;
+}
+
+.packaging-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(253, 185, 19, 0.3);
+    border-color: var(--yellow);
+}
+
+.packaging-card-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 3px solid var(--yellow);
+}
+
+.packaging-card-content {
+    padding: 30px;
+}
+
+.packaging-card h3 {
+    font-size: 1.8rem;
+    color: var(--black);
+    margin-bottom: 15px;
+}
+
+.packaging-card p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+/* Timeline section */
+.timeline-section {
+    background: var(--white);
+    padding: 80px 40px;
+}
+
+.timeline-content {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--light-gray);
+    padding: 50px;
+    border-radius: 15px;
+    border-left: 8px solid var(--yellow);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-item {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 30px;
+    align-items: flex-start;
+}
+
+.timeline-icon {
+    flex: 0 0 50px;
+    width: 50px;
+    height: 50px;
+    background: var(--yellow);
+    border: 3px solid var(--black);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--black);
+}
+
+.timeline-text {
+    flex: 1;
+}
+
+.timeline-text h4 {
+    font-size: 1.3rem;
+    color: var(--black);
+    margin-bottom: 8px;
+}
+
+.timeline-text p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* Contact options (Ordering CTA) */
+.contact-options {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.contact-method {
+    text-align: center;
+}
+
+.contact-method h3 {
+    color: var(--yellow);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.contact-method a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.3rem;
+    transition: color 0.3s;
+}
+
+.contact-method a:hover {
+    color: var(--yellow);
+}
+
+
+/* ============================================================
+   23. CONTACT PAGE
+   ============================================================ */
+.contact-info-section {
+    padding: 80px 40px;
+    background: var(--white);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.contact-card {
+    background: var(--light-gray);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    border: 3px solid var(--black);
+    border-top: 6px solid var(--yellow);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s;
+}
+
+.contact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(253, 185, 19, 0.25);
+    border-color: var(--yellow);
+}
+
+.contact-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--yellow);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    font-size: 2.5rem;
+    color: var(--black);
+    box-shadow: 0 4px 15px rgba(253, 185, 19, 0.4);
+}
+
+.contact-card h3 {
+    font-size: 1.8rem;
+    color: var(--black);
+    margin-bottom: 15px;
+}
+
+.contact-card p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+.contact-card a {
+    color: var(--black);
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 2px solid var(--yellow);
+    transition: all 0.3s;
+}
+
+.contact-card a:hover {
+    color: var(--yellow);
+}
+
+/* Cattle showcase */
+.cattle-showcase {
+    padding: 80px 40px;
+    background: var(--light-gray);
+    text-align: center;
+}
+
+.cattle-showcase-inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.cattle-showcase-inner img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    border: 4px solid var(--yellow);
+    display: block;
+}
+
+.cattle-showcase-inner h2 {
+    color: var(--black);
+    font-size: 2.2rem;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.cattle-showcase-inner p {
+    color: var(--dark-gray);
+    font-size: 1.15rem;
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Contact form */
+.form-section {
+    padding: 80px 40px;
+    background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+}
+
+.contact-form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+    border: 4px solid var(--black);
+    position: relative;
+}
+
+.contact-form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: var(--yellow);
+    border-radius: 15px 15px 0 0;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--black);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    border: 2px solid var(--medium-gray);
+    border-radius: 8px;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    transition: all 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--yellow);
+    box-shadow: 0 0 0 3px rgba(253, 185, 19, 0.2);
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Business info section */
+.business-info-section {
+    padding: 80px 40px;
+    background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+    color: var(--white);
+}
+
+.business-info-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.business-info-content h2 {
+    font-size: 2.5rem;
+    color: var(--yellow);
+    margin-bottom: 30px;
+}
+
+.business-info-content p {
+    font-size: 1.2rem;
+    line-height: 1.9;
+    margin-bottom: 25px;
+}
+
+.calves-showcase {
+    max-width: 700px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.calves-showcase img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
+    border: 4px solid var(--yellow);
+}
+
+.calves-showcase p {
+    margin-top: 18px;
+    font-size: 1.05rem;
+    color: var(--yellow);
+    font-style: italic;
+    font-weight: 600;
+}
+
+.business-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.info-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 35px;
+    border-radius: 12px;
+    border: 2px solid var(--yellow);
+    transition: all 0.4s;
+}
+
+.info-box:hover {
+    background: rgba(253, 185, 19, 0.2);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(253, 185, 19, 0.3);
+}
+
+.info-box h3 {
+    font-size: 1.6rem;
+    color: var(--yellow);
+    margin-bottom: 15px;
+}
+
+.info-box p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+
+/* ============================================================
+   24. ABOUT PAGE — SECTION UTILITY + STORY
+   ============================================================ */
+/* Generic .section used on About & SLC pages */
+.section {
+    padding: 80px 40px;
+    position: relative;
+}
+
+.section-light {
+    background: var(--white);
+}
+
+.section-dark {
+    background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+}
+
+/* Also used on SLC page */
+.section-gray {
+    background: var(--light-gray);
+}
+
+.content-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Also used on SLC page */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Story grid */
+.story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.story-content {
+    padding: 30px;
+}
+
+.story-content h3 {
+    font-size: 2rem;
+    color: var(--black);
+    margin-bottom: 25px;
+}
+
+.story-content p {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+.story-image {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+    border: 4px solid var(--yellow);
+}
+
+.story-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* ============================================================
+   25. ABOUT PAGE — HERD SPOTLIGHT
+   ============================================================ */
+.herd-spotlight {
+    background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+    padding: 70px 40px;
+    text-align: center;
+}
+
+.herd-spotlight-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.herd-spotlight-header {
+    margin-bottom: 50px;
+}
+
+.herd-spotlight-header h2 {
+    font-size: 3rem;
+    color: var(--black);
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.herd-spotlight-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: var(--yellow);
+}
+
+.herd-spotlight-header p {
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+    max-width: 750px;
+    margin: 25px auto 0;
+    line-height: 1.8;
+}
+
+.herd-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 10px;
+}
+
+.herd-card {
+    text-align: center;
+    background: var(--white);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    border: 3px solid var(--yellow);
+    transition: all 0.4s;
+}
+
+.herd-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 55px rgba(253, 185, 19, 0.3);
+}
+
+.herd-card > img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    display: block;
+}
+
+.herd-card-caption {
+    padding: 25px 22px 30px;
+}
+
+.herd-card-caption h3 {
+    font-size: 1.6rem;
+    color: var(--black);
+    margin-bottom: 10px;
+}
+
+.herd-card-caption h3 span {
+    color: var(--yellow);
+}
+
+.herd-card-caption p {
+    font-size: 1.05rem;
+    color: var(--dark-gray);
+    line-height: 1.75;
+}
+
+.herd-spotlight-tagline {
+    font-size: 1.15rem;
+    color: var(--yellow);
+    font-weight: 700;
+    font-style: italic;
+    margin-top: 40px;
+}
+
+
+/* ============================================================
+   26. ABOUT PAGE — MISSION, EXCELLENCE, SHOWCASE, TEAM
+   ============================================================ */
+.mission-section {
+    background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+    color: var(--white);
+    padding: 80px 40px;
+}
+
+.mission-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.mission-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+    padding: 45px;
+    border-radius: 15px;
+    border: 3px solid var(--yellow);
+    transition: all 0.4s;
+}
+
+.mission-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 50px rgba(253, 185, 19, 0.3);
+    background: linear-gradient(135deg, rgba(253,185,19,0.2), rgba(253,185,19,0.1));
+}
+
+.mission-card h3 {
+    font-size: 2rem;
+    color: var(--yellow);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.mission-card p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    text-align: center;
+}
+
+/* Excellence grid */
+.excellence-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    max-width: 1400px;
+    margin: 50px auto;
+}
+
+.excellence-item {
+    background: var(--light-gray);
+    padding: 40px;
+    border-radius: 12px;
+    border-left: 6px solid var(--yellow);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.excellence-item h3 {
+    font-size: 1.8rem;
+    color: var(--black);
+    margin-bottom: 20px;
+}
+
+.excellence-item p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.excellence-item ul {
+    margin-left: 25px;
+    margin-top: 15px;
+}
+
+.excellence-item li {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+/* Image showcase (About — 4-up grid) */
+.image-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto 50px;
+}
+
+.showcase-image {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+    border: 3px solid var(--yellow);
+    transition: all 0.4s;
+}
+
+.showcase-image:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 50px rgba(253, 185, 19, 0.4);
+}
+
+.showcase-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Package info box */
+.package-info-box {
+    max-width: 1000px;
+    margin: 50px auto 0;
+    text-align: center;
+    background: var(--light-gray);
+    padding: 40px;
+    border-radius: 15px;
+    border: 3px solid var(--yellow);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+}
+
+.package-info-box h3 {
+    font-size: 2rem;
+    color: var(--black);
+    margin-bottom: 20px;
+}
+
+.package-info-box p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.package-info-box p:last-child {
+    margin-bottom: 0;
+}
+
+/* Team section */
+.team-section {
+    text-align: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.team-content {
+    background: var(--light-gray);
+    padding: 50px;
+    border-radius: 15px;
+    border-top: 6px solid var(--yellow);
+    border-bottom: 6px solid var(--yellow);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+}
+
+.team-content p {
+    font-size: 1.2rem;
+    line-height: 1.9;
+    margin-bottom: 25px;
+}
+
+
+/* ============================================================
+   27. SLC / CITY LANDING PAGE — BENEFITS, TWO-COL, STATS,
+       SERVICE AREA
+   ============================================================ */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.benefit-card {
+    background: var(--white);
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid var(--yellow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.benefit-icon {
+    font-size: 3rem;
+    color: var(--yellow);
+    margin-bottom: 20px;
+}
+
+.benefit-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--black);
+}
+
+.benefit-card p {
+    line-height: 1.7;
+}
+
+/* Two-column layout */
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.column-content h3 {
+    font-size: 2rem;
+    color: var(--black);
+    margin-bottom: 20px;
+}
+
+.column-content p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.column-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.column-content ul li {
+    padding: 10px 0 10px 30px;
+    position: relative;
+}
+
+.column-content ul li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--yellow);
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.column-image {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.column-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Stats */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.stat-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--yellow);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    color: var(--dark-gray);
+}
+
+/* Service area block */
+.service-area {
+    background: var(--black);
+    color: var(--white);
+    padding: 50px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.service-area h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--yellow);
+}
+
+.service-area p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.areas-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.area-tag {
+    background: var(--yellow);
+    color: var(--black);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+
+/* ============================================================
+   28. RESPONSIVE — 1024px
+   ============================================================ */
+@media (max-width: 1024px) {
+    .header-container {
+        padding: 15px 30px;
+    }
+
+    nav ul {
+        gap: 30px;
+    }
+
+    .toc-hamburger {
+        top: 120px;
+        left: 15px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .toc-hamburger span {
+        width: 25px;
+    }
+
+    .toc-sidebar {
+        max-width: 180px;
+    }
+
+    /* About page grids collapse earlier */
+    .story-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .excellence-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+
+/* ============================================================
+   29. RESPONSIVE — 768px  (main mobile breakpoint)
+   ============================================================ */
+@media (max-width: 768px) {
+    /* Header */
+    .header-container {
+        padding: 12px 20px;
+    }
+
+    .header-logo img {
+        height: 50px;
+    }
+
+    /* Mobile nav */
+    nav ul {
+        position: fixed;
+        top: 82px;
+        left: 0;
+        right: 0;
+        background: var(--black);
+        flex-direction: column;
+        gap: 0;
+        padding: 20px;
+        border-bottom: 4px solid var(--yellow);
+        transform: translateX(-100%);
+        transition: transform 0.3s;
+        z-index: 999;
+    }
+
+    nav ul.active {
+        transform: translateX(0);
+    }
+
+    nav li {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid var(--dark-gray);
+    }
+
+    nav a {
+        display: block;
+        font-size: 1.1rem;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    main {
+        margin-top: 82px;
+    }
+
+    /* Float phone — show on mobile */
+    .float-phone {
+        display: flex;
+    }
+
+    /* TOC mobile */
+    .toc-hamburger {
+        top: 100px;
+        left: 10px;
+        width: 45px;
+        height: 45px;
+    }
+
+    .toc-hamburger span {
+        width: 22px;
+        height: 2px;
+    }
+
+    .toc-sidebar {
+        max-width: 160px;
+        padding: 15px 10px;
+    }
+
+    .toc-sidebar.active {
+        left: 10px;
+    }
+
+    .toc-title {
+        font-size: 0.8rem;
+    }
+
+    .toc-links a {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+
+    /* Hero mobile */
+    .hero {
+        padding: 0 20px 30px;
+        min-height: 350px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        letter-spacing: 1px;
+    }
+
+    .hero-subtitle {
+        font-size: 1.4rem;
+    }
+
+    .hero-tagline {
+        font-size: 1.1rem;
+    }
+
+    .hero-mission {
+        font-size: 1.1rem;
+    }
+
+    .hero-cta,
+    .cta-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 16px 30px;
+        font-size: 1rem;
+    }
+
+    /* Trust bar */
+    .trust-bar {
+        padding: 15px 20px;
+        margin-top: -20px;
+    }
+
+    .trust-bar p {
+        font-size: 1rem;
+    }
+
+    /* Contact top */
+    .contact-top {
+        padding: 45px 20px;
+    }
+
+    .contact-top-inner {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .contact-top-text h2 {
+        font-size: 1.9rem;
+    }
+
+    .contact-top-item {
+        min-width: unset;
+        width: 100%;
+    }
+
+    /* Section paddings */
+    .why-section,
+    .wagyu-section,
+    .quality-section,
+    .products-section,
+    .faq-section,
+    .social-section,
+    .business-card-section,
+    .section,
+    .contact-info-section,
+    .form-section,
+    .business-info-section,
+    .cattle-showcase,
+    .process-section,
+    .packaging-section,
+    .timeline-section,
+    .herd-spotlight,
+    .quality-showcase,
+    .detailed-products,
+    .products-overview,
+    .cta-section,
+    .mission-section {
+        padding: 60px 20px;
+    }
+
+    .section-header h2 {
+        font-size: 2.2rem;
+    }
+
+    /* Grid collapses */
+    .feature-grid,
+    .quality-cards,
+    .products-grid,
+    .wagyu-visual-showcase,
+    .showcase-gallery,
+    .product-features,
+    .packaging-grid,
+    .benefits-grid,
+    .stats-grid,
+    .two-column,
+    .herd-grid,
+    .mission-grid,
+    .image-showcase,
+    .contact-grid,
+    .business-info-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    /* Why section */
+    .why-content {
+        padding: 30px 25px;
+    }
+
+    /* Wagyu images */
+    .wagyu-image-card img {
+        height: 250px;
+    }
+
+    /* Quality calf showcase */
+    .quality-calf-showcase {
+        flex-direction: column;
+        padding: 30px 20px;
+        gap: 25px;
+    }
+
+    .quality-calf-showcase img {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+    }
+
+    /* Social */
+    .social-links {
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    /* Business card section */
+    .business-card-showcase {
+        padding: 40px 25px;
+    }
+
+    .business-card-showcase h3 {
+        font-size: 1.6rem;
+    }
+
+    .business-card-image {
+        max-width: 100%;
+    }
+
+    .contact-info-highlight {
+        font-size: 1.1rem;
+    }
+
+    /* Footer */
+    .footer-logo img {
+        max-width: 140px;
+    }
+
+    /* Ordering steps */
+    .step {
+        flex-direction: column !important;
+    }
+
+    .step-image {
+        flex: 1;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* About page */
+    .cta-content h2 {
+        font-size: 2.2rem;
+    }
+
+    .package-info-box {
+        padding: 30px 25px;
+    }
+
+    .package-info-box h3 {
+        font-size: 1.6rem;
+    }
+
+    .package-info-box p {
+        font-size: 1.1rem;
+    }
+
+    /* Contact page */
+    .contact-form-container {
+        padding: 30px 25px;
+    }
+
+    .cattle-showcase-inner h2 {
+        font-size: 1.8rem;
+    }
+
+    /* Herd spotlight */
+    .herd-spotlight-header h2 {
+        font-size: 2.2rem;
+    }
+}
+
+
+/* ============================================================
+   30. RESPONSIVE — 480px
+   ============================================================ */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.9rem;
+    }
+
+    .cattle-showcase-inner h2 {
+        font-size: 1.5rem;
+    }
+
+    .cta-content h2 {
+        font-size: 2.2rem;
+    }
+}
+
+
+/* ============================================================
+   31. FORCE HIDE FLOAT PHONE ON DESKTOP
+   ============================================================ */
+@media (min-width: 769px) {
+    .float-phone {
+        display: none !important;
+    }
+}
