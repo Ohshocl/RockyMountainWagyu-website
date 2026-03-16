@@ -147,6 +147,72 @@
             transform: translateY(-3px) rotate(2deg);
         }
 
+        /* Nav Contact Button - visually distinct from other nav links */
+        nav li.nav-contact-item a {
+            background: var(--yellow);
+            color: var(--black);
+            border-color: var(--yellow);
+            font-weight: 700;
+        }
+
+        nav li.nav-contact-item a:hover {
+            background: var(--white);
+            color: var(--black);
+            border-color: var(--white);
+            transform: translateY(-3px) scale(1.04);
+            box-shadow: 0 8px 25px rgba(253, 185, 19, 0.7);
+        }
+
+        nav li.nav-contact-item a::before {
+            background: var(--white);
+        }
+
+        /* Floating phone button - mobile only */
+        .float-phone {
+            display: none;
+            position: fixed;
+            bottom: 24px;
+            right: 20px;
+            z-index: 999;
+            background: var(--yellow);
+            color: var(--black);
+            border: 3px solid var(--black);
+            border-radius: 50px;
+            padding: 14px 22px;
+            font-size: 1rem;
+            font-weight: 700;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            text-decoration: none;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.35);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+            letter-spacing: 0.3px;
+        }
+
+        .float-phone:hover {
+            background: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 35px rgba(0,0,0,0.4);
+        }
+
+        .float-phone-icon {
+            font-size: 1.2rem;
+        }
+
+        @media (min-width: 769px) {
+            .float-phone {
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .float-phone {
+                display: flex;
+            }
+        }
+
         /* Mobile Menu Toggle */
         .mobile-menu-toggle {
             display: none;
@@ -429,6 +495,126 @@
             color: var(--black);
             font-weight: 600;
             margin: 0;
+        }
+
+        /* =============================================
+           CONTACT TOP SECTION (NEW)
+           ============================================= */
+        .contact-top {
+            background: var(--black);
+            padding: 60px 40px;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 4px solid var(--yellow);
+        }
+
+        .contact-top::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -80px;
+            width: 350px;
+            height: 280px;
+            background-image: url('documents/Rocky Mountain Wagyu Logo.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.04;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+
+        .contact-top-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-top-text {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .contact-top-text h2 {
+            font-size: 2.4rem;
+            color: var(--yellow);
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .contact-top-text p {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.85);
+            line-height: 1.7;
+            max-width: 480px;
+        }
+
+        .contact-top-details {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            flex-shrink: 0;
+        }
+
+        .contact-top-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: rgba(253, 185, 19, 0.08);
+            border: 2px solid rgba(253, 185, 19, 0.3);
+            border-radius: 10px;
+            padding: 16px 24px;
+            transition: all 0.3s;
+            text-decoration: none;
+            min-width: 300px;
+        }
+
+        .contact-top-item:hover {
+            background: rgba(253, 185, 19, 0.18);
+            border-color: var(--yellow);
+            transform: translateX(4px);
+        }
+
+        .contact-top-icon {
+            width: 46px;
+            height: 46px;
+            background: var(--yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.3rem;
+        }
+
+        .contact-top-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-top-label {
+            font-size: 0.8rem;
+            color: var(--yellow);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .contact-top-value {
+            font-size: 1.2rem;
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .contact-top-cta {
+            margin-top: 8px;
+            align-self: flex-start;
         }
 
         /* Why Section */
@@ -1231,6 +1417,25 @@
                 font-size: 1rem;
             }
 
+            /* Contact top responsive */
+            .contact-top {
+                padding: 45px 20px;
+            }
+
+            .contact-top-inner {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .contact-top-text h2 {
+                font-size: 1.9rem;
+            }
+
+            .contact-top-item {
+                min-width: unset;
+                width: 100%;
+            }
+
             .why-section,
             .wagyu-section,
             .quality-section,
@@ -1264,7 +1469,6 @@
                 height: 250px;
             }
 
-            /* Quality calf showcase responsive */
             .quality-calf-showcase {
                 flex-direction: column;
                 padding: 30px 20px;
@@ -1508,7 +1712,7 @@
                     <li><a href="About_us.html">About</a></li>
                     <li><a href="Products-Pricing.html">Products</a></li>
                     <li><a href="Ordering_Process.html">Ordering</a></li>
-                    <li><a href="Contact.html">Contact</a></li>
+                    <li class="nav-contact-item"><a href="Contact.html">Contact the Farm</a></li>
                 </ul>
             </nav>
         </div>
@@ -1526,13 +1730,13 @@
         <div class="toc-title">Quick Guide</div>
         <ul class="toc-links">
             <li><a href="#home" class="toc-link">Home</a></li>
+            <li><a href="#contact-top" class="toc-link">Contact Us</a></li>
             <li><a href="#why" class="toc-link">Why Wagyu</a></li>
             <li><a href="#special" class="toc-link">What's Special</a></li>
             <li><a href="#quality" class="toc-link">Our Quality</a></li>
             <li><a href="#products" class="toc-link">Products</a></li>
             <li><a href="#faq" class="toc-link">FAQ</a></li>
             <li><a href="#social" class="toc-link">Follow Us</a></li>
-            <li><a href="#contact" class="toc-link">Contact</a></li>
         </ul>
     </aside>
 
@@ -1543,11 +1747,12 @@
                 <h1>Rocky Mountain Wagyu</h1>
                 <p class="hero-subtitle">Premium Organic Wagyu Beef from Utah</p>
                 <p class="hero-tagline">Pasture to plate, The Rocky Mountain Way</p>
-                <p class="hero-mission">Discover prime-grade Wagyu beef raised for 2.5 years in Utah's pristine mountains. We deliver exceptional beef from our family farm to your table—serving the Salt Lake area and throughout the state.</p>
+                <p class="hero-mission">Discover prime-grade Wagyu beef raised for 2.5 years in Utah's pristine mountains. We sell whole, half, and quarter beef directly from our family farm — <strong style="color: var(--yellow);">ordering is done by calling or texting us directly.</strong></p>
                 <div class="hero-cta">
-                    <a href="Products-Pricing.html" class="btn btn-primary">Shop Our Beef</a>
-                    <a href="About_us.html" class="btn btn-secondary">Our Story</a>
+                    <a href="tel:8013013850" class="btn btn-primary">📞 Call to Reserve Beef</a>
+                    <a href="Contact.html" class="btn btn-secondary">Request Pricing</a>
                 </div>
+                <p style="margin-top: 18px; font-size: 1rem; color: rgba(255,255,255,0.75); letter-spacing: 0.3px;">Call or text: <strong style="color: var(--yellow);">801-301-3850</strong> &nbsp;|&nbsp; rockymtnwagyu@gmail.com</p>
             </div>
         </section>
 
@@ -1555,6 +1760,37 @@
         <div class="trust-bar">
             <p>Family-Owned Utah Farm • Locally Raised • 2.5 Year Process • No Hormones • No Antibiotics • Prime-Grade Quality</p>
         </div>
+
+        <!-- =============================================
+             CONTACT TOP SECTION (NEW)
+             ============================================= -->
+        <section class="contact-top" id="contact-top">
+            <div class="contact-top-inner">
+                <div class="contact-top-text">
+                    <h2>Ready to Order?</h2>
+                    <p>We're a family farm — not a storefront. The best way to get started is to reach out directly. We'll walk you through everything and answer any questions you have.</p>
+                </div>
+                <div class="contact-top-details">
+                    <a href="tel:8013013850" class="contact-top-item">
+                        <div class="contact-top-icon">📞</div>
+                        <div class="contact-top-info">
+                            <span class="contact-top-label">Call or Text</span>
+                            <span class="contact-top-value">801-301-3850</span>
+                        </div>
+                    </a>
+                    <a href="mailto:rockymtnwagyu@gmail.com" class="contact-top-item">
+                        <div class="contact-top-icon">✉️</div>
+                        <div class="contact-top-info">
+                            <span class="contact-top-label">Email Us</span>
+                            <span class="contact-top-value">rockymtnwagyu@gmail.com</span>
+                        </div>
+                    </a>
+                    <div style="text-align: center; margin-top: 8px;">
+                        <a href="Contact.html" class="btn btn-primary" style="font-size: 1rem; padding: 14px 36px;">Get In Touch</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Why We Raise Wagyu -->
         <section class="why-section" id="why">
@@ -1582,7 +1818,6 @@
                 <p style="color: var(--white);">Our beef is renowned for exceptional marbling, buttery texture, and rich flavor—representing the finest American Wagyu raised in Utah's pristine mountains.</p>
             </div>
 
-            <!-- Visual Showcase of Quality - FIXED: Swapped to calfslayingdown.jpeg -->
             <div class="wagyu-visual-showcase">
                 <div class="wagyu-image-card">
                     <img src="documents/wagyu_steaks.jpg" alt="Premium prime-grade Wagyu beef with perfect marbling">
@@ -1730,7 +1965,7 @@
             </div>
         </section>
 
-        <!-- Contact -->
+        <!-- Contact Bottom (original) -->
         <section class="business-card-section" id="contact">
             <div class="section-header">
                 <h2>Contact Us</h2>
@@ -1807,6 +2042,12 @@
             <p style="margin-top: 10px;">Premium Wagyu Beef Near You | Utah Family Farm | Prime Grade Organic Beef</p>
         </div>
     </footer>
+
+    <!-- Floating Phone Button - mobile only -->
+    <a href="tel:8013013850" class="float-phone" aria-label="Call Rocky Mountain Wagyu">
+        <span class="float-phone-icon">📞</span>
+        <span>801-301-3850</span>
+    </a>
 
     <script>
         function toggleMenu() {
