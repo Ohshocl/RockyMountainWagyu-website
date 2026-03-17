@@ -4,882 +4,167 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LTRHVGFDEY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTRHVGFDEY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-LTRHVGFDEY');
+        gtag('event', 'page_view', {
+            page_title: 'Utah Wagyu Beef Options | Rocky Mountain Wagyu Farm',
+            page_path: '/Products-Pricing.html'
+        });
+    </script>
 
-  gtag('config', 'G-LTRHVGFDEY');
-</script>
-    
-    <!-- SEO OPTIMIZED: Title under 60 chars with primary keyword -->
+    <!-- SEO: Title under 60 chars with primary keyword -->
     <title>Utah Wagyu Beef Options | Rocky Mountain Wagyu farm</title>
-    
-    <!-- SEO OPTIMIZED: Meta description 150-160 chars with CTA -->
+
+    <!-- SEO: Meta description 150-160 chars with CTA -->
     <meta name="description" content="Choose whole, half, or quarter premium Wagyu beef from our Utah family farm. Raised 2.5 years, no hormones or antibiotics. Contact us today!">
-    
-    <!-- SEO OPTIMIZED: Canonical URL -->
+
+    <!-- SEO: Canonical URL -->
     <link rel="canonical" href="https://rockymountainwagyufarm.com/Products-Pricing.html">
-    
+
     <!-- Additional SEO Meta Tags -->
     <meta name="keywords" content="Utah Wagyu beef, Wagyu beef Utah, Utah Wagyu farm, organic beef Utah, American Wagyu, premium Wagyu beef, Utah family farm">
     <meta name="author" content="Rocky Mountain Wagyu">
-    
-    <!-- Open Graph Tags for Social Sharing -->
+
+    <!-- Open Graph -->
     <meta property="og:title" content="Utah Wagyu Beef Options | Rocky Mountain Wagyu farm">
     <meta property="og:description" content="Choose whole, half, or quarter premium Wagyu beef from our Utah family farm. Raised 2.5 years, no hormones or antibiotics.">
     <meta property="og:url" content="https://rockymountainwagyufarm.com/Products-Pricing.html">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://rockymountainwagyufarm.com/documents/Rocky%20Mountain%20Wagyu%20Logo.png">
-    
-    <!-- Twitter Card Tags -->
+
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Utah Wagyu Beef Options | Rocky Mountain Wagyu farm">
     <meta name="twitter:description" content="Choose whole, half, or quarter premium Wagyu beef from our Utah family farm. Raised 2.5 years, no hormones or antibiotics.">
     <meta name="twitter:image" content="https://rockymountainwagyufarm.com/documents/Rocky%20Mountain%20Wagyu%20Logo.png">
-    
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="assets/css/main.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        /* Products page: hero sits inside main, no extra top margin needed */
+        main { margin-top: 0; }
 
-        :root {
-            --black: #000000;
-            --white: #FFFFFF;
-            --yellow: #FDB913;
-            --light-gray: #F5F5F5;
-            --medium-gray: #E0E0E0;
-            --dark-gray: #333333;
-        }
+        /* ── Products-page-specific classes that replace element-level inline styles ── */
 
-        body {
-            font-family: 'Georgia', 'Times New Roman', serif;
-            color: var(--dark-gray);
-            background-color: var(--white);
-            line-height: 1.6;
-        }
+        /* Quality showcase: yellow h2 override (dark section) */
+        .quality-showcase .section-header h2 { color: var(--yellow); }
+        .quality-showcase .section-header p   { color: var(--white); }
 
-        /* Header with Logo and Navigation */
-        header {
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            background: var(--black);
-            border-bottom: 4px solid var(--yellow);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-        }
+        /* Light-gray background variant for processing section */
+        .products-overview--gray { background: var(--light-gray); }
 
-        .header-container {
-            max-width: 1600px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 40px;
-        }
-
-        .header-logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .header-logo img {
-            height: 100px;
-            width: auto;
-            filter: drop-shadow(0 2px 8px rgba(253, 185, 19, 0.4));
-        }
-
-        nav ul {
-            display: flex;
-            gap: 15px;
-            list-style: none;
-            align-items: center;
-            justify-content: center;
-        }
-
-        nav a {
-            color: var(--white);
-            text-decoration: none;
-            font-size: 1rem;
-            transition: all 0.3s;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            padding: 12px 28px;
-            background: transparent;
-            border: 3px solid var(--yellow);
-            border-radius: 50px;
-            display: inline-block;
-            position: relative;
-            overflow: hidden;
-        }
-
-        nav a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--yellow);
-            transition: left 0.4s;
-            z-index: -1;
-        }
-
-        nav a:hover::before {
-            left: 0;
-        }
-
-        nav a:hover {
-            color: var(--black);
-            transform: translateY(-3px) rotate(-2deg);
-            box-shadow: 0 6px 20px rgba(253, 185, 19, 0.5);
-        }
-
-        nav li:nth-child(even) a:hover {
-            transform: translateY(-3px) rotate(2deg);
-        }
-
-        .mobile-menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--yellow);
-            font-size: 1.8rem;
-            cursor: pointer;
-            padding: 5px;
-        }
-
-        main {
-            margin-top: 0px;
-        }
-
-        /* Table of Contents Hamburger Button */
-        .toc-hamburger {
-            position: fixed;
-            left: 20px;
-            top: 150px;
-            z-index: 501;
-            background: var(--yellow);
-            border: 3px solid var(--black);
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 5px;
-            cursor: pointer;
-            box-shadow: 0 4px 20px rgba(253, 185, 19, 0.5);
-            transition: all 0.3s;
-        }
-
-        .toc-hamburger:hover {
-            background: var(--white);
-            transform: scale(1.1);
-            box-shadow: 0 6px 30px rgba(253, 185, 19, 0.7);
-        }
-
-        .toc-hamburger span {
-            width: 30px;
-            height: 3px;
-            background: var(--black);
-            border-radius: 2px;
-            transition: all 0.3s;
-        }
-
-        .toc-hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(7px, 7px);
-        }
-
-        .toc-hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .toc-hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
-        }
-
-        /* Table of Contents Sidebar */
-        .toc-sidebar {
-            position: fixed;
-            left: -250px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 500;
-            background: rgba(0, 0, 0, 0.95);
-            padding: 20px 15px;
-            border-radius: 12px;
-            border: 2px solid var(--yellow);
-            backdrop-filter: blur(10px);
-            max-width: 200px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-            transition: all 0.4s ease;
-        }
-
-        .toc-sidebar.active {
-            left: 20px;
-        }
-
-        .toc-title {
-            color: var(--yellow);
-            font-size: 0.9rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-align: center;
-        }
-
-        .toc-links {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .toc-links a {
-            color: var(--white);
-            text-decoration: none;
-            font-size: 0.85rem;
-            padding: 8px 12px;
-            border-left: 3px solid transparent;
-            transition: all 0.3s;
-            display: block;
-            line-height: 1.3;
-        }
-
-        .toc-links a:hover {
-            color: var(--yellow);
-            border-left-color: var(--yellow);
-            padding-left: 16px;
-            background: rgba(253, 185, 19, 0.1);
-        }
-
-        .toc-links a.active {
-            color: var(--yellow);
-            border-left-color: var(--yellow);
-            background: rgba(253, 185, 19, 0.15);
-            font-weight: 600;
-        }
-
-       /* Hero Section */
-.hero {
-    background-image: url('documents/hero_section.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: var(--white);
-    padding: 60px 40px 40px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    min-height: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.7) 100%);
-    pointer-events: none;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 1;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    color: var(--yellow);
-    margin-bottom: 25px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-shadow: 0 4px 10px rgba(0,0,0,0.8);
-}
-
-.hero-subtitle {
-    font-size: 1.8rem;
-    color: var(--white);
-    font-weight: 500;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.8);
-    margin-bottom: 20px;
-    line-height: 1.6;
-}
-
-.hero-tagline {
-    font-size: 1.5rem;
-    color: var(--yellow);
-    font-style: italic;
-    font-weight: 600;
-}
-
-        /* Section Styling */
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-header h2 {
-            font-size: 3rem;
-            color: var(--black);
-            margin-bottom: 20px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-header h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 120px;
-            height: 4px;
-            background: var(--yellow);
-        }
-
-        .section-header p {
-            font-size: 1.2rem;
-            color: var(--dark-gray);
-            max-width: 800px;
-            margin: 25px auto 0;
-            line-height: 1.8;
-        }
-
-        /* Products Overview Section */
-        .products-overview {
-            background: var(--white);
-            padding: 80px 40px;
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 35px;
-            max-width: 1400px;
-            margin: 50px auto;
-        }
-
-        .product-card {
-            background: var(--white);
-            border: 3px solid var(--black);
-            padding: 40px;
-            border-radius: 12px;
-            text-align: center;
-            transition: all 0.4s;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-            position: relative;
-        }
-
-        .product-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 6px;
-            background: var(--yellow);
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 18px 50px rgba(0,0,0,0.2);
-            border-color: var(--yellow);
-        }
-
-        .product-image {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
+        /* Product detail image (replaces flex/width inline styles) */
+        .product-detail-img {
+            flex: 0 0 400px;
+            width: 400px;
+            height: auto;
+            object-fit: contain;
             border-radius: 8px;
-            margin-bottom: 25px;
             border: 2px solid var(--yellow);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
 
-        .product-card h3 {
+        /* Flex wrapper inside product detail content */
+        .product-detail-flex {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        /* Feature grid inside detail flex */
+        .product-detail-feature-grid {
+            flex: 1;
+            min-width: 300px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            align-content: start;
+        }
+
+        /* Sub-headings inside detail content */
+        .detail-section-title {
+            font-size: 1.5rem;
             color: var(--black);
-            font-size: 1.8rem;
-            margin-bottom: 18px;
+            margin: 0 0 30px;
         }
 
-        .product-card h3::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 3px;
-            background: var(--yellow);
-            margin: 12px auto 0;
+        .detail-section-title--gap-top {
+            font-size: 1.5rem;
+            color: var(--black);
+            margin: 30px 0 20px;
         }
 
-        .product-card p {
-            font-size: 1.05rem;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        /* Quality Showcase Gallery */
-        .quality-showcase {
-            background: linear-gradient(135deg, var(--dark-gray) 0%, var(--black) 100%);
-            padding: 80px 40px;
-            color: var(--white);
-        }
-
-        .showcase-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            max-width: 1400px;
-            margin: 50px auto;
-        }
-
-        .showcase-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 12px;
-            border: 3px solid var(--yellow);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-            transition: all 0.4s;
-            aspect-ratio: 4/3;
-        }
-
-        .showcase-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(253, 185, 19, 0.4);
-        }
-
-        .showcase-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s;
-        }
-
-        .showcase-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .showcase-label {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.95), transparent);
-            padding: 25px 15px 15px;
-            color: var(--yellow);
-            font-size: 1.3rem;
-            font-weight: 700;
-            text-align: center;
-        }
-
-        /* Detailed Products Section */
-        .detailed-products {
+        /* Processing card note box */
+        .processing-note-box {
             background: var(--light-gray);
-            padding: 80px 40px;
-        }
-
-        .product-detail {
-            max-width: 1200px;
-            margin: 0 auto 60px;
-            background: var(--white);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-            border: 3px solid var(--black);
-        }
-
-        .product-detail-header {
-            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
-            color: var(--white);
-            padding: 40px;
-            position: relative;
-        }
-
-        .product-detail-header::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 6px;
-            background: var(--yellow);
-        }
-
-        .product-detail-header h3 {
-            font-size: 2.5rem;
-            color: var(--yellow);
-            margin-bottom: 15px;
-        }
-
-        .product-detail-content {
-            padding: 40px;
-        }
-
-        .product-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin: 30px 0;
-        }
-
-        .feature-item {
-            padding: 20px;
-            background: var(--light-gray);
+            padding: 15px;
             border-radius: 8px;
             border-left: 4px solid var(--yellow);
-        }
-
-        .feature-item h4 {
-            color: var(--black);
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
-
-        .feature-item p {
-            color: var(--dark-gray);
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        /* Pricing Information */
-        .pricing-note {
-            background: var(--yellow);
-            padding: 30px;
-            border-radius: 12px;
-            margin: 40px 0;
-            text-align: center;
-            border: 3px solid var(--black);
-        }
-
-        .pricing-note h4 {
-            font-size: 1.8rem;
-            color: var(--black);
-            margin-bottom: 15px;
-        }
-
-        .pricing-note p {
-            font-size: 1.1rem;
-            color: var(--dark-gray);
-            line-height: 1.6;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
-            color: var(--white);
-            padding: 80px 40px;
-            text-align: center;
-        }
-
-        .cta-section h2 {
-            color: var(--yellow);
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-        }
-
-        .cta-section p {
-            font-size: 1.3rem;
-            margin-bottom: 40px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .btn {
-            padding: 18px 45px;
-            font-size: 1.15rem;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            display: inline-block;
-        }
-
-        .btn-primary {
-            background: var(--yellow);
-            color: var(--black);
-            box-shadow: 0 8px 25px rgba(253, 185, 19, 0.4);
-            border: 3px solid var(--yellow);
-        }
-
-        .btn-primary:hover {
-            background: var(--white);
-            color: var(--black);
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(253, 185, 19, 0.6);
-        }
-
-        /* Footer */
-        footer {
-            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
-            color: var(--white);
-            padding: 60px 40px 30px;
-            border-top: 6px solid var(--yellow);
-        }
-
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
             text-align: left;
-            margin-bottom: 40px;
         }
 
-        .footer-section h4 {
-            color: var(--yellow);
-            font-size: 1.4rem;
-            margin-bottom: 20px;
-            font-weight: 700;
+        .processing-note-box p {
+            margin: 0;
+            font-size: 0.95rem;
         }
 
-        .footer-logo {
-            margin-bottom: 20px;
+        .processing-note-box p + p {
+            margin-top: 10px;
+            color: var(--dark-gray);
         }
 
-        .footer-logo img {
-            max-width: 180px;
-            height: auto;
-            filter: drop-shadow(0 3px 12px rgba(253, 185, 19, 0.4));
-        }
+        /* Pricing note spacing helpers */
+        .pricing-note p + p { margin-top: 15px; }
 
-        .footer-brand p {
-            font-size: 1.05rem;
-            line-height: 1.7;
-            margin-bottom: 12px;
-        }
-
-        .footer-tagline {
-            color: var(--yellow);
-            font-weight: 700;
+        /* CTA section extra phone line */
+        .cta-phone-line {
+            margin-top: 30px;
             font-size: 1.1rem;
-            margin-top: 15px;
-            font-style: italic;
         }
 
-        .footer-contact-info {
-            list-style: none;
-        }
-
-        .footer-contact-info li {
-            margin-bottom: 15px;
-            font-size: 1.05rem;
-            line-height: 1.6;
-        }
-
-        .footer-contact-info a {
-            color: var(--white);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-contact-info a:hover {
-            color: var(--yellow);
-        }
-
-        .footer-social-links {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .footer-social-link {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            text-decoration: none;
-            color: var(--white);
-            transition: all 0.3s;
-            font-size: 1.05rem;
-        }
-
-        .footer-social-link:hover {
-            color: var(--yellow);
-            transform: translateX(5px);
-        }
-
-        .footer-social-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--white);
-            border: 2px solid var(--yellow);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            color: var(--black);
-            transition: all 0.3s;
-        }
-
-        .footer-social-link:hover .footer-social-icon {
-            background: var(--yellow);
-            transform: rotate(5deg);
-        }
-
-        .footer-bottom {
-            border-top: 2px solid var(--dark-gray);
-            padding-top: 25px;
-            margin-top: 40px;
-            text-align: center;
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .toc-hamburger {
-                top: 120px;
-                left: 15px;
-                width: 50px;
-                height: 50px;
-            }
-
-            .toc-hamburger span {
-                width: 25px;
-            }
-
-            .toc-sidebar {
-                max-width: 180px;
-            }
-        }
+        /* Footer bottom second line */
+        .footer-bottom-sub { margin-top: 10px; }
 
         @media (max-width: 768px) {
-            .header-container {
-                padding: 12px 20px;
-            }
-
-            .header-logo img {
-                height: 50px;
-            }
-
-            nav ul {
-                position: fixed;
-                top: 82px;
-                left: 0;
-                right: 0;
-                background: var(--black);
-                flex-direction: column;
-                gap: 0;
-                padding: 20px;
-                border-bottom: 4px solid var(--yellow);
-                transform: translateX(-100%);
-                transition: transform 0.3s;
-            }
-
-            nav ul.active {
-                transform: translateX(0);
-            }
-
-            nav li {
+            .product-detail-img {
+                flex: 0 0 100%;
                 width: 100%;
-                text-align: center;
-                padding: 15px 0;
-                border-bottom: 1px solid var(--dark-gray);
-            }
-
-            nav a {
-                display: block;
-                font-size: 1.1rem;
-            }
-
-            .mobile-menu-toggle {
-                display: block;
-            }
-
-            main {
-                margin-top: 82px;
-            }
-
-            .toc-hamburger {
-                top: 100px;
-                left: 10px;
-                width: 45px;
-                height: 45px;
-            }
-
-            .toc-hamburger span {
-                width: 22px;
-                height: 2px;
-            }
-
-            .toc-sidebar {
-                max-width: 160px;
-                padding: 15px 10px;
-            }
-
-            .toc-sidebar.active {
-                left: 10px;
-            }
-
-            .toc-title {
-                font-size: 0.8rem;
-            }
-
-            .toc-links a {
-                font-size: 0.8rem;
-                padding: 6px 10px;
-            }
-
-            .hero {
-                min-height: 450px;
-                padding: 50px 20px;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-                letter-spacing: 1.5px;
-            }
-
-            .hero-subtitle {
-                font-size: 1.4rem;
-            }
-
-            .hero-tagline {
-                font-size: 1.2rem;
-            }
-
-            .section-header h2 {
-                font-size: 2.2rem;
-            }
-
-            .products-grid, .showcase-gallery {
-                grid-template-columns: 1fr;
-            }
-
-            .product-features {
-                grid-template-columns: 1fr;
             }
         }
     </style>
 
-    <!-- SEO OPTIMIZED: LocalBusiness Schema Markup -->
+    <!-- LocalBusiness Schema Markup -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Rocky Mountain Wagyu",
-      "description": "Utah family farm raising premium organic Wagyu beef for 2.5 years with no hormones or antibiotics. Offering whole, half, and quarter beef options.",
+      "description": "Utah family farm raising premium Wagyu beef for 2.5 years with no hormones or antibiotics. Offering whole, half, and quarter beef options.",
       "url": "https://rockymountainwagyufarm.com",
       "image": "https://rockymountainwagyufarm.com/documents/Rocky%20Mountain%20Wagyu%20Logo.png",
-      "telephone": "+1-801-301-3850",
+      "telephone": "+1-402-217-5291",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+1-402-217-5291",
+          "contactType": "sales",
+          "areaServed": "UT",
+          "availableLanguage": "English"
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+1-801-301-3850",
+          "contactType": "customer service",
+          "areaServed": "UT",
+          "availableLanguage": "English"
+        }
+      ],
       "email": "rockymtnwagyu@gmail.com",
       "address": {
         "@type": "PostalAddress",
@@ -892,7 +177,6 @@
         "longitude": "-111.9387235"
       },
       "priceRange": "$$-$$$",
-      "servesCuisine": "Wagyu Beef",
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Wagyu Beef Products",
@@ -902,7 +186,14 @@
             "itemOffered": {
               "@type": "Product",
               "name": "Whole Utah Wagyu Beef",
-              "description": "Complete Wagyu animal raised for 2.5 years in Utah, perfect for large families"
+              "description": "Complete Wagyu animal raised for 2.5 years in Utah, perfect for large families",
+              "offers": {
+                "@type": "Offer",
+                "url": "https://rockymountainwagyufarm.com/Products-Pricing.html",
+                "priceCurrency": "USD",
+                "priceValidUntil": "2026-12-31",
+                "availability": "https://schema.org/InStock"
+              }
             }
           },
           {
@@ -910,7 +201,14 @@
             "itemOffered": {
               "@type": "Product",
               "name": "Half Utah Wagyu Beef",
-              "description": "Half Wagyu beef with balanced selection of cuts, ideal for families of 4-6"
+              "description": "Half Wagyu beef with balanced selection of cuts, ideal for families of 4-6",
+              "offers": {
+                "@type": "Offer",
+                "url": "https://rockymountainwagyufarm.com/Products-Pricing.html",
+                "priceCurrency": "USD",
+                "priceValidUntil": "2026-12-31",
+                "availability": "https://schema.org/InStock"
+              }
             }
           },
           {
@@ -918,7 +216,14 @@
             "itemOffered": {
               "@type": "Product",
               "name": "Quarter Utah Wagyu Beef",
-              "description": "Quarter Wagyu beef introduction package, perfect for trying premium beef"
+              "description": "Quarter Wagyu beef introduction package, perfect for trying premium beef",
+              "offers": {
+                "@type": "Offer",
+                "url": "https://rockymountainwagyufarm.com/Products-Pricing.html",
+                "priceCurrency": "USD",
+                "priceValidUntil": "2026-12-31",
+                "availability": "https://schema.org/InStock"
+              }
             }
           }
         ]
@@ -936,53 +241,53 @@
     </script>
 </head>
 <body>
-    <!-- Header with Logo and Navigation -->
+
+    <!-- Standard Header -->
     <header>
         <div class="header-container">
             <div class="header-logo">
-                <!-- SEO OPTIMIZED: Improved alt text with location keywords -->
-                <img src="documents/Rocky Mountain Wagyu Logo.png" alt="Rocky Mountain Wagyu - Utah Family farm Logo">
+                <img src="documents/Rocky Mountain Wagyu Logo.png" alt="Rocky Mountain Wagyu - Utah Family Farm Logo">
             </div>
-            <button class="mobile-menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
+            <button class="mobile-menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">&#9776;</button>
             <nav>
                 <ul id="navMenu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="About_us.html">About</a></li>
                     <li><a href="Products-Pricing.html">Products</a></li>
                     <li><a href="Ordering_Process.html">Ordering</a></li>
-                    <li><a href="Contact.html">Contact</a></li>
+                    <li class="nav-contact-item"><a href="Contact.html">Contact the Farm</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Table of Contents Hamburger Button -->
+    <!-- TOC Hamburger -->
     <button class="toc-hamburger" onclick="toggleTOC()" aria-label="Toggle quick guide">
         <span></span>
         <span></span>
         <span></span>
     </button>
 
-    <!-- Table of Contents Sidebar -->
+    <!-- TOC Sidebar -->
     <aside class="toc-sidebar" id="tocSidebar">
         <div class="toc-title">Quick Guide</div>
         <ul class="toc-links">
-            <li><a href="#overview" class="toc-link">Overview</a></li>
-            <li><a href="#quality" class="toc-link">See Our Quality</a></li>
-            <li><a href="#processing" class="toc-link">Processing Options</a></li>
-            <li><a href="#whole-beef" class="toc-link">Whole Beef</a></li>
-            <li><a href="#half-beef" class="toc-link">Half Beef</a></li>
-            <li><a href="#quarter-beef" class="toc-link">Quarter Beef</a></li>
-            <li><a href="#presale" class="toc-link">Pre-Sale Program</a></li>
-            <li><a href="#order" class="toc-link">Order Now</a></li>
+            <li><a href="#overview"      class="toc-link">Overview</a></li>
+            <li><a href="#quality"       class="toc-link">See Our Quality</a></li>
+            <li><a href="#processing"    class="toc-link">Processing Options</a></li>
+            <li><a href="#whole-beef"    class="toc-link">Whole Beef</a></li>
+            <li><a href="#half-beef"     class="toc-link">Half Beef</a></li>
+            <li><a href="#quarter-beef"  class="toc-link">Quarter Beef</a></li>
+            <li><a href="#presale"       class="toc-link">Pre-Sale Program</a></li>
+            <li><a href="#order"         class="toc-link">Order Now</a></li>
         </ul>
     </aside>
 
     <main>
-        <!-- Hero Section -->
+
+        <!-- Hero -->
         <section class="hero">
             <div class="hero-content">
-                <!-- SEO OPTIMIZED: H1 with primary keywords under 60 chars -->
                 <h1>Utah Wagyu Beef Options</h1>
                 <p class="hero-subtitle">Choose the perfect size for your family</p>
                 <p class="hero-tagline">Pasture to plate, The Rocky Mountain Way</p>
@@ -993,13 +298,11 @@
         <section class="products-overview" id="overview">
             <div class="section-header">
                 <h2>Three Simple Choices</h2>
-                <!-- SEO OPTIMIZED: Natural keyword integration with 2.5 year differentiator -->
-                <p>We offer whole, half, and quarter beef to fit your family's needs. Every option is raised for 2.5 years in Utah's Rocky Mountains—no hormones, no antibiotics, just exceptional organic beef. You'll pick up your beef from our family farm and arrange processing with your preferred butcher, or we can coordinate butchering and delivery for an additional fee.</p>
+                <p>We offer whole, half, and quarter beef to fit your family's needs. Every option is raised for 2.5 years in Utah's Rocky Mountains—no hormones, no antibiotics, just exceptional beef. You'll pick up your beef from our family farm and arrange processing with your preferred butcher, or we can coordinate butchering and delivery for an additional fee.</p>
             </div>
 
             <div class="products-grid">
                 <div class="product-card">
-                    <!-- SEO OPTIMIZED: Improved alt text with Utah Wagyu keywords -->
                     <img src="documents/product_images/whole beef.jpg" alt="Whole Utah Wagyu beef from Rocky Mountain farm" class="product-image">
                     <h3>Whole Beef</h3>
                     <p>The complete animal with maximum variety and best value per pound. Perfect for large families or splitting between households. You arrange processing, or we can coordinate it for you.</p>
@@ -1007,7 +310,6 @@
                 </div>
 
                 <div class="product-card">
-                    <!-- SEO OPTIMIZED: Improved alt text -->
                     <img src="documents/product_images/Half beef.jpg" alt="Half Utah Wagyu beef option from family farm" class="product-image">
                     <h3>Half Beef</h3>
                     <p>Our most popular option. A balanced selection of cuts that's ideal for families of 4-6. You choose your butcher, or we can arrange processing and packaging.</p>
@@ -1015,7 +317,6 @@
                 </div>
 
                 <div class="product-card">
-                    <!-- SEO OPTIMIZED: Improved alt text -->
                     <img src="documents/product_images/quarter beef.jpg" alt="Quarter Utah Wagyu beef from Rocky Mountain farm" class="product-image">
                     <h3>Quarter Beef</h3>
                     <p>A great introduction to premium Wagyu beef without the commitment of larger quantities. Fits easily in a standard freezer. Take to your butcher or we'll handle it.</p>
@@ -1024,17 +325,15 @@
             </div>
         </section>
 
-       <!-- Quality Showcase Gallery -->
+        <!-- Quality Showcase Gallery -->
         <section class="quality-showcase" id="quality">
             <div class="section-header">
-                <h2 style="color: var(--yellow);">What You'll Receive</h2>
-                <!-- SEO OPTIMIZED: Natural Utah Wagyu keyword usage -->
-                <p style="color: var(--white);">When you purchase whole, half, or quarter beef from our Utah farm, your butcher will process it into a variety of premium cuts like these. Our Wagyu beef features exceptional marbling throughout—this intramuscular fat creates the signature buttery texture and rich flavor that makes American Wagyu world-renowned.</p>
+                <h2>What You'll Receive</h2>
+                <p>When you purchase whole, half, or quarter beef from our Utah farm, your butcher will process it into a variety of premium cuts like these. Our Wagyu beef features exceptional marbling throughout—this intramuscular fat creates the signature buttery texture and rich flavor that makes American Wagyu world-renowned.</p>
             </div>
 
             <div class="showcase-gallery">
                 <div class="showcase-item">
-                    <!-- SEO OPTIMIZED: Alt text with Utah Wagyu keywords -->
                     <img src="documents/product_images/ribeye.jpg" alt="Premium marbled Utah Wagyu ribeye steak from Rocky Mountain farm">
                     <div class="showcase-label">Ribeye</div>
                 </div>
@@ -1066,49 +365,49 @@
         </section>
 
         <!-- Processing & Delivery Options -->
-        <section class="products-overview" id="processing" style="background: var(--light-gray);">
+        <section class="products-overview products-overview--gray" id="processing">
             <div class="section-header">
-                <h2>Processing & Delivery Options</h2>
+                <h2>Processing &amp; Delivery Options</h2>
                 <p>We want you to have control over how your Utah Wagyu beef is processed and delivered. Here are your options:</p>
             </div>
 
             <div class="products-grid">
                 <div class="product-card">
                     <h3>Standard Pickup</h3>
-                    <p style="margin-bottom: 25px;">Purchase your whole, half, or quarter beef and pick it up directly from our Utah farm. You then take it to your preferred butcher for processing and packaging.</p>
-                    <div style="background: var(--light-gray); padding: 15px; border-radius: 8px; border-left: 4px solid var(--yellow); text-align: left;">
-                        <p style="margin: 0; font-size: 0.95rem;"><strong>Best for:</strong> Customers who have an established relationship with a local butcher or want to choose their own processor</p>
+                    <p>Purchase your whole, half, or quarter beef and pick it up directly from our Utah farm. You then take it to your preferred butcher for processing and packaging.</p>
+                    <div class="processing-note-box">
+                        <p><strong>Best for:</strong> Customers who have an established relationship with a local butcher or want to choose their own processor</p>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <h3>We Arrange Butchering</h3>
-                    <p style="margin-bottom: 25px;">We'll coordinate processing with our trusted local butcher. Choose between vacuum-sealed packaging or traditional butcher paper wrapping.</p>
-                    <div style="background: var(--light-gray); padding: 15px; border-radius: 8px; border-left: 4px solid var(--yellow); text-align: left;">
-                        <p style="margin: 0 0 10px; font-size: 0.95rem;"><strong>Includes:</strong> Professional cutting to your specifications, vacuum sealing or butcher paper, freezing</p>
-                        <p style="margin: 0; font-size: 0.95rem; color: var(--dark-gray);"><em>Additional processing fee applies - contact for current rates</em></p>
+                    <p>We'll coordinate processing with our trusted local butcher. Choose between vacuum-sealed packaging or traditional butcher paper wrapping.</p>
+                    <div class="processing-note-box">
+                        <p><strong>Includes:</strong> Professional cutting to your specifications, vacuum sealing or butcher paper, freezing</p>
+                        <p><em>Additional processing fee applies — contact for current rates</em></p>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <h3>Delivery Service</h3>
-                    <p style="margin-bottom: 25px;">We can deliver your Utah Wagyu beef directly to your butcher of choice, saving you the trip and ensuring proper transport.</p>
-                    <div style="background: var(--light-gray); padding: 15px; border-radius: 8px; border-left: 4px solid var(--yellow); text-align: left;">
-                        <p style="margin: 0 0 10px; font-size: 0.95rem;"><strong>Best for:</strong> Customers who need delivery to their preferred processor</p>
-                        <p style="margin: 0; font-size: 0.95rem; color: var(--dark-gray);"><em>Delivery fee based on distance - contact for quote</em></p>
+                    <p>We can deliver your Utah Wagyu beef directly to your butcher of choice, saving you the trip and ensuring proper transport.</p>
+                    <div class="processing-note-box">
+                        <p><strong>Best for:</strong> Customers who need delivery to their preferred processor</p>
+                        <p><em>Delivery fee based on distance — contact for quote</em></p>
                     </div>
                 </div>
             </div>
 
-            <div class="pricing-note" style="margin-top: 40px;">
+            <div class="pricing-note">
                 <h4>Questions About Processing?</h4>
-                <!-- SEO OPTIMIZED: Added call-to-action and phone number -->
-                <p>Contact us at <strong>801-301-3850</strong> to discuss processing options, get current pricing and fee estimates, and learn about our recommended butcher's services. We're happy to explain the entire process and help you choose the best option for your Utah Wagyu beef.</p>
+                <p>Contact us at <strong><a href="tel:4022175291">402-217-5291</a></strong> or <strong><a href="tel:8013013850">801-301-3850</a></strong> to discuss processing options, get current pricing and fee estimates, and learn about our recommended butcher's services. We're happy to explain the entire process and help you choose the best option for your Utah Wagyu beef.</p>
             </div>
         </section>
 
         <!-- Detailed Products -->
         <section class="detailed-products">
+
             <!-- Whole Beef -->
             <div class="product-detail" id="whole-beef">
                 <div class="product-detail-header">
@@ -1116,15 +415,15 @@
                     <p>The complete package with maximum value</p>
                 </div>
                 <div class="product-detail-content">
-                    <h4 style="font-size: 1.5rem; color: var(--black); margin: 0 0 30px;">What You're Purchasing</h4>
-                    <!-- SEO OPTIMIZED: Added Utah and 2.5 year keywords naturally -->
-                    <p style="margin-bottom: 30px;">You're purchasing a whole live animal (or hanging weight) from our Utah family farm. After processing by your butcher, this typically yields approximately 400-600 pounds of packaged beef, depending on the animal size and how it's cut. Each animal is raised for 2.5 years to ensure optimal marbling and flavor. The final variety of cuts depends on your cutting instructions to the butcher.</p>
-                    
-                    <div style="display: flex; gap: 30px; margin-bottom: 30px; flex-wrap: wrap;">
-                        <!-- SEO OPTIMIZED: Improved alt text -->
-                        <img src="documents/product_images/whole beef.jpg" alt="Whole Utah Wagyu beef from Rocky Mountain family farm" style="flex: 0 0 400px; width: 400px; height: auto; object-fit: contain; border-radius: 8px; border: 2px solid var(--yellow); box-shadow: 0 8px 25px rgba(0,0,0,0.15);">
-                        
-                        <div style="flex: 1; min-width: 300px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; align-content: start;">
+                    <h4 class="detail-section-title">What You're Purchasing</h4>
+                    <p>You're purchasing a whole live animal (or hanging weight) from our Utah family farm. After processing by your butcher, this typically yields approximately 400–600 pounds of packaged beef, depending on the animal size and how it's cut. Each animal is raised for 2.5 years to ensure optimal marbling and flavor. The final variety of cuts depends on your cutting instructions to the butcher.</p>
+
+                    <div class="product-detail-flex">
+                        <img src="documents/product_images/whole beef.jpg"
+                             alt="Whole Utah Wagyu beef from Rocky Mountain family farm"
+                             class="product-detail-img">
+
+                        <div class="product-detail-feature-grid">
                             <div class="feature-item">
                                 <h4>Complete Variety</h4>
                                 <p>Work with your butcher to get premium steaks, tender roasts, versatile ground beef, and specialty cuts</p>
@@ -1139,22 +438,23 @@
                             </div>
                             <div class="feature-item">
                                 <h4>Year's Supply</h4>
-                                <p>Enough beef to feed a large family or multiple households for 8-12 months</p>
+                                <p>Enough beef to feed a large family or multiple households for 8–12 months</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="pricing-note">
-                        <h4>Pricing & Processing</h4>
-                        <!-- SEO OPTIMIZED: Added call-to-action with phone and family farm keywords -->
-                        <p><strong>Beef Price:</strong> Contact our Utah family farm for current pricing<br>
-                        <strong>Processing Fee:</strong> Additional fee applies (contact for estimate)<br>
-                        <strong>Delivery Fee:</strong> Based on distance (if applicable)</p>
-                        <p style="margin-top: 15px;">The purchase price covers the animal itself. Processing fees are separate and paid directly to the butcher (if you use our butcher) or to your chosen processor. Call us at <strong>801-301-3850</strong> for current rates.</p>
+                        <h4>Pricing &amp; Processing</h4>
+                        <p>
+                            <strong>Beef Price:</strong> Contact our Utah family farm for current pricing<br>
+                            <strong>Processing Fee:</strong> Additional fee applies (contact for estimate)<br>
+                            <strong>Delivery Fee:</strong> Based on distance (if applicable)
+                        </p>
+                        <p>The purchase price covers the animal itself. Processing fees are separate and paid directly to the butcher (if you use our butcher) or to your chosen processor. Call us at <strong><a href="tel:4022175291">402-217-5291</a></strong> or <strong><a href="tel:8013013850">801-301-3850</a></strong> for current rates.</p>
                     </div>
 
-                    <h4 style="font-size: 1.5rem; color: var(--black); margin: 30px 0 20px;">Ideal For</h4>
-                    <p>Large families wanting to stock up for the year, multiple households pooling together to split the cost and beef, or anyone serious about knowing exactly where their meat comes from. You'll need approximately 16-20 cubic feet of freezer space for the final packaged product. <strong><a href="Contact.html" style="color: var(--black); text-decoration: underline;">Contact us</a> to learn more about whole beef options.</strong></p>
+                    <h4 class="detail-section-title--gap-top">Ideal For</h4>
+                    <p>Large families wanting to stock up for the year, multiple households pooling together to split the cost and beef, or anyone serious about knowing exactly where their meat comes from. You'll need approximately 16–20 cubic feet of freezer space for the final packaged product. <strong><a href="Contact.html">Contact us</a> to learn more about whole beef options.</strong></p>
                 </div>
             </div>
 
@@ -1165,15 +465,15 @@
                     <p>The perfect balance for most families</p>
                 </div>
                 <div class="product-detail-content">
-                    <h4 style="font-size: 1.5rem; color: var(--black); margin: 0 0 30px;">What You're Purchasing</h4>
-                    <!-- SEO OPTIMIZED: Added natural Utah and organic keywords -->
-                    <p style="margin-bottom: 30px;">You're purchasing half of an animal (or half of the hanging weight) from our organic Utah farm. After processing by your butcher, this typically yields approximately 200-300 pounds of packaged beef. This gives you a well-balanced mix of all major cut types—perfect for feeding a family of 4-6 for several months.</p>
-                    
-                    <div style="display: flex; gap: 30px; margin-bottom: 30px; flex-wrap: wrap;">
-                        <!-- SEO OPTIMIZED: Improved alt text -->
-                        <img src="documents/product_images/Half beef.jpg" alt="Half Utah Wagyu beef from organic Rocky Mountain farm" style="flex: 0 0 400px; width: 400px; height: auto; object-fit: contain; border-radius: 8px; border: 2px solid var(--yellow); box-shadow: 0 8px 25px rgba(0,0,0,0.15);">
-                        
-                        <div style="flex: 1; min-width: 300px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; align-content: start;">
+                    <h4 class="detail-section-title">What You're Purchasing</h4>
+                    <p>You're purchasing half of an animal (or half of the hanging weight) from our Utah farm. After processing by your butcher, this typically yields approximately 200–300 pounds of packaged beef. This gives you a well-balanced mix of all major cut types—perfect for feeding a family of 4–6 for several months.</p>
+
+                    <div class="product-detail-flex">
+                        <img src="documents/product_images/Half beef.jpg"
+                             alt="Half Utah Wagyu beef from Rocky Mountain farm"
+                             class="product-detail-img">
+
+                        <div class="product-detail-feature-grid">
                             <div class="feature-item">
                                 <h4>Balanced Selection</h4>
                                 <p>A natural mix of premium steaks for special dinners and everyday cuts for weekly meals</p>
@@ -1194,16 +494,17 @@
                     </div>
 
                     <div class="pricing-note">
-                        <h4>Pricing & Processing</h4>
-                        <!-- SEO OPTIMIZED: Natural integration with contact info -->
-                        <p><strong>Beef Price:</strong> Contact our Utah Wagyu farm for current pricing<br>
-                        <strong>Processing Fee:</strong> Additional fee applies (contact for estimate)<br>
-                        <strong>Delivery Fee:</strong> Based on distance (if applicable)</p>
-                        <p style="margin-top: 15px;">The purchase price covers your half of the animal. Processing is separate—either arranged through us for an additional fee, or you can use your own butcher. Email us at <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="562439353d2f3b22382137312f2316313b373f3a7835393b">[email&#160;protected]</a></strong> for details.</p>
+                        <h4>Pricing &amp; Processing</h4>
+                        <p>
+                            <strong>Beef Price:</strong> Contact our Utah Wagyu farm for current pricing<br>
+                            <strong>Processing Fee:</strong> Additional fee applies (contact for estimate)<br>
+                            <strong>Delivery Fee:</strong> Based on distance (if applicable)
+                        </p>
+                        <p>The purchase price covers your half of the animal. Processing is separate—either arranged through us for an additional fee, or you can use your own butcher. Email us at <strong><a href="mailto:rockymtnwagyu&#64;gmail.com">rockymtnwagyu&#64;gmail.com</a></strong> for details.</p>
                     </div>
 
-                    <h4 style="font-size: 1.5rem; color: var(--black); margin: 30px 0 20px;">Ideal For</h4>
-                    <p>Families of 4-6 who want premium Wagyu beef regularly but don't need an entire year's supply. Also great for two smaller households to split. You'll need approximately 8-10 cubic feet of freezer space for the final packaged product.</p>
+                    <h4 class="detail-section-title--gap-top">Ideal For</h4>
+                    <p>Families of 4–6 who want premium Wagyu beef regularly but don't need an entire year's supply. Also great for two smaller households to split. You'll need approximately 8–10 cubic feet of freezer space for the final packaged product.</p>
                 </div>
             </div>
 
@@ -1214,15 +515,15 @@
                     <p>A great way to experience our quality</p>
                 </div>
                 <div class="product-detail-content">
-                    <h4 style="font-size: 1.5rem; color: var(--black); margin: 0 0 30px;">What You're Purchasing</h4>
-                    <!-- SEO OPTIMIZED: Added American Wagyu and family farm keywords -->
-                    <p style="margin-bottom: 30px;">You're purchasing a quarter animal (or quarter of the hanging weight) from our Utah family farm. After processing by your butcher, this typically yields approximately 100-150 pounds of packaged beef. You'll get a good variety of cuts, though with less customization flexibility than larger orders since you're working with a smaller portion. This is perfect for experiencing our American Wagyu beef without a huge commitment.</p>
-                    
-                    <div style="display: flex; gap: 30px; margin-bottom: 30px; flex-wrap: wrap;">
-                        <!-- SEO OPTIMIZED: Improved alt text -->
-                        <img src="documents/product_images/quarter beef.jpg" alt="Quarter Utah Wagyu beef from Rocky Mountain family farm" style="flex: 0 0 400px; width: 400px; height: auto; object-fit: contain; border-radius: 8px; border: 2px solid var(--yellow); box-shadow: 0 8px 25px rgba(0,0,0,0.15);">
-                        
-                        <div style="flex: 1; min-width: 300px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; align-content: start;">
+                    <h4 class="detail-section-title">What You're Purchasing</h4>
+                    <p>You're purchasing a quarter animal (or quarter of the hanging weight) from our Utah family farm. After processing by your butcher, this typically yields approximately 100–150 pounds of packaged beef. You'll get a good variety of cuts, though with less customization flexibility than larger orders since you're working with a smaller portion. This is perfect for experiencing our American Wagyu beef without a huge commitment.</p>
+
+                    <div class="product-detail-flex">
+                        <img src="documents/product_images/quarter beef.jpg"
+                             alt="Quarter Utah Wagyu beef from Rocky Mountain family farm"
+                             class="product-detail-img">
+
+                        <div class="product-detail-feature-grid">
                             <div class="feature-item">
                                 <h4>Good Variety</h4>
                                 <p>Selection of steaks, roasts, and ground beef to try different preparations</p>
@@ -1243,29 +544,30 @@
                     </div>
 
                     <div class="pricing-note">
-                        <h4>Pricing & Processing</h4>
-                        <p><strong>Beef Price:</strong> Contact us for current pricing<br>
-                        <strong>Processing Fee:</strong> Additional fee applies (contact for estimate)<br>
-                        <strong>Delivery Fee:</strong> Based on distance (if applicable)</p>
-                        <p style="margin-top: 15px;">The purchase price covers your quarter of the animal. Processing is separate—either arranged through us for an additional fee, or you can use your own butcher.</p>
+                        <h4>Pricing &amp; Processing</h4>
+                        <p>
+                            <strong>Beef Price:</strong> Contact us for current pricing<br>
+                            <strong>Processing Fee:</strong> Additional fee applies (contact for estimate)<br>
+                            <strong>Delivery Fee:</strong> Based on distance (if applicable)
+                        </p>
+                        <p>The purchase price covers your quarter of the animal. Processing is separate—either arranged through us for an additional fee, or you can use your own butcher.</p>
                     </div>
 
-                    <h4 style="font-size: 1.5rem; color: var(--black); margin: 30px 0 20px;">Ideal For</h4>
-                    <p>Smaller households, couples, or first-time bulk beef buyers wanting to experience our quality. Also great if you're curious about the difference Wagyu beef makes but aren't ready for larger quantities. You'll need approximately 4-5 cubic feet of freezer space for the final packaged product.</p>
+                    <h4 class="detail-section-title--gap-top">Ideal For</h4>
+                    <p>Smaller households, couples, or first-time bulk beef buyers wanting to experience our quality. Also great if you're curious about the difference Wagyu beef makes but aren't ready for larger quantities. You'll need approximately 4–5 cubic feet of freezer space for the final packaged product.</p>
                 </div>
             </div>
 
-            <!-- Pre-Sale Program - NOW MATCHES OTHER SECTIONS -->
+            <!-- Pre-Sale Program -->
             <div class="product-detail" id="presale">
                 <div class="product-detail-header">
                     <h3>Pre-Sale Program</h3>
                     <p>Reserve beef from our next generation of Utah-raised calves</p>
                 </div>
                 <div class="product-detail-content">
-                    <h4 style="font-size: 1.5rem; color: var(--black); margin: 0 0 30px;">How It Works</h4>
-                    <!-- SEO OPTIMIZED: Natural keyword integration with 2.5 year differentiator -->
-                    <p style="margin-bottom: 30px;">Our pre-sale program lets you reserve beef from calves currently being raised on our Utah farm. Each calf requires 2.5 years from birth to reach optimal quality and weight for processing. During this time, they receive the same care and attention that makes our beef exceptional.</p>
-                    
+                    <h4 class="detail-section-title">How It Works</h4>
+                    <p>Our pre-sale program lets you reserve beef from calves currently being raised on our Utah farm. Each calf requires 2.5 years from birth to reach optimal quality and weight for processing. During this time, they receive the same care and attention that makes our beef exceptional.</p>
+
                     <div class="product-features">
                         <div class="feature-item">
                             <h4>Lock In Pricing</h4>
@@ -1288,71 +590,66 @@
                     <div class="pricing-note">
                         <h4>Program Terms</h4>
                         <p>Our pre-sale program includes specific terms regarding animal loss, natural weight variations, refund policies, and timing guarantees. These protections ensure fairness for both you and our family farm throughout the 2.5-year raising period.</p>
-                        <!-- SEO OPTIMIZED: Added call-to-action with contact info -->
-                        <p style="margin-top: 15px;"><strong>Contact us at 801-301-3850 to discuss pre-sale options, learn about current availability, and explore payment plan details for your Utah Wagyu beef.</strong></p>
+                        <p><strong>Contact us at <a href="tel:4022175291">402-217-5291</a> to discuss pre-sale options, learn about current availability, and explore payment plan details for your Utah Wagyu beef.</strong></p>
                     </div>
 
-                    <h4 style="font-size: 1.5rem; color: var(--black); margin: 30px 0 20px;">Perfect For</h4>
-                    <p>Customers who want to secure premium Utah Wagyu beef at today's prices for future delivery. Great for those planning ahead, wanting to spread payments over time, or interested in following their calf's journey from birth to harvest. <strong><a href="Contact.html" style="color: var(--black); text-decoration: underline;">Contact us</a> to learn more about our pre-sale program.</strong></p>
+                    <h4 class="detail-section-title--gap-top">Perfect For</h4>
+                    <p>Customers who want to secure premium Utah Wagyu beef at today's prices for future delivery. Great for those planning ahead, wanting to spread payments over time, or interested in following their calf's journey from birth to harvest. <strong><a href="Contact.html">Contact us</a> to learn more about our pre-sale program.</strong></p>
                 </div>
             </div>
+
         </section>
 
         <!-- Call to Action -->
         <section class="cta-section" id="order">
-            <!-- SEO OPTIMIZED: Clear call-to-action with location keywords -->
             <h2>Ready to Order Your Utah Wagyu Beef?</h2>
             <p>Get in touch to check availability, discuss which option fits your needs, and reserve your beef from our Utah family farm. We're here to answer questions and help you make the best choice for your family.</p>
             <a href="Contact.html" class="btn btn-primary">Contact Us to Order</a>
-            <!-- SEO OPTIMIZED: Additional CTA with phone number -->
-            <p style="margin-top: 30px; font-size: 1.1rem;">Call us at <strong>801-301-3850</strong> or email <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9ceef3fff7e5f1e8f2ebfdfbe5e9dcfbf1fdf5f0b2fff3f1">[email&#160;protected]</a></strong></p>
+            <p class="cta-phone-line">Call or text: <strong><a href="tel:4022175291">402-217-5291</a></strong> &nbsp;|&nbsp; <strong><a href="tel:8013013850">801-301-3850</a></strong> &nbsp;|&nbsp; <strong><a href="mailto:rockymtnwagyu&#64;gmail.com">rockymtnwagyu&#64;gmail.com</a></strong></p>
         </section>
+
     </main>
 
-    <!-- Footer -->
+    <!-- Standard Footer -->
     <footer>
         <div class="footer-content">
-            <!-- About Section -->
             <div class="footer-section">
                 <div class="footer-logo">
-                    <!-- SEO OPTIMIZED: Improved alt text -->
-                    <img src="documents/Rocky Mountain Wagyu Logo.png" alt="Rocky Mountain Wagyu Utah Family farm Logo">
+                    <img src="documents/Rocky Mountain Wagyu Logo.png" alt="Rocky Mountain Wagyu Logo">
                 </div>
                 <div class="footer-brand">
-                    <!-- SEO OPTIMIZED: Natural keyword integration -->
                     <p>Premium, organic Wagyu beef raised with care in Utah's Rocky Mountains.</p>
-                    <p>Family-operated with a commitment to quality that exceeds industry standards.</p>
+                    <p>We're a family-operated farm with a commitment to quality that exceeds industry standards.</p>
                     <p class="footer-tagline">Pasture to plate, The Rocky Mountain Way</p>
                 </div>
             </div>
 
-            <!-- Contact Section -->
             <div class="footer-section">
                 <h4>Contact Us</h4>
                 <ul class="footer-contact-info">
-                    <li><strong>Phone:</strong><br><a href="tel:8013013850">801-301-3850</a></li>
-                    <li><strong>Email:</strong><br><a href="/cdn-cgi/l/email-protection#a8dac7cbc3d1c5dcc6dfc9cfd1dde8cfc5c9c1c486cbc7c5"><span class="__cf_email__" data-cfemail="d0a2bfb3bba9bda4bea7b1b7a9a590b7bdb1b9bcfeb3bfbd">[email&#160;protected]</span></a></li>
+                    <li><strong>Phone:</strong><br><a href="tel:4022175291">402-217-5291</a></li>
+                    <li><a href="tel:8013013850">801-301-3850</a></li>
+                    <li><strong>Email:</strong><br><a href="mailto:rockymtnwagyu&#64;gmail.com">rockymtnwagyu&#64;gmail.com</a></li>
+                    <li><strong>Location:</strong><br>Utah Rocky Mountains</li>
                     <li><strong>Hours:</strong><br>By appointment<br>(We operate on a farming timeline)</li>
                 </ul>
             </div>
 
-            <!-- Social Media Section -->
             <div class="footer-section">
                 <h4>Follow Our Journey</h4>
                 <div class="footer-social-links">
-                    <a href="https://www.instagram.com/RockymtnWagyu" target="_blank" class="footer-social-link">
+                    <a href="https://www.instagram.com/RockymtnWagyu" target="_blank" rel="noopener" class="footer-social-link">
                         <div class="footer-social-icon">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.40z"/>
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                             </svg>
                         </div>
                         <span>@RockymtnWagyu</span>
                     </a>
-
-                    <a href="https://www.tiktok.com/@Rockymtnwagyu" target="_blank" class="footer-social-link">
+                    <a href="https://www.tiktok.com/@Rockymtnwagyu" target="_blank" rel="noopener" class="footer-social-link">
                         <div class="footer-social-icon">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.10z"/>
+                                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
                             </svg>
                         </div>
                         <span>@Rockymtnwagyu</span>
@@ -1360,86 +657,13 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="footer-bottom">
-            <!-- SEO OPTIMIZED: Added Utah keywords to footer -->
             <p>&copy; 2025 Rocky Mountain Wagyu. All rights reserved.</p>
-            <p style="margin-top: 10px;">Premium Mountain-Raised American Wagyu Beef | Utah Family farm</p>
+            <p class="footer-bottom-sub">Premium Wagyu Beef Near You | Utah Family Farm | Prime Grade Organic Beef</p>
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        function toggleMenu() {
-            document.getElementById('navMenu').classList.toggle('active');
-        }
-
-        function toggleTOC() {
-            const sidebar = document.getElementById('tocSidebar');
-            const hamburger = document.querySelector('.toc-hamburger');
-            sidebar.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        }
-
-        document.addEventListener('click', function(event) {
-            const nav = document.getElementById('navMenu');
-            const toggle = document.querySelector('.mobile-menu-toggle');
-            const tocSidebar = document.getElementById('tocSidebar');
-            const tocHamburger = document.querySelector('.toc-hamburger');
-            
-            // Close main menu if clicking outside
-            if (!nav.contains(event.target) && !toggle.contains(event.target)) {
-                nav.classList.remove('active');
-            }
-
-            // Close TOC menu if clicking outside
-            if (!tocSidebar.contains(event.target) && !tocHamburger.contains(event.target)) {
-                tocSidebar.classList.remove('active');
-                tocHamburger.classList.remove('active');
-            }
-        });
-
-        document.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('click', function() {
-                document.getElementById('navMenu').classList.remove('active');
-            });
-        });
-
-        const tocLinks = document.querySelectorAll('.toc-link');
-        const sections = document.querySelectorAll('section[id], div[id]');
-
-        tocLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
-                
-                if (targetSection) {
-                    const headerOffset = 94;
-                    const elementPosition = targetSection.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-
-                    // Close the TOC sidebar after clicking a link
-                    document.getElementById('tocSidebar').classList.remove('active');
-                    document.querySelector('.toc-hamburger').classList.remove('active');
-                }
-            });
-        });
-
-        function highlightActiveSection() {
-            const scrollPos = window.scrollY + 150;
-
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.offsetHeight;
-                const sectionId = section.getAttribute('id');
-
-                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-                    tocLinks.forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === `#${sectionId}`) {
-                            link.classList.
+    <script src="assets/js/main.js" defer></script>
+</body>
+</html>
