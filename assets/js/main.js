@@ -207,3 +207,19 @@ document.querySelectorAll('.btn').forEach(function (button) {
         }
     });
 });
+
+
+/* ============================================================
+   8. NAV HOME LINK — REWRITE index.html → /
+
+   Any nav link with href="index.html" is rewritten to href="/"
+   at runtime. This prevents Google from discovering /index.html
+   as a separate URL from /, which causes the "Alternate page
+   with proper canonical tag" warning in Search Console.
+
+   No HTML changes needed across any page — one fix here
+   covers the entire site.
+   ============================================================ */
+document.querySelectorAll('nav a[href="index.html"]').forEach(function (link) {
+    link.setAttribute('href', '/');
+});
