@@ -240,7 +240,7 @@ document.querySelectorAll('nav a[href="index.html"]').forEach(function (link) {
    Phone numbers:
      Primary:   402-217-5291  (href="tel:4022175291")
      Secondary: 801-301-3850  (href="tel:8013013850")
-     Tertiary:  435-239-5465  (display only — no href)
+     Tertiary:  435-239-5465  (href="tel:4352395465")
    ============================================================ */
 (function () {
     const target = document.getElementById('site-footer');
@@ -264,7 +264,7 @@ document.querySelectorAll('nav a[href="index.html"]').forEach(function (link) {
             <ul class="footer-contact-info">
                 <li><strong>Phone:</strong><br><a href="tel:4022175291">402-217-5291</a></li>
                 <li><a href="tel:8013013850">801-301-3850</a></li>
-                <li>435-239-5465</li>
+                <li><a href="tel:4352395465">435-239-5465</a></li>
                 <li><strong>Email:</strong><br><a href="mailto:rockymtnwagyu&#64;gmail.com">rockymtnwagyu&#64;gmail.com</a></li>
                 <li><strong>Location:</strong><br>Utah Rocky Mountains</li>
                 <li><strong>Hours:</strong><br>By appointment</li>
