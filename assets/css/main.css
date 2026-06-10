@@ -1458,6 +1458,35 @@ footer {
     letter-spacing: 0.3px;
 }
 
+/* Contact row inside combined section — adds breathing room above */
+.cattle-contact-row {
+    margin-top: 50px;
+    border-top: 1px solid rgba(253, 185, 19, 0.25);
+    padding-top: 40px;
+}
+
+/* Adjust text colors for dark background */
+.available-cattle-section .contact-top-inner .contact-top-text p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.available-cattle-section .contact-top-inner .contact-top-text h2 {
+    color: var(--yellow);
+}
+
+.available-cattle-section .contact-top-item {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(253, 185, 19, 0.3);
+}
+
+.available-cattle-section .contact-top-label {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.available-cattle-section .contact-top-value {
+    color: var(--yellow);
+}
+
 /* ============================================================
    20. PRODUCTS PAGE — OVERVIEW, QUALITY GALLERY, DETAIL CARDS
    ============================================================ */
